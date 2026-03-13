@@ -250,9 +250,22 @@ h1 em{font-style:italic;color:var(--teal-b)}
 .cta-guar b{color:rgba(255,255,255,.6)}
 
 /* ── FOOTER ── */
-footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);flex-wrap:wrap;gap:14px}
-.ft-logo img{height:42px;width:auto;display:block}
-.ft-note{font-size:14px;color:var(--muted)}
+footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 80px 32px}
+.ft-top{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+.ft-brand-col{}
+.ft-logo img{height:40px;width:auto;display:block;margin-bottom:14px}
+.ft-tagline{font-size:13px;color:var(--muted);line-height:1.6;max-width:220px;margin-bottom:18px}
+.ft-email{font-size:13px;color:var(--teal);text-decoration:none;font-weight:600}
+.ft-email:hover{text-decoration:underline}
+.ft-col-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--night);margin-bottom:14px}
+.ft-links{display:flex;flex-direction:column;gap:9px}
+.ft-links a{font-size:13px;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-links a:hover{color:var(--teal)}
+.ft-bottom{border-top:1px solid var(--border);padding-top:22px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.ft-copy{font-size:12px;color:var(--muted)}
+.ft-legal-links{display:flex;gap:20px}
+.ft-legal-links a{font-size:12px;color:var(--muted);text-decoration:none;transition:color .2s}
+.ft-legal-links a:hover{color:var(--teal)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
@@ -277,7 +290,9 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
   .buy-grid{grid-template-columns:1fr}
   .cta-band{padding:64px 24px}
   .cta-final-grid{grid-template-columns:1fr}
-  footer{padding:28px 24px}
+  footer{padding:36px 24px 24px}
+  .ft-top{grid-template-columns:1fr 1fr;gap:28px}
+  .ft-bottom{flex-direction:column;align-items:flex-start;gap:10px}
   h1{font-size:42px}
   .s-h{font-size:32px}
 }
@@ -310,7 +325,7 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
       <div class="ch-title">I need more clients, better pricing, and a clearer message</div>
       <div class="ch-desc">You know what you do — but your pitch is vague, your prices are guesswork, and your outreach isn't converting. This blueprint fixes all three.</div>
       <div class="ch-points">
-        <div class="ch-pt">Magnetic client pitch — one sentence that positions you perfectly</div>
+        <div class="ch-pt">Magnetic pitch — one sentence that makes the right buyers stop and pay attention</div>
         <div class="ch-pt">Pricing strategy with exact numbers and a step-by-step raise plan</div>
         <div class="ch-pt">30-day action plan tailored to your business and goals</div>
         <div class="ch-pt">5 copy-paste scripts ready to use today</div>
@@ -468,26 +483,26 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
     <div class="del-card">
       <div class="del-num">1</div>
       <div class="del-ttl">Your Magnetic Client Pitch</div>
-      <div class="del-body">One precise sentence built from your actual client language and industry context. Not a tagline. Not an elevator speech. A conversion tool that works in a bio, a DM, a discovery call, and a proposal.</div>
-      <div class="del-example">"I help wellness entrepreneurs who are invisible online attract premium clients and charge what they are truly worth."</div>
+      <div class="del-body">One precise sentence built from your actual offer, your industry, and the language your best buyers use. Not a tagline. Not a mission statement. A conversion tool that works in a bio, a DM, an email, a product listing, and a sales conversation.</div>
+      <div class="del-example">"We help independent retailers cut dead stock by 40% using demand forecasting built for businesses that can't afford enterprise software."</div>
     </div>
     <div class="del-card">
       <div class="del-num">2</div>
       <div class="del-ttl">Your Pricing Strategy</div>
-      <div class="del-body">A full pricing analysis — how much you are undercharging, what you need to charge to hit your 5× revenue target, and a two-step increase roadmap with exact figures. Includes language for announcing your rate increase to existing clients.</div>
+      <div class="del-body">A full pricing analysis — how much you are undercharging, what you need to charge to hit your 5× revenue target, and a two-step increase roadmap with exact figures. Includes language for communicating your new rates to existing buyers and introducing them to new ones.</div>
       <div class="del-example">"You are undercharging by $650 per project. Raise to $800 in 30 days, then $1,200 in 60 days."</div>
     </div>
     <div class="del-card">
       <div class="del-num">3</div>
-      <div class="del-ttl">Your Ideal Client Profile</div>
-      <div class="del-body">A detailed profile of exactly who to target — their core pain, what they want most, and precisely where to find more of them. Platform-specific guidance based on where you currently get clients.</div>
-      <div class="del-example">"Find them on LinkedIn — post 3× per week and send 10 connection requests daily to matched profiles."</div>
+      <div class="del-ttl">Your Ideal Buyer Profile</div>
+      <div class="del-body">A detailed profile of exactly who to target — their core pain, what they want most, and precisely where to find more of them. Platform-specific and channel-specific guidance based on your business type and current reach.</div>
+      <div class="del-example">"Your ideal buyer is a small business owner spending 10+ hours on admin. Find them in Facebook Groups, LinkedIn, and local business communities — post 3× per week addressing their top frustrations."</div>
     </div>
     <div class="del-card">
       <div class="del-num">4</div>
-      <div class="del-ttl">Your Client Attraction Plan</div>
-      <div class="del-body">Three to four personalised, platform-specific actions — not vague advice but full step-by-step instructions, copy templates, and implementation detail built around your current channels and goals.</div>
-      <div class="del-example">"Post a 5-slide 'Who I Help' carousel this week. Slide 1: hook. Slide 2: problem. Slides 3–4: solution. Slide 5: pitch + CTA."</div>
+      <div class="del-ttl">Your Growth & Acquisition Plan</div>
+      <div class="del-body">Three to four personalised, channel-specific actions — not vague advice but full step-by-step instructions, copy templates, and implementation detail built around your business type, offer, and current channels.</div>
+      <div class="del-example">"Post a 5-slide 'What We Do' carousel this week. Slide 1: hook. Slide 2: problem. Slides 3–4: solution. Slide 5: offer + CTA. Boost it with $10 for 3 days."</div>
     </div>
     <div class="del-card">
       <div class="del-num">5</div>
@@ -498,8 +513,8 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
     <div class="del-card">
       <div class="del-num">6</div>
       <div class="del-ttl">5 Copy-Paste Scripts</div>
-      <div class="del-body">Social bio, cold email/DM opening, price objection response, referral ask, and social post hook — all constructed from your pitch, pain points, and result language. Professional, ready to send today.</div>
-      <div class="del-example">"Cold DM: 'Hi [Name], I noticed [specific detail]. I help [clients] who [pain] — I have a couple of ideas for your situation…'"</div>
+      <div class="del-body">Social bio, cold outreach opening, price objection response, referral ask, and social post hook — all constructed from your pitch, your offer, and your buyer's pain language. Professional, ready to use today.</div>
+      <div class="del-example">"Cold DM: 'Hi [Name], I noticed [specific detail]. We help [buyers] who [pain] — I have a couple of ideas that could work for your situation…'"</div>
     </div>
   </div>
 </section>
@@ -514,8 +529,8 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
       <div class="who-items">
         <div class="wi"><span class="wi-ico">✓</span>You are in business but feel like you are underselling yourself</div>
         <div class="wi"><span class="wi-ico">✓</span>You are great at what you do but struggle to explain it clearly</div>
-        <div class="wi"><span class="wi-ico">✓</span>You get clients from referrals but have no consistent system</div>
-        <div class="wi"><span class="wi-ico">✓</span>You have tried raising prices but clients pushed back</div>
+        <div class="wi"><span class="wi-ico">✓</span>You get sales from referrals or word of mouth but have no consistent system</div>
+        <div class="wi"><span class="wi-ico">✓</span>You have tried raising prices but buyers pushed back</div>
         <div class="wi"><span class="wi-ico">✓</span>You are busy but not earning what you know you are worth</div>
         <div class="wi"><span class="wi-ico">✓</span>You want a clear, specific plan — not more generic advice</div>
       </div>
@@ -548,29 +563,29 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
     <div class="sv-step">
       <div class="sv-num">2</div>
       <div class="sv-body">
-        <div class="sv-ttl">Describe your challenges and your ideal client</div>
-        <div class="sv-desc">Where are you stuck? Who is your best client and what keeps them up at night? This is where most business owners get their first real clarity.</div>
+        <div class="sv-ttl">Describe your challenges and your ideal buyer</div>
+        <div class="sv-desc">Where are you stuck? Who is your ideal buyer and what problem are you solving for them? This is where most business owners get their first real clarity.</div>
       </div>
     </div>
     <div class="sv-step">
       <div class="sv-num">3</div>
       <div class="sv-body">
         <div class="sv-ttl">Share your offer, pricing, and revenue numbers</div>
-        <div class="sv-desc">What do you currently charge? How much are you earning? How many clients can you handle? These numbers calculate your exact path to 5× revenue.</div>
+        <div class="sv-desc">What do you currently charge? How much are you earning? How many orders or projects can you handle? These numbers calculate your exact path to 5× revenue.</div>
       </div>
     </div>
     <div class="sv-step">
       <div class="sv-num">4</div>
       <div class="sv-body">
         <div class="sv-ttl">Tell us your 90-day goal</div>
-        <div class="sv-desc">More clients, higher prices, a consistent system, or full capacity — your goal shapes every recommendation your blueprint makes.</div>
+        <div class="sv-desc">More sales, higher prices, a consistent system, or full capacity — your goal shapes every recommendation your blueprint makes.</div>
       </div>
     </div>
     <div class="sv-step">
       <div class="sv-num">5</div>
       <div class="sv-body">
         <div class="sv-ttl">Receive your personalised blueprint instantly</div>
-        <div class="sv-desc">Your pitch, pricing strategy, client profile, attraction plan, 30-day plan, and 5 scripts — generated in seconds, emailed to you automatically, and downloadable as a PDF.</div>
+        <div class="sv-desc">Your pitch, pricing strategy, buyer profile, growth plan, 30-day action plan, and scripts — generated in seconds, emailed to you automatically, and downloadable as a PDF.</div>
       </div>
     </div>
   </div>
@@ -580,7 +595,7 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
 <div class="product-divider" id="bos">
   <div class="pd-label">Already attracting clients?</div>
   <div class="pd-title">There is a second ceiling.<br>And a blueprint for that too.</div>
-  <div class="pd-sub">Most business owners who grow past their first revenue milestone hit the same wall: the business runs — but only because they are running it. Every decision goes through them. Every client needs them personally. The Business OS Blueprint is built for this exact moment.</div>
+  <div class="pd-sub">Most business owners who grow past their first revenue milestone hit the same wall: the business runs — but only because they are running it. Every decision goes through them. Every order, every enquiry, every problem lands on their desk. The Business OS Blueprint is built for this exact moment.</div>
 </div>
 
 <!-- ═══════════════ BUSINESS OS BLUEPRINT ═══════════════ -->
@@ -592,8 +607,8 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
     <div class="del-card os">
       <div class="del-num" style="background:var(--purple)">1</div>
       <div class="del-ttl">Your Core Systems Map</div>
-      <div class="del-body">Six critical business systems — Enquiry & Intake, Onboarding, Service Delivery, Client Communication, Invoicing, and Post-Project Follow-Up — fully mapped with implementation guidance and the exact tools to run each one.</div>
-      <div class="del-example os">"Your Client Intake system currently takes 3–5 hours per week. Here is how to automate it to 20 minutes."</div>
+      <div class="del-body">Six critical business systems — Lead & Enquiry, Onboarding, Fulfilment & Delivery, Customer Communication, Invoicing & Payments, and After-Sale Follow-Up — fully mapped with implementation guidance and the exact tools to run each one.</div>
+      <div class="del-example os">"Your Fulfilment system currently takes 4–6 hours per order cycle. Here is how to streamline it to under 90 minutes."</div>
     </div>
     <div class="del-card os">
       <div class="del-num" style="background:var(--purple)">2</div>
@@ -659,10 +674,10 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
         </tr>
       </thead>
       <tbody>
-        <tr><td>Best for</td><td class="col-g">Business owners who need more clients, better positioning, or higher prices</td><td class="col-o">Business owners who have clients but feel trapped by day-to-day operations</td></tr>
+        <tr><td>Best for</td><td class="col-g">Business owners who need more sales, better positioning, or higher prices</td><td class="col-o">Business owners with revenue who feel trapped by day-to-day operations</td></tr>
         <tr><td>Primary outcome</td><td class="col-g">A magnetic pitch, pricing strategy, and 30-day plan to grow revenue</td><td class="col-o">A systems map, automation priorities, and delegation plan to reclaim time</td></tr>
         <tr><td>Time to complete</td><td class="col-g">2–3 minutes</td><td class="col-o">2–3 minutes</td></tr>
-        <tr><td>Deliverables</td><td class="col-g">Pitch · Pricing · Client Profile · Attraction Plan · 30-Day Plan · 5 Scripts</td><td class="col-o">Systems Map · Automation Priorities · Delegation Guide · 90-Day Freedom Plan</td></tr>
+        <tr><td>Deliverables</td><td class="col-g">Pitch · Pricing · Buyer Profile · Growth Plan · 30-Day Plan · 5 Scripts</td><td class="col-o">Systems Map · Automation Priorities · Delegation Guide · 90-Day Freedom Plan</td></tr>
         <tr><td>Downloadable PDF</td><td class="col-g"><span class="ct-check">✓</span> Yes</td><td class="col-o"><span class="ct-check o">✓</span> Yes</td></tr>
         <tr><td>Automatic confirmation email</td><td class="col-g"><span class="ct-check">✓</span> Sent instantly on purchase</td><td class="col-o"><span class="ct-check o">✓</span> Sent instantly on purchase</td></tr>
         <tr><td>Money-back guarantee</td><td class="col-g"><span class="ct-check">✓</span> 30 days</td><td class="col-o"><span class="ct-check o">✓</span> 30 days</td></tr>
@@ -730,13 +745,13 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
       <div class="buy-tag g"></div>
       <div class="buy-popular">Most Popular</div>
       <div class="buy-label">Growth Blueprint</div>
-      <div class="buy-title">Attract the right clients.<br>Charge what you're worth.</div>
+      <div class="buy-title">Attract the right buyers.<br>Charge what you're worth.</div>
       <div class="buy-desc">For business owners who need a magnetic pitch, a pricing strategy, and a clear 30-day plan. Complete in under 3 minutes. Built entirely from your answers.</div>
       <div class="buy-features">
-        <div class="bf"><span class="bf-ico">✓</span>Magnetic client pitch — your exact positioning sentence</div>
+        <div class="bf"><span class="bf-ico">✓</span>Magnetic pitch — your exact positioning sentence</div>
         <div class="bf"><span class="bf-ico">✓</span>Pricing strategy with step-by-step raise roadmap</div>
-        <div class="bf"><span class="bf-ico">✓</span>Ideal client profile with specific platform guidance</div>
-        <div class="bf"><span class="bf-ico">✓</span>Client attraction plan — 3 to 4 personalised actions</div>
+        <div class="bf"><span class="bf-ico">✓</span>Ideal buyer profile with specific platform guidance</div>
+        <div class="bf"><span class="bf-ico">✓</span>Growth & acquisition plan — 3 to 4 personalised actions</div>
         <div class="bf"><span class="bf-ico">✓</span>30-day action plan — 4 weeks, 5 tasks per week</div>
         <div class="bf"><span class="bf-ico">✓</span>5 copy-paste scripts — ready to use today</div>
         <div class="bf"><span class="bf-ico">✓</span>Automatic confirmation email on purchase</div>
@@ -784,11 +799,11 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Which blueprint should I start with?</div>
-      <div class="faq-a">If you are still working to attract consistent clients, clarify your positioning, or raise your prices — start with the Growth Blueprint at $97. If you already have clients but feel trapped inside day-to-day operations — the Business OS Blueprint at $297 addresses that directly. If you are unsure, start with the Growth Blueprint. The Business OS Blueprint is offered immediately after you generate it, and most business owners find the sequence makes both more powerful.</div>
+      <div class="faq-a">If you are still working to attract consistent sales, clarify your positioning, or raise your prices — start with the Growth Blueprint at $97. If you already have revenue coming in but feel trapped inside day-to-day operations — the Business OS Blueprint at $297 addresses that directly. If you are unsure, start with the Growth Blueprint. The Business OS Blueprint is offered immediately after you generate it, and most business owners find the sequence makes both more powerful.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">What exactly is the Growth Blueprint?</div>
-      <div class="faq-a">A personalised business strategy document generated from your answers to 8 questions. It includes a magnetic client pitch, a pricing strategy with exact revenue targets and a step-by-step price increase plan, an ideal client profile, a client attraction plan with full implementation detail, a week-by-week 30-day action plan, and 5 copy-paste scripts — all tailored specifically to your business, industry, and goals. No two blueprints are the same.</div>
+      <div class="faq-a">A personalised business strategy document generated from your answers to 8 questions. It includes a magnetic pitch, a pricing strategy with exact revenue targets and a step-by-step price increase plan, an ideal buyer profile, a growth plan with full implementation detail, a week-by-week 30-day action plan, and 5 copy-paste scripts — all tailored specifically to your business, industry, and goals. No two blueprints are the same.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">What exactly is the Business OS Blueprint?</div>
@@ -796,7 +811,7 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">How is this different from a generic business template or course?</div>
-      <div class="faq-a">Every section of your blueprint is generated from your specific answers — not pre-written content. The pitch is constructed from your actual client language. The pricing calculation uses your real numbers. The scripts are written around your industry and situation. The action plan reflects your goals and current stage. No two blueprints are identical because no two businesses are identical.</div>
+      <div class="faq-a">Every section of your blueprint is generated from your specific answers — not pre-written content. The pitch is constructed from your actual offer and the language your buyers use. The pricing calculation uses your real numbers. The scripts are written around your industry and situation. The action plan reflects your goals and current stage. No two blueprints are identical because no two businesses are identical.</div>
     </div>
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">How long does it take to complete?</div>
@@ -833,7 +848,7 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
   <div class="cta-final-grid">
     <div class="cta-mini">
       <div class="cta-mini-label g">Growth Blueprint</div>
-      <div class="cta-mini-title">Attract clients.<br>Charge properly.</div>
+      <div class="cta-mini-title">Attract buyers.<br>Charge properly.</div>
       <div class="cta-mini-was">$197</div>
       <div class="cta-mini-price g">$97</div>
       <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="btn-cta-g">✦ Get My Growth Blueprint — $97</a>
@@ -850,8 +865,56 @@ footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center
 </section>
 
 <footer>
-  <div class="ft-logo"><img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™" height="42" style="display:block;width:auto"/></div>
-  <div class="ft-note">Clarity. Strategy. Growth. &nbsp;·&nbsp; © 2026 ScaleMyBiz™. All rights reserved.</div>
+  <div class="ft-top">
+
+    <!-- Brand col -->
+    <div class="ft-brand-col">
+      <div class="ft-logo"><img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™"/></div>
+      <div class="ft-tagline">A business growth tool built for any business owner — products, services, or both. Clarity. Strategy. Growth.</div>
+    </div>
+
+    <!-- Products col -->
+    <div>
+      <div class="ft-col-title">Products</div>
+      <div class="ft-links">
+        <a href="#buy">Growth Plan — $97</a>
+        <a href="#buy">Business Operations Plan — $297</a>
+      </div>
+    </div>
+
+    <!-- Company col -->
+    <div>
+      <div class="ft-col-title">Company</div>
+      <div class="ft-links">
+        <a href="#about">About</a>
+        <a href="#how-it-works">How It Works</a>
+        <a href="#testimonials">Results</a>
+        <a href="#faq">FAQs</a>
+      </div>
+    </div>
+
+    <!-- Contact col -->
+    <div>
+      <div class="ft-col-title">Contact</div>
+      <div class="ft-links">
+        <a href="mailto:hello@scalemybiz.global">Email Us</a>
+        <a href="mailto:hello@scalemybiz.global?subject=Affiliate%20Programme">Become an Affiliate</a>
+        <a href="mailto:hello@scalemybiz.global?subject=Support">Support</a>
+        <a href="mailto:hello@scalemybiz.global?subject=Refund%20Request">Refund Request</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="ft-bottom">
+    <div class="ft-copy">Clarity. Strategy. Growth. &nbsp;·&nbsp; © 2026 ScaleMyBiz™. All rights reserved.</div>
+    <div class="ft-legal-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="terms.html">Terms of Service</a>
+      <a href="refund.html">Refund Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </div>
 </footer>
 
 <script>

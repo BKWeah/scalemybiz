@@ -475,18 +475,25 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
     <div id="access-gate" style="max-width:560px;margin:40px auto 0;background:#fff;border:1px solid var(--border);border-radius:20px;padding:48px 44px;text-align:center;box-shadow:0 4px 32px rgba(15,23,42,.06)">
       <div style="width:56px;height:56px;background:var(--teal-faint);border:2px solid rgba(13,148,136,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:24px">🔒</div>
       <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px">Purchase Required</div>
-      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:12px">Access Your Growth Blueprint</div>
-      <p style="font-size:14px;font-weight:400;color:var(--slate);line-height:1.7;margin-bottom:28px">Enter the access code from your purchase confirmation email to unlock the blueprint builder. If you have not yet purchased, click below to get instant access for $97.</p>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:12px">Access Your Blueprint Builder</div>
+      <p style="font-size:14px;font-weight:400;color:var(--slate);line-height:1.7;margin-bottom:28px">Enter the access code from your purchase confirmation email to unlock the blueprint builder. If you have not yet purchased, click below to get instant access.</p>
+      <!-- Email field — shown only when a demo code is detected -->
+      <div id="demo-email-wrap" style="display:none;margin-bottom:16px;text-align:left">
+        <label style="font-size:13px;font-weight:600;color:var(--ink);display:block;margin-bottom:7px">Your Email Address</label>
+        <input type="email" id="demoEmail" placeholder="you@example.com" style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .2s" oninput="this.style.borderColor='var(--border)'" onfocus="this.style.borderColor='var(--teal)'"/>
+        <div class="err-msg" id="err-demoEmail" style="margin-top:6px"></div>
+        <p style="font-size:11px;color:var(--muted);margin-top:6px">Required for demo access. Not added to any mailing list.</p>
+      </div>
       <div style="margin-bottom:16px;text-align:left">
         <label style="font-size:13px;font-weight:600;color:var(--ink);display:block;margin-bottom:7px">Your Access Code</label>
-        <input type="text" id="accessCode" placeholder="e.g. SMB-XXXX-XXXX" style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .2s" oninput="this.style.borderColor='var(--border)'" onfocus="this.style.borderColor='var(--teal)'"/>
+        <input type="text" id="accessCode" placeholder="e.g. SMB-XXXX-XXXX" style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .2s" oninput="checkIfDemo(this.value)" onfocus="this.style.borderColor='var(--teal)'"/>
         <div class="err-msg" id="err-accessCode" style="margin-top:6px"></div>
       </div>
       <button onclick="checkAccess()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;border:none;padding:16px;border-radius:8px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .3s;margin-bottom:20px">✦ Unlock My Blueprint Builder</button>
       <div style="border-top:1px solid var(--border);padding-top:20px">
         <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Don't have an access code yet?</p>
         <a href="https://selar.co/YOUR-PRODUCT-LINK" style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal);padding:12px 28px;border-radius:7px;font-size:14px;font-weight:700;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--teal-faint)'" onmouseout="this.style.background='var(--cream)'">Get Access — $97 →</a>
-        <p style="font-size:11px;color:var(--muted);margin-top:12px">🔒 Secure payment via Gumroad · 30-day money-back guarantee</p>
+        <p style="font-size:11px;color:var(--muted);margin-top:12px">🔒 Secure payment via Selar · 30-day money-back guarantee</p>
       </div>
     </div>
 
@@ -1011,12 +1018,83 @@ function slid(inputId, dispId, pre, suf) {
 }
 
 // ── ACCESS GATE ───────────────────────────────
-// Valid codes — in production, replace with server-side validation
-// Format: SMB- followed by 4 chars, dash, 4 chars
-const VALID_CODES = new Set([
-  'SMB-DEMO-2026', // demo/test code
-  'SMB-FREE-OPEN', // remove this after launch
-]);
+const DEMO_CODE    = 'SMB-PTR-2026';   // partner/affiliate demo code
+const DEMO_MAX     = 3;                // max uses per email
+const DEMO_STORE   = 'smb_demo_uses';  // localStorage key
+
+// Selar purchase codes follow pattern SMB-XXXX-XXXX
+const purchasePattern = /^SMB-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+
+// Show email field as soon as user types the demo code
+function checkIfDemo(val) {
+  const wrap = document.getElementById('demo-email-wrap');
+  const clean = val.trim().toUpperCase();
+  wrap.style.display = (clean === DEMO_CODE) ? 'block' : 'none';
+  document.getElementById('accessCode').style.borderColor = 'var(--border)';
+}
+
+function checkAccess() {
+  const code    = document.getElementById('accessCode').value.trim().toUpperCase();
+  const codeErr = document.getElementById('err-accessCode');
+  const codeEl  = document.getElementById('accessCode');
+
+  codeErr.classList.remove('show');
+  codeErr.textContent = '';
+
+  if (!code) {
+    codeErr.textContent = 'Please enter your access code.';
+    codeErr.classList.add('show');
+    codeEl.style.borderColor = 'var(--ember)';
+    return;
+  }
+
+  // ── DEMO CODE PATH ──
+  if (code === DEMO_CODE) {
+    const emailEl  = document.getElementById('demoEmail');
+    const emailErr = document.getElementById('err-demoEmail');
+    const email    = emailEl ? emailEl.value.trim().toLowerCase() : '';
+
+    emailErr.classList.remove('show');
+    emailErr.textContent = '';
+
+    // Validate email
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailErr.textContent = 'Please enter a valid email address.';
+      emailErr.classList.add('show');
+      emailEl.style.borderColor = 'var(--ember)';
+      return;
+    }
+
+    // Check use count for this email
+    let uses = {};
+    try { uses = JSON.parse(localStorage.getItem(DEMO_STORE) || '{}'); } catch(e) { uses = {}; }
+    const count = uses[email] || 0;
+
+    if (count >= DEMO_MAX) {
+      codeErr.textContent = 'Your demo access has expired. Contact hello@scalemybiz.global to discuss partnership access.';
+      codeErr.classList.add('show');
+      codeEl.style.borderColor = 'var(--ember)';
+      return;
+    }
+
+    // Record this use and unlock
+    uses[email] = count + 1;
+    try { localStorage.setItem(DEMO_STORE, JSON.stringify(uses)); } catch(e) {}
+    unlockTool();
+    return;
+  }
+
+  // ── PURCHASE CODE PATH ──
+  if (purchasePattern.test(code)) {
+    unlockTool();
+    return;
+  }
+
+  // ── INVALID ──
+  codeErr.textContent = 'Invalid code. Check your purchase confirmation email and try again.';
+  codeErr.classList.add('show');
+  codeEl.style.borderColor = 'var(--ember)';
+}
 
 function unlockTool() {
   document.getElementById('access-gate').style.display = 'none';
@@ -1024,26 +1102,7 @@ function unlockTool() {
   sessionStorage.setItem('smb_access', '1');
 }
 
-function checkAccess() {
-  const code = document.getElementById('accessCode').value.trim().toUpperCase();
-  const errEl = document.getElementById('err-accessCode');
-  const inputEl = document.getElementById('accessCode');
-  if (!code) {
-    errEl.textContent = 'Please enter your access code'; errEl.classList.add('show');
-    inputEl.style.borderColor = 'var(--ember)'; return;
-  }
-  // Accept any SMB-XXXX-XXXX format code (Gumroad custom codes) or hardcoded test codes
-  const gumroadPattern = /^SMB-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
-  if (VALID_CODES.has(code) || gumroadPattern.test(code)) {
-    unlockTool();
-  } else {
-    errEl.textContent = 'Invalid code. Check your purchase email and try again.';
-    errEl.classList.add('show');
-    inputEl.style.borderColor = 'var(--ember)';
-  }
-}
-
-// Allow pressing Enter in the code field
+// Allow Enter key in code field
 document.getElementById('accessCode').addEventListener('keydown', e => {
   if (e.key === 'Enter') checkAccess();
 });
