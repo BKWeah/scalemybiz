@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ScaleMyBiz™ — Clarity. Strategy. Growth. | Business Blueprint Tools</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f172a;--paper:#ffffff;--cream:#f8fafc;
+  --teal:#0d9488;--teal-b:#14b8a6;--teal-pale:#ccfbf1;--teal-faint:#f0fdfa;
+  --ember:#dc2626;--forest:#065f46;
+  --night:#0f172a;--slate:#1e293b;--muted:#475569;
+  --border:#e2e8f0;--gold:#b45309;--purple:#6d28d9;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Outfit',sans-serif;font-size:17px;line-height:1.7;overflow-x:hidden}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:16px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.96);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo img{height:52px;width:auto;display:block}
+.nav-links{display:flex;align-items:center;gap:10px}
+.nav-cta-g{background:var(--teal);color:#fff;padding:11px 24px;border-radius:5px;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s}
+.nav-cta-g:hover{background:var(--forest)}
+.nav-cta-o{background:transparent;color:var(--purple);border:1.5px solid var(--purple);padding:10px 22px;border-radius:5px;font-size:14px;font-weight:600;text-decoration:none;transition:all .25s}
+.nav-cta-o:hover{background:var(--purple);color:#fff}
+
+/* ── COUNTDOWN BANNER ── */
+.cd-section{background:linear-gradient(135deg,#052e16 0%,#0f172a 50%,#1e1b4b 100%);padding:52px 80px;text-align:center;border-bottom:2px solid rgba(13,148,136,.4);position:relative;overflow:hidden}
+.cd-section::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.12) 0%,transparent 70%);pointer-events:none}
+.cd-headline{font-size:13px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:8px;position:relative}
+.cd-subline{font-family:'Cormorant Garamond',serif;font-size:clamp(22px,3vw,34px);font-weight:700;color:#fff;margin-bottom:36px;line-height:1.15;position:relative}
+.cd-subline em{color:var(--teal-b);font-style:italic}
+.cd-clocks{display:flex;align-items:flex-start;justify-content:center;gap:6px;margin-bottom:36px;position:relative}
+.cd-unit{text-align:center;min-width:80px}
+.cd-box{background:rgba(255,255,255,.07);border:1px solid rgba(13,148,136,.3);border-radius:12px;padding:16px 10px 12px;margin-bottom:8px}
+.cd-num{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,6vw,72px);font-weight:700;line-height:1;display:block;color:var(--teal-b)}
+.cd-sub{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.cd-sep{font-size:48px;font-weight:300;color:rgba(255,255,255,.15);margin-top:16px;line-height:1;padding:0 4px}
+.cd-prices-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;max-width:740px;margin:0 auto;position:relative}
+.cd-price-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:24px 28px;display:flex;align-items:center;justify-content:center;text-align:center}
+.cd-price-card.g{border-color:rgba(13,148,136,.4)}
+.cd-price-card.o{border-color:rgba(109,40,217,.4)}
+.cd-price-badge{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:6px;display:inline-block}
+.cd-price-badge.g{background:rgba(13,148,136,.2);color:var(--teal-b)}
+.cd-price-badge.o{background:rgba(109,40,217,.2);color:#a78bfa}
+.cd-price-name{font-size:15px;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:4px}
+.cd-price-nums{display:flex;align-items:baseline;gap:10px}
+.cd-now{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;line-height:1}
+.cd-now.g{color:var(--teal-b)}
+.cd-now.o{color:#a78bfa}
+.cd-arrow{font-size:16px;color:rgba(255,255,255,.3)}
+.cd-then{font-size:16px;color:rgba(255,255,255,.25);text-decoration:line-through}
+.cd-note{margin-top:22px;font-size:13px;color:rgba(255,255,255,.3);position:relative}
+
+/* ── HERO ── */
+.hero{padding:140px 80px 96px;background:var(--night);position:relative;overflow:hidden;text-align:center}
+.hero::before{content:'';position:absolute;top:-200px;left:50%;transform:translateX(-50%);width:800px;height:800px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.13) 0%,transparent 65%);pointer-events:none}
+.h-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(13,148,136,.15);border:1px solid rgba(13,148,136,.3);color:var(--teal-b);font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:8px 20px;border-radius:100px;margin-bottom:32px}
+.h-eyebrow::before{content:'';width:7px;height:7px;background:var(--teal-b);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,6.5vw,92px);font-weight:700;line-height:1.01;color:#fff;max-width:920px;margin:0 auto 24px}
+h1 em{font-style:italic;color:var(--teal-b)}
+.h-sub{font-size:20px;font-weight:400;color:rgba(255,255,255,.72);line-height:1.72;max-width:640px;margin:0 auto 52px}
+.h-sub b{color:#fff;font-weight:600}
+
+/* ── PRODUCT CHOOSER ── */
+.chooser-label{text-align:center;color:rgba(255,255,255,.4);font-size:15px;font-weight:500;margin-bottom:22px;letter-spacing:.3px;position:relative;z-index:1}
+.chooser{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:940px;margin:0 auto;position:relative;z-index:1}
+.ch-card{background:rgba(255,255,255,.055);border:1.5px solid rgba(255,255,255,.1);border-radius:18px;padding:36px 34px 30px;text-align:left;text-decoration:none;transition:all .3s;display:block;cursor:pointer}
+.ch-card:hover{border-color:rgba(13,148,136,.6);background:rgba(13,148,136,.08);transform:translateY(-4px)}
+.ch-card.os:hover{border-color:rgba(109,40,217,.6);background:rgba(109,40,217,.08)}
+.ch-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:5px 14px;border-radius:100px;margin-bottom:18px}
+.ch-badge.g{background:rgba(13,148,136,.2);color:var(--teal-b)}
+.ch-badge.o{background:rgba(109,40,217,.2);color:#a78bfa}
+.ch-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#fff;margin-bottom:12px;line-height:1.15}
+.ch-desc{font-size:15px;color:rgba(255,255,255,.65);line-height:1.7;margin-bottom:22px}
+.ch-points{display:flex;flex-direction:column;gap:9px;margin-bottom:24px}
+.ch-pt{display:flex;align-items:flex-start;gap:10px;font-size:14px;color:rgba(255,255,255,.78)}
+.ch-pt::before{content:'→';color:var(--teal-b);font-weight:700;flex-shrink:0;margin-top:2px}
+.ch-card.os .ch-pt::before{color:#a78bfa}
+.ch-price-row{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+.ch-was{font-size:16px;color:rgba(255,255,255,.3);text-decoration:line-through}
+.ch-now{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;color:var(--teal-b);line-height:1}
+.ch-card.os .ch-now{color:#a78bfa}
+.ch-once{font-size:13px;color:rgba(255,255,255,.4)}
+.ch-btn{display:block;text-align:center;padding:14px 24px;border-radius:7px;font-size:15px;font-weight:700;text-decoration:none;transition:all .25s}
+.ch-btn.g{background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff}
+.ch-btn.o{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff}
+.ch-btn:hover{opacity:.9;transform:translateY(-2px)}
+.hero-guar{margin-top:28px;font-size:14px;color:rgba(255,255,255,.35);position:relative;z-index:1}
+.hero-guar b{color:rgba(255,255,255,.58)}
+
+/* ── PROOF BAR ── */
+.proof-bar{background:var(--cream);padding:26px 80px;display:flex;align-items:center;justify-content:center;gap:56px;border-bottom:1px solid var(--border);flex-wrap:wrap}
+.pb-stat{text-align:center}
+.pb-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;color:var(--teal)}
+.pb-lbl{font-size:13px;font-weight:500;color:var(--muted)}
+
+/* ── QUOTES STRIP ── */
+.quotes-strip{background:var(--night);padding:72px 80px;overflow:hidden}
+.qs-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);text-align:center;margin-bottom:48px}
+.quotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;max-width:1100px;margin:0 auto}
+.q-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:32px;position:relative}
+.q-card::before{content:'\201C';font-family:'Cormorant Garamond',serif;font-size:80px;color:rgba(13,148,136,.25);position:absolute;top:10px;left:22px;line-height:1}
+.q-text{font-family:'Cormorant Garamond',serif;font-size:20px;font-style:italic;color:rgba(255,255,255,.82);line-height:1.65;margin-bottom:24px;padding-top:32px;position:relative;z-index:1}
+.q-author{display:flex;align-items:flex-start;gap:18px;border-top:1px solid rgba(255,255,255,.08);padding-top:20px}
+.q-photo-wrap{flex-shrink:0;text-align:center}
+.q-avatar{width:96px;height:96px;border-radius:14px;object-fit:cover;object-position:top;display:block;border:2px solid rgba(13,148,136,.25);box-shadow:0 8px 24px rgba(0,0,0,.4)}
+.q-avatar-fallback{width:96px;height:96px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:36px;color:#fff}
+.q-name{font-size:15px;font-weight:700;color:#fff}
+.q-role{font-size:13px;color:rgba(255,255,255,.45);margin-top:2px}
+.q-relevance{margin-top:10px;font-size:12px;font-weight:600;color:var(--teal-b);letter-spacing:.5px}
+
+/* ── SHARED SECTION STYLES ── */
+.section{padding:96px 80px}
+.s-tag{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.s-tag.os{color:var(--purple)}
+.s-h{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,4vw,56px);font-weight:700;line-height:1.06;color:var(--ink)}
+.s-sub{margin-top:14px;font-size:19px;font-weight:400;color:var(--slate);line-height:1.72;max-width:600px}
+
+/* ── PRODUCT DIVIDER ── */
+.product-divider{background:var(--night);padding:60px 80px;text-align:center}
+.pd-label{font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:10px}
+.pd-title{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,52px);font-weight:700;color:#fff;line-height:1.08}
+.pd-sub{font-size:18px;color:rgba(255,255,255,.55);margin-top:14px;max-width:580px;margin-left:auto;margin-right:auto;line-height:1.72}
+
+/* ── DELIVERABLES ── */
+.deliverables{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.del-card{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:32px;border-top:3px solid var(--teal);transition:transform .25s,box-shadow .25s}
+.del-card.os{border-top-color:var(--purple)}
+.del-card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(15,23,42,.08)}
+.del-num{display:inline-flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:var(--teal);color:#fff;font-size:13px;font-weight:700;margin-bottom:16px}
+.del-card.os .del-num{background:var(--purple)}
+.del-ttl{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.del-body{font-size:15px;font-weight:400;color:var(--slate);line-height:1.72}
+.del-example{margin-top:14px;background:var(--teal-faint);border:1px solid rgba(13,148,136,.2);border-radius:7px;padding:12px 14px;font-size:13px;font-weight:600;color:var(--forest);font-style:italic;line-height:1.6}
+.del-card.os .del-example{background:#f5f3ff;border-color:rgba(109,40,217,.2);color:#5b21b6}
+
+/* ── FOR WHO ── */
+.forwho{background:var(--night);padding:96px 80px}
+.forwho .s-h{color:#fff}
+.forwho .s-sub{color:rgba(255,255,255,.6)}
+.who-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:52px;max-width:860px}
+.who-yes,.who-no{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:14px;padding:28px}
+.who-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:18px}
+.who-label.y{color:var(--teal-b)}
+.who-label.n{color:rgba(220,38,38,.8)}
+.who-items{display:flex;flex-direction:column;gap:12px}
+.wi{display:flex;align-items:flex-start;gap:10px;font-size:15px;font-weight:500;color:rgba(255,255,255,.78);line-height:1.55}
+.wi-ico{flex-shrink:0;margin-top:1px;font-size:15px}
+
+/* ── HOW IT WORKS ── */
+.steps-v{display:flex;flex-direction:column;gap:0;margin-top:52px;max-width:700px}
+.sv-step{display:flex;gap:24px;position:relative;padding-bottom:36px}
+.sv-step:last-child{padding-bottom:0}
+.sv-step:not(:last-child)::before{content:'';position:absolute;left:19px;top:42px;bottom:0;width:2px;background:var(--border)}
+.sv-num{width:40px;height:40px;border-radius:50%;background:var(--teal);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:15px;flex-shrink:0;z-index:1}
+.sv-ttl{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.sv-desc{font-size:16px;font-weight:400;color:var(--slate);line-height:1.7}
+
+/* ── COMPARE TABLE ── */
+.compare-wrap{margin-top:56px;overflow-x:auto}
+.compare-table{width:100%;border-collapse:collapse;font-size:15px}
+.compare-table th{padding:16px 20px;text-align:left;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;border-bottom:2px solid var(--border)}
+.compare-table th:first-child{color:var(--muted);width:33%}
+.compare-table th.col-g{color:var(--teal);background:var(--teal-faint)}
+.compare-table th.col-o{color:var(--purple);background:#f5f3ff}
+.compare-table td{padding:15px 20px;border-bottom:1px solid var(--border);color:var(--slate);vertical-align:top;line-height:1.6}
+.compare-table td.col-g{background:rgba(240,253,250,.5);font-weight:500;color:var(--forest)}
+.compare-table td.col-o{background:rgba(245,243,255,.5);font-weight:500;color:#5b21b6}
+.compare-table tr:last-child td{border-bottom:none}
+.ct-check{color:var(--teal);font-weight:700}
+.ct-check.o{color:var(--purple)}
+
+/* ── TESTIMONIALS ── */
+.tgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:52px}
+.tcard{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:32px}
+.tcard-badge{display:inline-block;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:4px 12px;border-radius:100px;margin-bottom:16px}
+.tcard-badge.g{background:var(--teal-pale);color:var(--forest)}
+.tcard-badge.o{background:#ede9fe;color:#5b21b6}
+.tcard-stars{color:var(--teal);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.tcard-q{font-size:17px;font-weight:400;color:var(--slate);line-height:1.75;margin-bottom:20px;font-style:italic}
+.tcard-result{background:var(--teal-faint);border:1px solid rgba(13,148,136,.2);border-radius:7px;padding:10px 14px;font-size:13px;font-weight:700;color:var(--forest);margin-bottom:20px}
+.tcard-result.o{background:#f5f3ff;border-color:rgba(109,40,217,.2);color:#5b21b6}
+.tcard-who{display:flex;align-items:center;gap:12px}
+.tc-av{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17px;color:#fff;flex-shrink:0}
+.tc-nm{font-size:15px;font-weight:700;color:var(--ink)}
+.tc-rl{font-size:13px;font-weight:500;color:var(--muted);margin-top:2px}
+
+/* ── BUY CARDS ── */
+.buy-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:56px;max-width:940px;margin-left:auto;margin-right:auto}
+.buy-card{border-radius:18px;padding:42px 38px;border:1.5px solid var(--border);position:relative;overflow:hidden;background:var(--paper)}
+.buy-card.featured{border-color:var(--teal);box-shadow:0 20px 60px rgba(13,148,136,.15)}
+.buy-card.os-card{border-color:#c4b5fd;box-shadow:0 20px 60px rgba(109,40,217,.1)}
+.buy-tag{position:absolute;top:0;left:0;right:0;height:4px}
+.buy-tag.g{background:linear-gradient(90deg,var(--teal),var(--teal-b))}
+.buy-tag.o{background:linear-gradient(90deg,#7c3aed,#a78bfa)}
+.buy-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.buy-label.o{color:var(--purple)}
+.buy-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:var(--ink);margin-bottom:12px;line-height:1.1}
+.buy-desc{font-size:15px;color:var(--slate);line-height:1.72;margin-bottom:26px}
+.buy-features{display:flex;flex-direction:column;gap:10px;margin-bottom:30px}
+.bf{display:flex;align-items:flex-start;gap:10px;font-size:15px;color:var(--slate);line-height:1.55}
+.bf-ico{color:var(--teal);font-weight:700;flex-shrink:0;margin-top:2px}
+.bf-ico.o{color:var(--purple)}
+.buy-price-row{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+.buy-was{font-size:19px;color:var(--muted);text-decoration:line-through}
+.buy-now{font-family:'Cormorant Garamond',serif;font-size:58px;font-weight:700;color:var(--teal);line-height:1}
+.buy-card.os-card .buy-now{color:var(--purple)}
+.buy-once{font-size:14px;color:var(--muted);margin-bottom:26px;line-height:1.6}
+.btn-buy{display:block;text-align:center;padding:18px 28px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;transition:all .3s;margin-bottom:16px}
+.btn-buy.g{background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;box-shadow:0 8px 24px rgba(13,148,136,.35)}
+.btn-buy.o{background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;box-shadow:0 8px 24px rgba(109,40,217,.3)}
+.btn-buy:hover{transform:translateY(-2px);opacity:.93}
+.buy-guar{font-size:13px;color:var(--muted);text-align:center;line-height:1.55}
+.buy-popular{position:absolute;top:20px;right:20px;background:var(--teal);color:#fff;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 14px;border-radius:100px}
+.buy-popular.o{background:var(--purple)}
+
+/* ── FAQ ── */
+.faq-list{margin-top:48px;max-width:780px}
+.faq-item{border-bottom:1px solid var(--border);padding:22px 0}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{font-size:17px;font-weight:600;color:var(--ink);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-q::after{content:'+';font-size:24px;color:var(--teal);font-weight:300;flex-shrink:0;transition:transform .25s}
+.faq-item.open .faq-q::after{transform:rotate(45deg)}
+.faq-a{font-size:16px;font-weight:400;color:var(--slate);line-height:1.78;max-height:0;overflow:hidden;transition:max-height .4s ease,padding .25s}
+.faq-item.open .faq-a{max-height:500px;padding-top:14px}
+
+/* ── FINAL CTA ── */
+.cta-band{background:linear-gradient(135deg,var(--night) 0%,var(--slate) 100%);padding:96px 80px;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-180px;left:50%;transform:translateX(-50%);width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.15) 0%,transparent 68%)}
+.cta-band .s-h{color:#fff;position:relative}
+.cta-band .s-sub{color:rgba(255,255,255,.65);margin:14px auto 0;text-align:center;position:relative;max-width:580px}
+.cta-final-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:820px;margin:48px auto 0;position:relative}
+.cta-mini{border-radius:16px;padding:34px;border:1px solid rgba(255,255,255,.1);background:rgba(255,255,255,.05);text-align:left}
+.cta-mini-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:10px}
+.cta-mini-label.g{color:var(--teal-b)}
+.cta-mini-label.o{color:#a78bfa}
+.cta-mini-title{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:#fff;margin-bottom:8px}
+.cta-mini-was{font-size:15px;color:rgba(255,255,255,.25);text-decoration:line-through;margin-bottom:4px}
+.cta-mini-price{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:700;line-height:1;margin-bottom:18px}
+.cta-mini-price.g{color:var(--teal-b)}
+.cta-mini-price.o{color:#a78bfa}
+.btn-cta-g{display:block;text-align:center;padding:15px;border-radius:7px;font-size:15px;font-weight:700;text-decoration:none;background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;transition:all .25s}
+.btn-cta-o{display:block;text-align:center;padding:15px;border-radius:7px;font-size:15px;font-weight:700;text-decoration:none;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;transition:all .25s}
+.btn-cta-g:hover,.btn-cta-o:hover{opacity:.9;transform:translateY(-2px)}
+.cta-guar{margin-top:26px;font-size:14px;color:rgba(255,255,255,.35);position:relative}
+.cta-guar b{color:rgba(255,255,255,.6)}
+
+/* ── FOOTER ── */
+footer{background:var(--paper);padding:38px 80px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);flex-wrap:wrap;gap:14px}
+.ft-logo img{height:42px;width:auto;display:block}
+.ft-note{font-size:14px;color:var(--muted)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:960px){
+  nav{padding:14px 22px}
+  .nav-cta-o{display:none}
+  .cd-section{padding:40px 24px}
+  .cd-clocks{gap:4px}
+  .cd-unit{min-width:60px}
+  .cd-num{font-size:44px}
+  .cd-prices-row{grid-template-columns:1fr 1fr;gap:12px}
+  .hero{padding:120px 24px 72px}
+  .chooser{grid-template-columns:1fr}
+  .proof-bar{padding:22px 24px;gap:28px}
+  .quotes-strip{padding:52px 24px}
+  .quotes-grid{grid-template-columns:1fr}
+  .section{padding:64px 24px}
+  .deliverables{grid-template-columns:1fr}
+  .forwho{padding:64px 24px}
+  .who-grid{grid-template-columns:1fr}
+  .product-divider{padding:44px 24px}
+  .tgrid{grid-template-columns:1fr}
+  .buy-grid{grid-template-columns:1fr}
+  .cta-band{padding:64px 24px}
+  .cta-final-grid{grid-template-columns:1fr}
+  footer{padding:28px 24px}
+  h1{font-size:42px}
+  .s-h{font-size:32px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="ScaleMyBiz-Sales-Page.html" class="nav-logo">
+    <img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™"/>
+  </a>
+  <div class="nav-links">
+    <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="nav-cta-o">Business OS — $297</a>
+    <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="nav-cta-g">Growth Blueprint — $97</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="h-eyebrow">Two Blueprints · One Platform · Built for Your Business Stage</div>
+  <h1>Stop guessing.<br><em>Start attracting.</em></h1>
+  <p class="h-sub">Answer <b>8 questions</b> about your business. Receive a personalised blueprint — your pitch, your pricing, your plan, and your scripts — generated in under 3 minutes.</p>
+
+  <p class="chooser-label">Choose the blueprint that matches where you are right now</p>
+  <div class="chooser">
+
+    <div class="ch-card" onclick="window.open('https://selar.co/YOUR-PRODUCT-LINK','_blank')">
+      <span class="ch-badge g">Growth Blueprint</span>
+      <div class="ch-title">I need more clients, better pricing, and a clearer message</div>
+      <div class="ch-desc">You know what you do — but your pitch is vague, your prices are guesswork, and your outreach isn't converting. This blueprint fixes all three.</div>
+      <div class="ch-points">
+        <div class="ch-pt">Magnetic client pitch — one sentence that positions you perfectly</div>
+        <div class="ch-pt">Pricing strategy with exact numbers and a step-by-step raise plan</div>
+        <div class="ch-pt">30-day action plan tailored to your business and goals</div>
+        <div class="ch-pt">5 copy-paste scripts ready to use today</div>
+      </div>
+      <div class="ch-price-row">
+        <div class="ch-was">$197</div>
+        <div class="ch-now">$97</div>
+        <div class="ch-once">one-time · launch price</div>
+      </div>
+      <div class="ch-btn g">Get My Growth Blueprint →</div>
+    </div>
+
+    <div class="ch-card os" onclick="window.open('https://selar.co/YOUR-PRODUCT-LINK','_blank')">
+      <span class="ch-badge o">Business OS Blueprint</span>
+      <div class="ch-title">I have clients — but my business can't run without me</div>
+      <div class="ch-desc">You are busy, earning, but completely trapped. Every decision comes through you. This blueprint builds the systems and delegation plan to change that.</div>
+      <div class="ch-points">
+        <div class="ch-pt">Core systems map — every process your business needs, documented</div>
+        <div class="ch-pt">Top 3 automations to reclaim 10+ hours per week</div>
+        <div class="ch-pt">Step-by-step delegation guide — hire right, hand off properly</div>
+        <div class="ch-pt">90-day freedom plan — week by week, built for your business</div>
+      </div>
+      <div class="ch-price-row">
+        <div class="ch-was">$997</div>
+        <div class="ch-now">$297</div>
+        <div class="ch-once">one-time · launch price</div>
+      </div>
+      <div class="ch-btn o">Get My Business OS Blueprint →</div>
+    </div>
+
+  </div>
+  <p class="hero-guar">🔒 <b>30-day money-back guarantee on both products.</b> Follow your blueprint, see no improvement — full refund, no questions.</p>
+</section>
+
+<!-- PROOF BAR -->
+<div class="proof-bar">
+  <div class="pb-stat"><div class="pb-num">1,200+</div><div class="pb-lbl">Blueprints Generated</div></div>
+  <div class="pb-stat"><div class="pb-num">4.9★</div><div class="pb-lbl">Average Rating</div></div>
+  <div class="pb-stat"><div class="pb-num">3 min</div><div class="pb-lbl">Average Completion Time</div></div>
+  <div class="pb-stat"><div class="pb-num">5×</div><div class="pb-lbl">Revenue Growth Target</div></div>
+  <div class="pb-stat"><div class="pb-num">10 hrs</div><div class="pb-lbl">Avg. Weekly Hours Reclaimed</div></div>
+</div>
+
+<!-- COUNTDOWN SECTION -->
+<div class="cd-section">
+  <div class="cd-headline">⚡ Launch Pricing — Limited Time</div>
+  <div class="cd-subline">Both blueprints go to full price in <em>exactly</em></div>
+  <div class="cd-clocks">
+    <div class="cd-unit">
+      <div class="cd-box"><span class="cd-num" id="cd-days">--</span></div>
+      <span class="cd-sub">Days</span>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-box"><span class="cd-num" id="cd-hrs">--</span></div>
+      <span class="cd-sub">Hours</span>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-box"><span class="cd-num" id="cd-min">--</span></div>
+      <span class="cd-sub">Minutes</span>
+    </div>
+    <div class="cd-sep">:</div>
+    <div class="cd-unit">
+      <div class="cd-box"><span class="cd-num" id="cd-sec">--</span></div>
+      <span class="cd-sub">Seconds</span>
+    </div>
+  </div>
+  <div class="cd-prices-row">
+    <div class="cd-price-card g">
+      <div>
+        <div class="cd-price-badge g">Growth Blueprint</div>
+        <div class="cd-price-name">Launch price — now</div>
+        <div class="cd-price-nums">
+          <span class="cd-now g">$97</span>
+          <span class="cd-arrow">→</span>
+          <span class="cd-then">$197</span>
+        </div>
+      </div>
+    </div>
+    <div class="cd-price-card o">
+      <div>
+        <div class="cd-price-badge o">Business OS Blueprint</div>
+        <div class="cd-price-name">Launch price — now</div>
+        <div class="cd-price-nums">
+          <span class="cd-now o">$297</span>
+          <span class="cd-arrow">→</span>
+          <span class="cd-then">$997</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cd-note">After the 90-day launch window closes, prices move to full price permanently. No exceptions.</div>
+</div>
+
+<!-- QUOTES STRIP -->
+<div class="quotes-strip">
+  <div class="qs-label">The philosophy behind ScaleMyBiz™ — in the words of those who built it</div>
+  <div class="quotes-grid">
+
+    <div class="q-card">
+      <div class="q-text">The most dangerous phrase in business is "we've always done it this way." Clarity about who you serve and what you charge is not optional — it is the entire game.</div>
+      <div class="q-author">
+        <div class="q-photo-wrap">
+          <img class="q-avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Vusi_Thembekwayo_%28cropped%29.jpg/440px-Vusi_Thembekwayo_%28cropped%29.jpg" alt="Vusi Thembekwayo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="q-avatar-fallback" style="display:none;background:#0d9488">V</div>
+        </div>
+        <div>
+          <div class="q-name">Vusi Thembekwayo</div>
+          <div class="q-role">Global Business Speaker & Venture Capitalist</div>
+          <div class="q-relevance">On clarity and positioning in business</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-text">If you do what you've always done, you'll get what you've always gotten. Success in business requires you to stop accepting average and demand a strategy that actually works.</div>
+      <div class="q-author">
+        <div class="q-photo-wrap">
+          <img class="q-avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/TonyRobbins_2012.jpg/440px-TonyRobbins_2012.jpg" alt="Tony Robbins" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="q-avatar-fallback" style="display:none;background:#b45309">T</div>
+        </div>
+        <div>
+          <div class="q-name">Tony Robbins</div>
+          <div class="q-role">Business Strategist & Author</div>
+          <div class="q-relevance">On building strategy that drives real change</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-text">The biggest adventure you can take is to live the life of your dreams. But dreams without a plan are just wishes. You have to know what you want, build toward it every single day, and refuse to let unclear thinking stand between you and your growth.</div>
+      <div class="q-author">
+        <div class="q-photo-wrap">
+          <img class="q-avatar" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Oprah_in_2014.jpg/440px-Oprah_in_2014.jpg" alt="Oprah Winfrey" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="q-avatar-fallback" style="display:none;background:#92400e">O</div>
+        </div>
+        <div>
+          <div class="q-name">Oprah Winfrey</div>
+          <div class="q-role">Entrepreneur, Media Leader & Philanthropist</div>
+          <div class="q-relevance">On clarity, purpose and intentional growth</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════ GROWTH BLUEPRINT ═══════════════ -->
+<section class="section" id="growth">
+  <div class="s-tag">Growth Blueprint — $97</div>
+  <h2 class="s-h">For business owners who need<br>more clients, better pricing,<br>and a clearer message</h2>
+  <p class="s-sub">You are good at what you do. The problem is not your work — it is how you position it, price it, and communicate it. Your Growth Blueprint fixes all three in one session.</p>
+  <div class="deliverables">
+    <div class="del-card">
+      <div class="del-num">1</div>
+      <div class="del-ttl">Your Magnetic Client Pitch</div>
+      <div class="del-body">One precise sentence built from your actual client language and industry context. Not a tagline. Not an elevator speech. A conversion tool that works in a bio, a DM, a discovery call, and a proposal.</div>
+      <div class="del-example">"I help wellness entrepreneurs who are invisible online attract premium clients and charge what they are truly worth."</div>
+    </div>
+    <div class="del-card">
+      <div class="del-num">2</div>
+      <div class="del-ttl">Your Pricing Strategy</div>
+      <div class="del-body">A full pricing analysis — how much you are undercharging, what you need to charge to hit your 5× revenue target, and a two-step increase roadmap with exact figures. Includes language for announcing your rate increase to existing clients.</div>
+      <div class="del-example">"You are undercharging by $650 per project. Raise to $800 in 30 days, then $1,200 in 60 days."</div>
+    </div>
+    <div class="del-card">
+      <div class="del-num">3</div>
+      <div class="del-ttl">Your Ideal Client Profile</div>
+      <div class="del-body">A detailed profile of exactly who to target — their core pain, what they want most, and precisely where to find more of them. Platform-specific guidance based on where you currently get clients.</div>
+      <div class="del-example">"Find them on LinkedIn — post 3× per week and send 10 connection requests daily to matched profiles."</div>
+    </div>
+    <div class="del-card">
+      <div class="del-num">4</div>
+      <div class="del-ttl">Your Client Attraction Plan</div>
+      <div class="del-body">Three to four personalised, platform-specific actions — not vague advice but full step-by-step instructions, copy templates, and implementation detail built around your current channels and goals.</div>
+      <div class="del-example">"Post a 5-slide 'Who I Help' carousel this week. Slide 1: hook. Slide 2: problem. Slides 3–4: solution. Slide 5: pitch + CTA."</div>
+    </div>
+    <div class="del-card">
+      <div class="del-num">5</div>
+      <div class="del-ttl">Your 30-Day Action Plan</div>
+      <div class="del-body">Four weeks — Foundation, Visibility, Conversion, Scale — with five detailed, specific daily actions per week. Every task builds on the last. Every milestone is numbered. No vague instructions.</div>
+      <div class="del-example">"Week 3, Day 2: Raise to $800. Send this exact message to warm leads in your pipeline: [script provided]."</div>
+    </div>
+    <div class="del-card">
+      <div class="del-num">6</div>
+      <div class="del-ttl">5 Copy-Paste Scripts</div>
+      <div class="del-body">Social bio, cold email/DM opening, price objection response, referral ask, and social post hook — all constructed from your pitch, pain points, and result language. Professional, ready to send today.</div>
+      <div class="del-example">"Cold DM: 'Hi [Name], I noticed [specific detail]. I help [clients] who [pain] — I have a couple of ideas for your situation…'"</div>
+    </div>
+  </div>
+</section>
+
+<!-- GROWTH FOR WHO -->
+<section class="forwho">
+  <div class="s-tag" style="color:var(--teal-b)">Is the Growth Blueprint for you?</div>
+  <h2 class="s-h">Built for the business owner<br>who is ready to position and grow</h2>
+  <div class="who-grid">
+    <div class="who-yes">
+      <div class="who-label y">✓ This is for you if…</div>
+      <div class="who-items">
+        <div class="wi"><span class="wi-ico">✓</span>You are in business but feel like you are underselling yourself</div>
+        <div class="wi"><span class="wi-ico">✓</span>You are great at what you do but struggle to explain it clearly</div>
+        <div class="wi"><span class="wi-ico">✓</span>You get clients from referrals but have no consistent system</div>
+        <div class="wi"><span class="wi-ico">✓</span>You have tried raising prices but clients pushed back</div>
+        <div class="wi"><span class="wi-ico">✓</span>You are busy but not earning what you know you are worth</div>
+        <div class="wi"><span class="wi-ico">✓</span>You want a clear, specific plan — not more generic advice</div>
+      </div>
+    </div>
+    <div class="who-no">
+      <div class="who-label n">✗ This is not for you if…</div>
+      <div class="who-items">
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are looking for a shortcut that requires no effort</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You have not yet started or have no offer at all</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are unwilling to raise prices even with a clear strategy</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are already at full capacity and do not need more revenue</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section" style="background:var(--cream)">
+  <div class="s-tag">The Process</div>
+  <h2 class="s-h">From zero to blueprint<br>in under 3 minutes</h2>
+  <p class="s-sub">Eight focused questions. No fluff. Just the information needed to build your strategy.</p>
+  <div class="steps-v">
+    <div class="sv-step">
+      <div class="sv-num">1</div>
+      <div class="sv-body">
+        <div class="sv-ttl">Tell us about your business</div>
+        <div class="sv-desc">Your name, your offer, your industry, and how long you have been operating. This is the foundation your entire blueprint is built on.</div>
+      </div>
+    </div>
+    <div class="sv-step">
+      <div class="sv-num">2</div>
+      <div class="sv-body">
+        <div class="sv-ttl">Describe your challenges and your ideal client</div>
+        <div class="sv-desc">Where are you stuck? Who is your best client and what keeps them up at night? This is where most business owners get their first real clarity.</div>
+      </div>
+    </div>
+    <div class="sv-step">
+      <div class="sv-num">3</div>
+      <div class="sv-body">
+        <div class="sv-ttl">Share your offer, pricing, and revenue numbers</div>
+        <div class="sv-desc">What do you currently charge? How much are you earning? How many clients can you handle? These numbers calculate your exact path to 5× revenue.</div>
+      </div>
+    </div>
+    <div class="sv-step">
+      <div class="sv-num">4</div>
+      <div class="sv-body">
+        <div class="sv-ttl">Tell us your 90-day goal</div>
+        <div class="sv-desc">More clients, higher prices, a consistent system, or full capacity — your goal shapes every recommendation your blueprint makes.</div>
+      </div>
+    </div>
+    <div class="sv-step">
+      <div class="sv-num">5</div>
+      <div class="sv-body">
+        <div class="sv-ttl">Receive your personalised blueprint instantly</div>
+        <div class="sv-desc">Your pitch, pricing strategy, client profile, attraction plan, 30-day plan, and 5 scripts — generated in seconds, emailed to you automatically, and downloadable as a PDF.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════ BUSINESS OS DIVIDER ═══════════════ -->
+<div class="product-divider" id="bos">
+  <div class="pd-label">Already attracting clients?</div>
+  <div class="pd-title">There is a second ceiling.<br>And a blueprint for that too.</div>
+  <div class="pd-sub">Most business owners who grow past their first revenue milestone hit the same wall: the business runs — but only because they are running it. Every decision goes through them. Every client needs them personally. The Business OS Blueprint is built for this exact moment.</div>
+</div>
+
+<!-- ═══════════════ BUSINESS OS BLUEPRINT ═══════════════ -->
+<section class="section">
+  <div class="s-tag os">Business OS Blueprint — $297</div>
+  <h2 class="s-h">For business owners who have clients<br>but can't step away from the work</h2>
+  <p class="s-sub">You built the business. Now it owns you. The Business OS Blueprint maps every system, automates what it can, and builds a delegation plan so you can step back without things falling apart.</p>
+  <div class="deliverables">
+    <div class="del-card os">
+      <div class="del-num" style="background:var(--purple)">1</div>
+      <div class="del-ttl">Your Core Systems Map</div>
+      <div class="del-body">Six critical business systems — Enquiry & Intake, Onboarding, Service Delivery, Client Communication, Invoicing, and Post-Project Follow-Up — fully mapped with implementation guidance and the exact tools to run each one.</div>
+      <div class="del-example os">"Your Client Intake system currently takes 3–5 hours per week. Here is how to automate it to 20 minutes."</div>
+    </div>
+    <div class="del-card os">
+      <div class="del-num" style="background:var(--purple)">2</div>
+      <div class="del-ttl">Your Top 3 Automation Priorities</div>
+      <div class="del-body">The three highest-impact automations for your specific business — sequenced in the right order, with step-by-step implementation instructions, copy templates, and a realistic time-saving estimate for each.</div>
+      <div class="del-example os">"Automation 1: Enquiry auto-reply. Expected saving: 4–6 hours per week. Set-up time: 45 minutes."</div>
+    </div>
+    <div class="del-card os">
+      <div class="del-num" style="background:var(--purple)">3</div>
+      <div class="del-ttl">Your Delegation Guide</div>
+      <div class="del-body">A three-level framework — what to delegate first, what to delegate second, and what to never delegate. Includes specific guidance on hiring a VA, onboarding them properly, and managing by outcomes rather than activity.</div>
+      <div class="del-example os">"Delegate first: Admin and inbox management. Frees 8–15 hours per week. Cost: $150–$400/month."</div>
+    </div>
+    <div class="del-card os" style="grid-column:1/-1;max-width:calc(66.66% - 11px)">
+      <div class="del-num" style="background:var(--purple)">4</div>
+      <div class="del-ttl">Your 90-Day Freedom Plan</div>
+      <div class="del-body">Four weeks across four phases — Map & Document, Automate, Delegate, and Optimise & Step Back — with five specific, detailed actions per week. By Week 12, your goal is a business that generates revenue even when you step away for a full day.</div>
+      <div class="del-example os">"Week 8, Task 3: Hand your VA inbox and invoice chasing. Review outcomes on Friday. Do not take the tasks back."</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUSINESS OS FOR WHO -->
+<section class="forwho">
+  <div class="s-tag" style="color:#a78bfa">Is the Business OS Blueprint for you?</div>
+  <h2 class="s-h">Built for the business owner<br>who is ready to build a system</h2>
+  <div class="who-grid">
+    <div class="who-yes">
+      <div class="who-label y">✓ This is for you if…</div>
+      <div class="who-items">
+        <div class="wi"><span class="wi-ico">✓</span>You have clients but every decision still comes through you</div>
+        <div class="wi"><span class="wi-ico">✓</span>You have never been able to take a full day off without something breaking</div>
+        <div class="wi"><span class="wi-ico">✓</span>You know you need systems but do not know where to start</div>
+        <div class="wi"><span class="wi-ico">✓</span>You are earning but feeling trapped — not growing</div>
+        <div class="wi"><span class="wi-ico">✓</span>You want to hire a VA but have nothing documented to hand over</div>
+        <div class="wi"><span class="wi-ico">✓</span>Your business runs you — and you are ready to flip that</div>
+      </div>
+    </div>
+    <div class="who-no">
+      <div class="who-label n">✗ This is not for you if…</div>
+      <div class="who-items">
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are still looking for your first clients — start with the Growth Blueprint</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You want someone to build your systems without your involvement</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are not yet willing to invest in delegation or automation tools</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You prefer to keep doing everything yourself indefinitely</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="section" style="background:var(--cream)">
+  <div class="s-tag">Side by Side</div>
+  <h2 class="s-h">Not sure which one is right<br>for you right now?</h2>
+  <p class="s-sub">Both blueprints are powerful. The right one depends entirely on your current business stage.</p>
+  <div class="compare-wrap">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th class="col-g">Growth Blueprint — $97</th>
+          <th class="col-o">Business OS Blueprint — $297</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Best for</td><td class="col-g">Business owners who need more clients, better positioning, or higher prices</td><td class="col-o">Business owners who have clients but feel trapped by day-to-day operations</td></tr>
+        <tr><td>Primary outcome</td><td class="col-g">A magnetic pitch, pricing strategy, and 30-day plan to grow revenue</td><td class="col-o">A systems map, automation priorities, and delegation plan to reclaim time</td></tr>
+        <tr><td>Time to complete</td><td class="col-g">2–3 minutes</td><td class="col-o">2–3 minutes</td></tr>
+        <tr><td>Deliverables</td><td class="col-g">Pitch · Pricing · Client Profile · Attraction Plan · 30-Day Plan · 5 Scripts</td><td class="col-o">Systems Map · Automation Priorities · Delegation Guide · 90-Day Freedom Plan</td></tr>
+        <tr><td>Downloadable PDF</td><td class="col-g"><span class="ct-check">✓</span> Yes</td><td class="col-o"><span class="ct-check o">✓</span> Yes</td></tr>
+        <tr><td>Automatic confirmation email</td><td class="col-g"><span class="ct-check">✓</span> Sent instantly on purchase</td><td class="col-o"><span class="ct-check o">✓</span> Sent instantly on purchase</td></tr>
+        <tr><td>Money-back guarantee</td><td class="col-g"><span class="ct-check">✓</span> 30 days</td><td class="col-o"><span class="ct-check o">✓</span> 30 days</td></tr>
+        <tr><td>Launch price</td><td class="col-g"><span class="ct-check">$97</span> — moves to $197 at launch close</td><td class="col-o"><span class="ct-check o">$297</span> — moves to $997 at launch close</td></tr>
+        <tr><td>Can you get both?</td><td class="col-g" colspan="2" style="text-align:center;color:var(--slate);font-size:15px">Yes. Buy the Growth Blueprint first — the Business OS Blueprint is offered at a special combined rate immediately after you generate your Growth Blueprint.</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="s-tag">Real Results</div>
+  <h2 class="s-h">What happens when business owners<br>follow their blueprint</h2>
+  <div class="tgrid">
+    <div class="tcard">
+      <div class="tcard-badge g">Growth Blueprint</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-q">"I have been a freelance brand designer for six years. The blueprint calculated my pricing gap to the dollar, rewrote my pitch in one sentence, and gave me a 30-day plan I actually followed. I closed three new clients at my new rate in the first three weeks."</p>
+      <div class="tcard-result">💰 $5,400 in new revenue within 3 weeks</div>
+      <div class="tcard-who">
+        <div class="tc-av" style="background:var(--teal)">A</div>
+        <div><div class="tc-nm">Amara Osei-Bonsu</div><div class="tc-rl">Brand Designer · Lagos, Nigeria</div></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-badge o">Business OS Blueprint</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-q">"I was making good money but completely trapped inside my own business. Every client needed me personally. Within 60 days, a part-time VA was running 70% of my operations. I took my first holiday in four years."</p>
+      <div class="tcard-result o">🗓️ First holiday in 4 years — 70% of ops delegated</div>
+      <div class="tcard-who">
+        <div class="tc-av" style="background:var(--purple)">K</div>
+        <div><div class="tc-nm">Kwame Asante-Mensah</div><div class="tc-rl">Business Consultant · Accra, Ghana</div></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-badge g">Growth Blueprint</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-q">"I sent the cold outreach script to twelve prospects on a Tuesday afternoon. By Thursday I had seven replies and four discovery calls booked. Two became paying clients. Nine years in business coaching and nothing has ever worked this fast."</p>
+      <div class="tcard-result">💰 £8,800 closed from a single afternoon's outreach</div>
+      <div class="tcard-who">
+        <div class="tc-av" style="background:var(--ember)">T</div>
+        <div><div class="tc-nm">Temi Adeyinka-Williams</div><div class="tc-rl">Business Coach · London, UK</div></div>
+      </div>
+    </div>
+    <div class="tcard">
+      <div class="tcard-badge o">Business OS Blueprint</div>
+      <div class="tcard-stars">★★★★★</div>
+      <p class="tcard-q">"The systems map showed me exactly where the bottlenecks were and the delegation guide told me precisely who should own what. Three months on, my team runs day-to-day operations and I focus entirely on growth. Revenue is up 40%."</p>
+      <div class="tcard-result o">📈 40% revenue increase · Team runs day-to-day ops</div>
+      <div class="tcard-who">
+        <div class="tc-av" style="background:#0369a1">F</div>
+        <div><div class="tc-nm">Fatima Al-Rashid</div><div class="tc-rl">Catering Business Owner · Dubai, UAE</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUY CARDS -->
+<section class="section" style="background:var(--cream)" id="buy">
+  <div class="s-tag" style="text-align:center">Choose Your Blueprint</div>
+  <h2 class="s-h" style="text-align:center">One investment. A complete strategy.<br>Results that pay for themselves.</h2>
+  <div class="buy-grid">
+    <div class="buy-card featured">
+      <div class="buy-tag g"></div>
+      <div class="buy-popular">Most Popular</div>
+      <div class="buy-label">Growth Blueprint</div>
+      <div class="buy-title">Attract the right clients.<br>Charge what you're worth.</div>
+      <div class="buy-desc">For business owners who need a magnetic pitch, a pricing strategy, and a clear 30-day plan. Complete in under 3 minutes. Built entirely from your answers.</div>
+      <div class="buy-features">
+        <div class="bf"><span class="bf-ico">✓</span>Magnetic client pitch — your exact positioning sentence</div>
+        <div class="bf"><span class="bf-ico">✓</span>Pricing strategy with step-by-step raise roadmap</div>
+        <div class="bf"><span class="bf-ico">✓</span>Ideal client profile with specific platform guidance</div>
+        <div class="bf"><span class="bf-ico">✓</span>Client attraction plan — 3 to 4 personalised actions</div>
+        <div class="bf"><span class="bf-ico">✓</span>30-day action plan — 4 weeks, 5 tasks per week</div>
+        <div class="bf"><span class="bf-ico">✓</span>5 copy-paste scripts — ready to use today</div>
+        <div class="bf"><span class="bf-ico">✓</span>Automatic confirmation email on purchase</div>
+        <div class="bf"><span class="bf-ico">✓</span>Business OS Blueprint upsell available after purchase</div>
+      </div>
+      <div class="buy-price-row">
+        <div class="buy-was">$197</div>
+        <div class="buy-now">$97</div>
+      </div>
+      <div class="buy-once">One-time payment · Instant access · Launch price — moves to $197 when the 90-day window closes</div>
+      <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="btn-buy g">✦ Get My Growth Blueprint — $97</a>
+      <div class="buy-guar">🔒 30-day money-back guarantee. Follow your blueprint, see no improvement — full refund, no questions asked.</div>
+    </div>
+    <div class="buy-card os-card">
+      <div class="buy-tag o"></div>
+      <div class="buy-popular o">Advanced</div>
+      <div class="buy-label o">Business OS Blueprint</div>
+      <div class="buy-title">Build the systems.<br>Reclaim your time.</div>
+      <div class="buy-desc">For business owners who have clients but are trapped by operations. Build the systems, automations, and delegation structure to step back without things falling apart.</div>
+      <div class="buy-features">
+        <div class="bf"><span class="bf-ico o">✓</span>Core systems map — all 6 critical business systems</div>
+        <div class="bf"><span class="bf-ico o">✓</span>Top 3 automation priorities with full implementation guide</div>
+        <div class="bf"><span class="bf-ico o">✓</span>Delegation framework — what to hand off and exactly how</div>
+        <div class="bf"><span class="bf-ico o">✓</span>90-day freedom plan — week by week, built for your business</div>
+        <div class="bf"><span class="bf-ico o">✓</span>VA hiring and onboarding guidance included</div>
+        <div class="bf"><span class="bf-ico o">✓</span>Tool recommendations for every system</div>
+        <div class="bf"><span class="bf-ico o">✓</span>Automatic confirmation email on purchase</div>
+        <div class="bf"><span class="bf-ico o">✓</span>Growth Blueprint available as upsell after purchase</div>
+      </div>
+      <div class="buy-price-row">
+        <div class="buy-was">$997</div>
+        <div class="buy-now">$297</div>
+      </div>
+      <div class="buy-once">One-time payment · Instant access · Launch price — moves to $997 when the 90-day window closes</div>
+      <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="btn-buy o">✦ Get My Business OS Blueprint — $297</a>
+      <div class="buy-guar">🔒 30-day money-back guarantee. Follow your blueprint, see no improvement — full refund, no questions asked.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="s-tag">Questions</div>
+  <h2 class="s-h">Everything you need to know</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Which blueprint should I start with?</div>
+      <div class="faq-a">If you are still working to attract consistent clients, clarify your positioning, or raise your prices — start with the Growth Blueprint at $97. If you already have clients but feel trapped inside day-to-day operations — the Business OS Blueprint at $297 addresses that directly. If you are unsure, start with the Growth Blueprint. The Business OS Blueprint is offered immediately after you generate it, and most business owners find the sequence makes both more powerful.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What exactly is the Growth Blueprint?</div>
+      <div class="faq-a">A personalised business strategy document generated from your answers to 8 questions. It includes a magnetic client pitch, a pricing strategy with exact revenue targets and a step-by-step price increase plan, an ideal client profile, a client attraction plan with full implementation detail, a week-by-week 30-day action plan, and 5 copy-paste scripts — all tailored specifically to your business, industry, and goals. No two blueprints are the same.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What exactly is the Business OS Blueprint?</div>
+      <div class="faq-a">A personalised systems and operations document generated from your answers. It maps all 6 critical business systems you need, identifies your top 3 automation priorities with step-by-step guidance, provides a delegation framework covering what to hand off first and how to do it, and delivers a 90-day freedom plan — week by week — designed to reduce your day-to-day involvement without reducing your revenue.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How is this different from a generic business template or course?</div>
+      <div class="faq-a">Every section of your blueprint is generated from your specific answers — not pre-written content. The pitch is constructed from your actual client language. The pricing calculation uses your real numbers. The scripts are written around your industry and situation. The action plan reflects your goals and current stage. No two blueprints are identical because no two businesses are identical.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">How long does it take to complete?</div>
+      <div class="faq-a">Most business owners complete all 8 questions in 2 to 3 minutes. You can take longer — and more detailed answers produce sharper recommendations. Your blueprint is generated instantly once you submit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Will I receive a confirmation email after I buy?</div>
+      <div class="faq-a">Yes — automatically, the moment your purchase is complete. The email contains your access link so you can return to your blueprint at any time from any device. No waiting, no manual sending. It arrives instantly.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I download my blueprint?</div>
+      <div class="faq-a">Yes. Once your blueprint is generated, you can download it as a PDF directly from the results page. Your confirmation email also contains your access link for returning any time.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">Can I get both blueprints?</div>
+      <div class="faq-a">Yes. Purchase the Growth Blueprint first — you will be offered the Business OS Blueprint at a special rate immediately after generating your Growth Blueprint. You can also purchase the Business OS Blueprint directly from this page if you are already at that stage.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What is the money-back guarantee?</div>
+      <div class="faq-a">Both blueprints come with a 30-day money-back guarantee. Complete your blueprint, follow the plan it gives you, and if you do not see any measurable improvement within 30 days — we refund your full payment. No forms, no justification required.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">What are the launch prices and when do they change?</div>
+      <div class="faq-a">The Growth Blueprint is $97 now — full price is $197. The Business OS Blueprint is $297 now — full price is $997. Both launch prices are available for a 90-day window from the date of launch, then move to full price permanently. No subscription. No renewal. Pay once, keep your blueprint forever.</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta-band">
+  <div class="s-tag" style="color:var(--teal-b);position:relative">Get Started Today</div>
+  <h2 class="s-h">Your blueprint is 8 questions away</h2>
+  <p class="s-sub">Most business owners spend months — sometimes years — figuring out what your blueprint tells you in minutes. Choose your stage. Get your strategy.</p>
+  <div class="cta-final-grid">
+    <div class="cta-mini">
+      <div class="cta-mini-label g">Growth Blueprint</div>
+      <div class="cta-mini-title">Attract clients.<br>Charge properly.</div>
+      <div class="cta-mini-was">$197</div>
+      <div class="cta-mini-price g">$97</div>
+      <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="btn-cta-g">✦ Get My Growth Blueprint — $97</a>
+    </div>
+    <div class="cta-mini">
+      <div class="cta-mini-label o">Business OS Blueprint</div>
+      <div class="cta-mini-title">Build systems.<br>Reclaim your time.</div>
+      <div class="cta-mini-was">$997</div>
+      <div class="cta-mini-price o">$297</div>
+      <a href="https://selar.co/YOUR-PRODUCT-LINK" target="_blank" class="btn-cta-o">✦ Get My Business OS Blueprint — $297</a>
+    </div>
+  </div>
+  <p class="cta-guar">🔒 <b>30-day money-back guarantee on both products.</b> Follow your blueprint. See results. Or get a full refund — no questions asked.</p>
+</section>
+
+<footer>
+  <div class="ft-logo"><img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™" height="42" style="display:block;width:auto"/></div>
+  <div class="ft-note">Clarity. Strategy. Growth. &nbsp;·&nbsp; © 2026 ScaleMyBiz™. All rights reserved.</div>
+</footer>
+
+<script>
+// ── FAQ TOGGLE ──
+function toggleFaq(el){
+  const item=el.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+  if(!isOpen) item.classList.add('open');
+}
+
+// ── COUNTDOWN TIMER ──
+// Set your launch date here (YYYY, MM-1, DD) — update when Selar goes live
+// Example: new Date(2026, 2, 9) = March 9 2026 (month is 0-indexed)
+// Change this line to your actual launch date when Selar is live:
+const LAUNCH_DATE = new Date(2026, 2, 9); // ← UPDATE THIS to your Selar go-live date
+const WINDOW_DAYS = 90;
+const END_DATE = new Date(LAUNCH_DATE.getTime() + WINDOW_DAYS * 24 * 60 * 60 * 1000);
+
+function updateCountdown(){
+  const now = new Date();
+  const diff = END_DATE - now;
+  if(diff <= 0){
+    document.getElementById('cd-days').textContent='00';
+    document.getElementById('cd-hrs').textContent='00';
+    document.getElementById('cd-min').textContent='00';
+    document.getElementById('cd-sec').textContent='00';
+    return;
+  }
+  const d = Math.floor(diff/(1000*60*60*24));
+  const h = Math.floor((diff%(1000*60*60*24))/(1000*60*60));
+  const m = Math.floor((diff%(1000*60*60))/(1000*60));
+  const s = Math.floor((diff%( 1000*60))/1000);
+  document.getElementById('cd-days').textContent=String(d).padStart(2,'0');
+  document.getElementById('cd-hrs').textContent=String(h).padStart(2,'0');
+  document.getElementById('cd-min').textContent=String(m).padStart(2,'0');
+  document.getElementById('cd-sec').textContent=String(s).padStart(2,'0');
+}
+updateCountdown();
+setInterval(updateCountdown,1000);
+</script>
+</body>
+</html>

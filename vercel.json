@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/", "destination": "/ScaleMyBiz-Sales-Page.html" }
+  ]
+}

@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ScaleMyBiz™ — Attract the Right Clients. Charge What You're Worth. Grow 5×.</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0f172a;
+  --paper:#ffffff;
+  --cream:#f8fafc;
+  --teal:#0d9488;
+  --teal-bright:#14b8a6;
+  --teal-pale:#ccfbf1;
+  --teal-faint:#f0fdfa;
+  --amber:#d97706;
+  --amber-pale:#fef3c7;
+  --ember:#dc2626;
+  --forest:#065f46;
+  --night:#0f172a;
+  --slate:#1e293b;
+  --muted:#475569;
+  --border:#e2e8f0;
+  --border-teal:rgba(13,148,136,0.3);
+}
+
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:'Outfit',sans-serif;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:18px 56px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--ink);text-decoration:none;letter-spacing:-.3px}
+.nav-logo sup{font-size:13px;color:var(--teal);vertical-align:super;font-family:'Outfit',sans-serif;font-weight:500}
+.nav-btn{background:var(--teal);color:#ffffff;padding:11px 26px;border-radius:5px;font-size:13px;font-weight:600;text-decoration:none;letter-spacing:.2px;transition:all .25s}
+.nav-btn:hover{background:var(--forest);color:#ffffff}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;padding-top:76px}
+
+.hero-l{padding:84px 64px 84px 80px;display:flex;flex-direction:column;justify-content:center}
+.eyebrow{display:inline-flex;align-items:center;gap:9px;background:var(--teal-pale);border:1px solid var(--border-teal);color:var(--forest);font-size:11px;font-weight:600;letter-spacing:2.8px;text-transform:uppercase;padding:8px 18px;border-radius:100px;margin-bottom:38px;width:fit-content;animation:up .65s ease both}
+.eyebrow::before{content:'';width:6px;height:6px;background:var(--teal);border-radius:50%;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+h1{font-family:'Cormorant Garamond',serif;font-size:clamp(46px,5.8vw,84px);font-weight:700;line-height:1.01;color:var(--ink);animation:up .65s .07s ease both}
+h1 em{font-style:italic;color:var(--teal)}
+.hero-sub{margin-top:22px;font-size:17px;font-weight:400;color:var(--slate);line-height:1.78;max-width:490px;animation:up .65s .14s ease both}
+.hero-sub b{color:var(--ink);font-weight:600}
+
+.hero-acts{margin-top:44px;display:flex;gap:14px;flex-wrap:wrap;animation:up .65s .2s ease both}
+.btn-main{display:inline-flex;align-items:center;gap:9px;background:var(--teal);color:#ffffff;padding:17px 38px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;text-decoration:none;border:none;cursor:pointer;transition:all .3s}
+.btn-main:hover{background:var(--forest);color:#ffffff;transform:translateY(-2px);box-shadow:0 14px 36px rgba(13,148,136,.35)}
+.btn-ghost{display:inline-flex;align-items:center;gap:9px;background:transparent;color:var(--ink);border:1.5px solid var(--border);padding:17px 30px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:500;text-decoration:none;transition:all .3s;cursor:pointer}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal)}
+
+.social-proof{margin-top:52px;display:flex;align-items:center;gap:14px;animation:up .65s .26s ease both}
+.sp-faces{display:flex}
+.sp-face{width:34px;height:34px;border-radius:50%;border:2.5px solid #ffffff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:13px;color:#ffffff;margin-left:-9px}
+.sp-face:first-child{margin-left:0}
+.sp-txt{font-size:13px;font-weight:500;color:var(--slate);line-height:1.5}
+.sp-txt b{color:var(--ink);font-weight:600}
+
+/* HERO RIGHT */
+.hero-r{background:var(--night);display:flex;align-items:center;justify-content:center;padding:80px 48px;position:relative;overflow:hidden}
+.hero-r::before{content:'';position:absolute;top:-160px;right:-160px;width:440px;height:440px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.18) 0%,transparent 68%)}
+.hero-r::after{content:'';position:absolute;bottom:-80px;left:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(220,38,38,.1) 0%,transparent 68%)}
+
+.delivers-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:18px;padding:38px;width:100%;max-width:356px;position:relative;z-index:1;animation:up .65s .38s ease both}
+.dc-label{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,.75);font-weight:600;margin-bottom:30px}
+.dc-item{display:flex;align-items:flex-start;gap:14px;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.08)}
+.dc-item:last-child{margin-bottom:0;padding-bottom:0;border-bottom:none}
+.dc-ico{width:42px;height:42px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
+.dc-ico.a{background:rgba(13,148,136,.25)}
+.dc-ico.b{background:rgba(220,38,38,.2)}
+.dc-ico.c{background:rgba(6,95,70,.4)}
+.dc-ico.d{background:rgba(30,41,59,.7)}
+.dc-title{font-family:'Cormorant Garamond',serif;font-size:16px;font-weight:700;color:#ffffff;margin-bottom:3px}
+.dc-desc{font-size:13px;font-weight:500;color:rgba(255,255,255,.75);line-height:1.58}
+
+@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+
+/* ── HOW IT WORKS ── */
+.section{padding:96px 80px}
+.stag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:12px}
+.sh{font-family:'Cormorant Garamond',serif;font-size:clamp(32px,4vw,56px);font-weight:700;line-height:1.07;color:var(--ink)}
+.ss{margin-top:14px;font-size:16px;font-weight:400;color:var(--slate);line-height:1.75;max-width:530px}
+
+.steps-row{display:grid;grid-template-columns:repeat(4,1fr);margin-top:60px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+.step-box{padding:38px 28px;border-right:1px solid var(--border);background:var(--cream);transition:background .28s}
+.step-box:last-child{border-right:none}
+.step-box:hover{background:var(--teal-pale)}
+.step-no{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--teal-pale);line-height:1;margin-bottom:18px;transition:color .28s}
+.step-box:hover .step-no{color:rgba(13,148,136,.2)}
+.step-ico{font-size:26px;margin-bottom:14px;display:block}
+.step-ttl{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:700;color:var(--ink);margin-bottom:9px}
+.step-dsc{font-size:13px;font-weight:500;color:var(--slate);line-height:1.65}
+
+/* ── TOOL ── */
+.tool-wrap{background:var(--cream);padding:96px 0}
+.tool-inner{max-width:820px;margin:0 auto;padding:0 28px}
+.tool-hdr{text-align:center;margin-bottom:52px}
+
+.shell{background:var(--paper);border:1px solid var(--border);border-radius:22px;overflow:hidden;box-shadow:0 28px 72px rgba(15,23,42,.08)}
+
+/* PROGRESS */
+.prog-bar{height:3px;background:var(--border)}
+.prog-fill{height:100%;background:linear-gradient(90deg,var(--teal),var(--ember));transition:width .55s cubic-bezier(.4,0,.2,1)}
+.prog-dots{display:flex;justify-content:space-between;padding:18px 36px 0;flex-wrap:wrap;gap:6px}
+.pd{display:flex;align-items:center;gap:7px;font-size:12px;font-weight:500;color:var(--muted);transition:color .25s}
+.pd.act{color:var(--teal)}
+.pd.done{color:var(--ink)}
+.pd-dot{width:20px;height:20px;border-radius:50%;border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;background:var(--paper);transition:all .25s;flex-shrink:0}
+.pd.act .pd-dot{border-color:var(--teal);color:var(--teal);background:var(--teal-pale)}
+.pd.done .pd-dot{border-color:var(--teal);background:var(--teal);color:#ffffff}
+
+/* FORM STEPS */
+.fstep{display:none;padding:46px 52px;animation:up .32s ease}
+.fstep.on{display:block}
+.ftag{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal);margin-bottom:7px}
+.fttl{font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.fsub{font-size:14px;color:var(--slate);font-weight:400;line-height:1.66;margin-bottom:36px;max-width:540px}
+
+.fg{margin-bottom:26px}
+label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:9px}
+.lh{font-weight:400;color:var(--muted);font-size:12px;margin-left:5px}
+input[type=text],input[type=number],textarea,select{width:100%;background:#ffffff;border:1.5px solid var(--border);border-radius:9px;padding:13px 17px;font-family:'Outfit',sans-serif;font-size:15px;color:var(--ink);transition:border-color .2s,box-shadow .2s;outline:none;-webkit-appearance:none}
+input:focus,textarea:focus,select:focus{border-color:var(--teal);box-shadow:0 0 0 3px rgba(13,148,136,.12)}
+textarea{resize:vertical;min-height:88px;line-height:1.6}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+
+/* PILLS */
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
+.pill{padding:9px 17px;border:1.5px solid var(--border);border-radius:100px;font-size:13px;cursor:pointer;transition:all .2s;background:#ffffff;color:var(--slate);user-select:none;white-space:nowrap}
+.pill:hover{border-color:var(--teal);color:var(--teal)}
+.pill.on{background:var(--teal);border-color:var(--teal);color:#ffffff;font-weight:600}
+
+/* SLIDER */
+.sl-wrap{display:flex;align-items:center;gap:18px;margin-top:7px}
+input[type=range]{flex:1;-webkit-appearance:none;height:4px;background:var(--border);border-radius:2px;outline:none;border:none;padding:0;cursor:pointer}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;background:var(--teal);cursor:pointer;box-shadow:0 2px 8px rgba(13,148,136,.35)}
+.sl-val{font-family:'Cormorant Garamond',serif;font-size:27px;font-weight:700;color:var(--teal);min-width:88px;text-align:right}
+
+/* INFO BOX */
+.ibox{background:var(--teal-faint);border:1px solid rgba(13,148,136,.2);border-radius:9px;padding:14px 18px;font-size:13px;color:var(--slate);line-height:1.62;margin-top:8px}
+.ibox b{color:var(--forest)}
+
+/* NAV BTNS */
+.fnav{display:flex;justify-content:space-between;align-items:center;margin-top:44px;padding-top:28px;border-top:1px solid var(--border)}
+.btn-back{background:none;border:none;font-family:'Outfit',sans-serif;font-size:14px;color:var(--muted);cursor:pointer;padding:0;transition:color .2s}
+.btn-back:hover{color:var(--ink)}
+.btn-next{background:var(--teal);color:#ffffff;border:none;padding:15px 34px;font-family:'Outfit',sans-serif;font-size:14px;font-weight:600;border-radius:7px;cursor:pointer;transition:all .28s;display:flex;align-items:center;gap:9px}
+.btn-next:hover{background:var(--forest);color:#ffffff;transform:translateX(3px)}
+.btn-gen{background:linear-gradient(135deg,var(--teal),var(--forest));color:#ffffff;border:none;padding:17px 42px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;border-radius:7px;cursor:pointer;transition:all .3s;box-shadow:0 8px 22px rgba(13,148,136,.35)}
+.btn-gen:hover{transform:translateY(-2px);box-shadow:0 16px 38px rgba(13,148,136,.45)}
+
+/* GENERATING */
+#gen-screen{display:none;padding:72px 52px;text-align:center}
+.spin{width:52px;height:52px;border:3px solid var(--border);border-top-color:var(--teal);border-radius:50%;animation:spin 1s linear infinite;margin:0 auto 22px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.gen-t{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.gen-s{font-size:14px;font-weight:500;color:var(--slate)}
+
+/* ── RESULT ── */
+#result-wrap{display:none;animation:up .45s ease}
+
+.res-hero{background:var(--night);padding:52px 56px;text-align:center;position:relative;overflow:hidden}
+.res-hero::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:380px;height:380px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.18) 0%,transparent 68%)}
+.res-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:11px;position:relative}
+.res-name{font-family:'Cormorant Garamond',serif;font-size:34px;font-weight:700;color:#ffffff;margin-bottom:5px;position:relative}
+.res-bizline{font-size:14px;font-weight:500;color:rgba(255,255,255,.65);position:relative}
+
+.res-body{padding:44px 52px}
+
+/* PITCH BLOCK */
+.pitch-blk{background:var(--night);border-radius:14px;padding:38px;margin-bottom:24px;border:1px solid rgba(13,148,136,.25);position:relative;overflow:hidden}
+.pitch-blk::before{content:'\201C';position:absolute;top:-28px;left:20px;font-family:'Cormorant Garamond',serif;font-size:130px;color:rgba(13,148,136,.1);line-height:1;pointer-events:none}
+.pb-lbl{font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:14px}
+.pb-txt{font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;font-weight:400;color:#ffffff;line-height:1.58;position:relative}
+.pb-foot{margin-top:18px;display:flex;justify-content:flex-end}
+.btn-copy-sm{background:rgba(13,148,136,.2);border:1px solid rgba(13,148,136,.35);color:var(--teal-bright);padding:8px 18px;border-radius:5px;font-family:'Outfit',sans-serif;font-size:12px;font-weight:600;cursor:pointer;transition:all .2s}
+.btn-copy-sm:hover{background:rgba(13,148,136,.35);color:#ffffff}
+
+/* REVENUE */
+.rev-blk{background:var(--cream);border:1px solid var(--border);border-radius:14px;padding:34px;margin-bottom:24px}
+.rb-lbl{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--slate);margin-bottom:22px}
+.rb-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:center;gap:12px;margin-bottom:22px}
+.rb-col{text-align:center}
+.rb-amt{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:700;line-height:1}
+.rb-amt.now{color:var(--muted)}
+.rb-amt.tgt{color:var(--teal)}
+.rb-amt.rec{color:var(--ember)}
+.rb-desc{font-size:11px;font-weight:600;color:var(--slate);text-transform:uppercase;letter-spacing:1px;margin-top:5px}
+.rb-arrow{font-size:20px;color:var(--border)}
+.rb-note{font-size:13px;font-weight:500;color:var(--slate);line-height:1.6;padding-top:18px;border-top:1px solid var(--border)}
+
+/* BLUEPRINT CARDS */
+.bp-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-bottom:24px}
+.bpc{background:#ffffff;border:1px solid var(--border);border-radius:13px;padding:26px;border-top:3px solid var(--teal)}
+.bpc.full{grid-column:span 2;border-top-color:var(--ember)}
+.bpc.grn{border-top-color:var(--forest)}
+.bpc.ngt{border-top-color:var(--slate)}
+.bpc-tag{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:11px}
+.bpc-body{font-size:14px;color:var(--slate);line-height:1.76}
+.bpc-body b{font-weight:700;color:var(--teal)}
+.bpc-body em{color:var(--muted);font-style:italic}
+
+/* ACTIONS */
+.action-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--border)}
+.action-row:last-child{border-bottom:none}
+.action-num{width:26px;height:26px;border-radius:50%;background:var(--teal);color:#ffffff;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0;margin-top:2px}
+.action-body{flex:1}
+.action-ttl{font-weight:600;color:var(--ink);margin-bottom:5px;font-size:14px}
+.action-det{font-size:13px;font-weight:500;color:var(--slate);line-height:1.62}
+.cpy-line{background:var(--teal-faint);border:1px dashed rgba(13,148,136,.35);border-radius:6px;padding:11px 76px 11px 14px;font-size:13px;color:var(--slate);margin-top:9px;font-style:italic;position:relative;cursor:pointer;transition:background .2s;line-height:1.55}
+.cpy-line:hover{background:var(--teal-pale)}
+.cpy-line::after{content:'📋 Copy';position:absolute;right:10px;top:50%;transform:translateY(-50%);font-size:11px;color:var(--forest);font-style:normal;font-weight:700}
+
+/* WEEK PLAN */
+.week-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.wk{background:var(--cream);border:1px solid var(--border);border-radius:9px;padding:18px}
+.wk-lbl{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal);margin-bottom:11px}
+.wk-tasks{display:flex;flex-direction:column;gap:8px}
+.wk-task{display:flex;align-items:flex-start;gap:8px;font-size:13px;color:var(--slate);line-height:1.5}
+.wk-task::before{content:'→';color:var(--teal);font-weight:700;flex-shrink:0;margin-top:1px}
+
+/* BLUEPRINT STAT GRID */
+.bp-stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:14px 0 18px}
+.bp-stat{background:var(--teal-faint);border-radius:8px;padding:12px;text-align:center;border:1px solid rgba(13,148,136,.18)}
+.bp-stat-val{font-size:22px;font-weight:700;color:var(--teal);font-family:'Cormorant Garamond',serif}
+.bp-stat-lbl{font-size:11px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-top:3px}
+.bp-roadmap{background:var(--night);border-radius:10px;padding:18px 20px;margin:16px 0}
+.bp-road-title{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:14px}
+.bp-road-step{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start;color:rgba(255,255,255,.88);font-size:13px;line-height:1.65}
+.bp-road-step:last-child{margin-bottom:0}
+.bp-road-num{background:var(--teal);color:#fff;font-weight:700;font-size:12px;width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.bp-insight{background:rgba(13,148,136,.07);border-left:3px solid var(--teal);border-radius:0 6px 6px 0;padding:12px 14px;margin:14px 0;font-size:13px;color:var(--slate);line-height:1.7}
+@media(max-width:600px){.bp-stat-row{grid-template-columns:repeat(2,1fr)}}
+
+/* SCRIPTS */
+.script-item{margin-bottom:16px}
+.script-lbl{font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+
+/* RESULT ACTIONS */
+.res-acts{display:flex;gap:14px;justify-content:center;margin-top:36px;padding-top:28px;border-top:1px solid var(--border);flex-wrap:wrap}
+
+/* ═══════════════════════════════════════
+   UPSELL SECTION — Business OS Blueprint
+═══════════════════════════════════════ */
+#upsell{display:none;animation:up .5s ease}
+.upsell-band{background:linear-gradient(135deg,var(--night) 0%,var(--slate) 100%);border-radius:0;padding:52px;position:relative;overflow:hidden}
+.upsell-band::before{content:'';position:absolute;top:-100px;right:-100px;width:360px;height:360px;border-radius:50%;background:radial-gradient(circle,rgba(13,148,136,.15) 0%,transparent 68%)}
+.upsell-band::after{content:'OS';position:absolute;bottom:-40px;left:32px;font-family:'Cormorant Garamond',serif;font-size:200px;font-weight:700;color:rgba(255,255,255,.025);line-height:1;pointer-events:none}
+.up-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:12px;position:relative}
+.up-title{font-family:'Cormorant Garamond',serif;font-size:38px;font-weight:700;color:#ffffff;line-height:1.08;margin-bottom:10px;position:relative}
+.up-title em{font-style:italic;color:var(--teal-bright)}
+.up-sub{font-size:15px;font-weight:400;color:rgba(255,255,255,.82);line-height:1.72;max-width:560px;margin-bottom:32px;position:relative}
+.up-promise{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:36px;position:relative}
+.up-item{display:flex;align-items:flex-start;gap:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px}
+.up-item-ico{font-size:20px;flex-shrink:0}
+.up-item-txt{font-size:13px;font-weight:500;color:rgba(255,255,255,.78);line-height:1.55}
+.up-item-ttl{font-size:14px;font-weight:700;color:#ffffff;margin-bottom:3px}
+
+.up-price-row{display:flex;align-items:center;gap:20px;flex-wrap:wrap;position:relative}
+.up-price{font-family:'Cormorant Garamond',serif;font-size:52px;font-weight:700;color:var(--teal-bright);line-height:1}
+.up-price-note{font-size:13px;font-weight:500;color:rgba(255,255,255,.65);line-height:1.55;max-width:200px}
+.up-price-was{font-size:16px;color:rgba(255,255,255,.35);text-decoration:line-through;margin-right:6px}
+.btn-upsell{background:linear-gradient(135deg,var(--teal),var(--forest));color:#ffffff;border:none;padding:18px 44px;font-family:'Outfit',sans-serif;font-size:15px;font-weight:700;border-radius:7px;cursor:pointer;transition:all .3s;box-shadow:0 8px 28px rgba(13,148,136,.4);white-space:nowrap}
+.btn-upsell:hover{transform:translateY(-2px);box-shadow:0 18px 42px rgba(13,148,136,.5)}
+.btn-skip{background:none;border:none;font-family:'Outfit',sans-serif;font-size:13px;color:rgba(255,255,255,.35);cursor:pointer;padding:12px 0 0;display:block;transition:color .2s}
+.btn-skip:hover{color:rgba(255,255,255,.6)}
+
+/* BIZ OS RESULT */
+#biz-os-result{display:none;animation:up .45s ease}
+.bos-hero{background:linear-gradient(135deg,var(--forest) 0%,var(--night) 100%);padding:48px 52px;text-align:center;position:relative;overflow:hidden}
+.bos-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(13,148,136,0.12)'/%3E%3C/svg%3E") repeat}
+.bos-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:10px;position:relative}
+.bos-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:700;color:#ffffff;position:relative}
+
+/* PROOF */
+.proof-sec{background:var(--ink);padding:96px 80px}
+.proof-sec .sh{color:#ffffff}
+.proof-sec .ss{color:rgba(255,255,255,.75);font-weight:400}
+.proof-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:52px}
+.pcard{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:30px}
+.pcard-stars{color:var(--teal-bright);font-size:13px;letter-spacing:2px;margin-bottom:14px}
+.pcard-q{font-size:15px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.7;margin-bottom:22px;font-style:italic}
+.pcard-who{display:flex;align-items:center;gap:11px}
+.pcard-av{width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:700;font-size:17px;color:#ffffff;flex-shrink:0}
+.pcard-nm{font-size:14px;font-weight:700;color:#ffffff}
+.pcard-rl{font-size:12px;font-weight:500;color:rgba(255,255,255,.6);margin-top:2px}
+
+footer{background:var(--paper);padding:44px 80px;display:flex;align-items:center;justify-content:space-between;border-top:1px solid var(--border);flex-wrap:wrap;gap:14px}
+.ft-brand{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink)}
+.ft-brand sup{font-size:12px;color:var(--teal);font-family:'Outfit',sans-serif}
+.ft-note{font-size:13px;font-weight:500;color:var(--slate)}
+
+
+/* VALIDATION ERRORS */
+.err-msg{font-size:12px;color:var(--ember);font-weight:600;margin-top:6px;min-height:18px;display:none}
+.err-msg.show{display:block}
+input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow:0 0 0 3px rgba(220,38,38,.1)!important}
+
+/* RE-OFFER MODAL */
+.modal-overlay{position:fixed;inset:0;background:rgba(15,23,42,.7);backdrop-filter:blur(6px);z-index:500;display:flex;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .3s}
+.modal-overlay.show{opacity:1;pointer-events:all}
+.modal-box{background:var(--night);border:1px solid rgba(13,148,136,.25);border-radius:20px;padding:44px;max-width:520px;width:100%;position:relative;animation:up .4s ease}
+.modal-close{position:absolute;top:16px;right:18px;background:none;border:none;color:rgba(255,255,255,.3);font-size:22px;cursor:pointer;line-height:1;transition:color .2s}
+.modal-close:hover{color:rgba(255,255,255,.7)}
+.modal-tag{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--teal-bright);margin-bottom:10px}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:#ffffff;line-height:1.1;margin-bottom:12px}
+.modal-body{font-size:14px;font-weight:400;color:rgba(255,255,255,.7);line-height:1.7;margin-bottom:24px}
+.modal-perks{display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.modal-perk{display:flex;align-items:flex-start;gap:10px;font-size:13px;font-weight:500;color:rgba(255,255,255,.8)}
+.modal-perk::before{content:'✓';color:var(--teal-bright);font-weight:700;flex-shrink:0;margin-top:1px}
+.modal-price-row{display:flex;align-items:center;gap:16px;margin-bottom:20px}
+.modal-price{font-family:'Cormorant Garamond',serif;font-size:44px;font-weight:700;color:var(--teal-bright);line-height:1}
+.modal-was{font-size:16px;color:rgba(255,255,255,.3);text-decoration:line-through}
+.modal-launch{font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--teal-bright);background:rgba(13,148,136,.15);padding:3px 10px;border-radius:100px}
+.modal-acts{display:flex;flex-direction:column;gap:10px}
+
+/* PDF PRINT STYLES */
+@media print{
+  nav,#how,.tool-wrap .tool-hdr,#upsell,#biz-os-result,.proof-sec,footer,
+  .fnav,.btn-main,.btn-ghost,.res-acts,.pb-foot{display:none!important}
+  body{background:#fff!important;color:#000!important}
+  .shell{box-shadow:none!important;border:none!important}
+  .res-hero{background:#0f172a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .pitch-blk{background:#0f172a!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .bpc,.wk,.rev-blk{break-inside:avoid}
+  .bp-grid{grid-template-columns:1fr 1fr!important}
+  .week-grid{grid-template-columns:1fr 1fr!important}
+}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  nav{padding:14px 22px}
+  .hero{grid-template-columns:1fr}
+  .hero-r{display:none}
+  .hero-l{padding:60px 24px}
+  .section{padding:60px 24px}
+  .steps-row{grid-template-columns:1fr 1fr}
+  .step-box{border-bottom:1px solid var(--border)}
+  .tool-inner{padding:0 14px}
+  .fstep{padding:28px 22px}
+  .res-body{padding:28px 22px}
+  .res-hero{padding:36px 22px}
+  .bp-grid{grid-template-columns:1fr}
+  .bpc.full{grid-column:span 1}
+  .week-grid{grid-template-columns:1fr}
+  .proof-grid{grid-template-columns:1fr 1fr}
+  .proof-sec{padding:60px 24px}
+  footer{padding:36px 24px}
+  .prog-dots{padding:14px 20px 0}
+  .rb-grid{grid-template-columns:1fr;gap:8px}
+  .rb-arrow{display:none}
+  .up-promise{grid-template-columns:1fr}
+  .upsell-band{padding:36px 22px}
+  .bos-hero{padding:36px 22px}
+}
+@media(max-width:560px){
+  .proof-grid{grid-template-columns:1fr}
+  .steps-row{grid-template-columns:1fr}
+}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('falKjtS_aIfecApCq');</script>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo"><img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™" height="44" style="display:block;width:auto"/></a>
+  <a href="#build" class="nav-btn">Get My Blueprint →</a>
+</nav>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <div class="hero-l">
+    <div class="eyebrow">Your Personal Blueprint Builder</div>
+    <h1>Stop guessing.<br>Start <em>scaling.</em></h1>
+    <p class="hero-sub">Answer <b>8 smart questions</b> and get a personalized blueprint that tells you exactly who to target, what to charge, and precisely what to say — so the right clients come to <em>you</em>.</p>
+    <div class="hero-acts">
+      <a href="#build" class="btn-main">Build My Blueprint →</a>
+      <a href="#how" class="btn-ghost">See How It Works</a>
+    </div>
+    <div class="social-proof">
+      <div class="sp-faces">
+        <div class="sp-face" style="background:var(--teal)">A</div>
+        <div class="sp-face" style="background:var(--ember)">J</div>
+        <div class="sp-face" style="background:var(--forest)">M</div>
+        <div class="sp-face" style="background:var(--slate)">K</div>
+      </div>
+      <div class="sp-txt"><b>1,200+ business owners</b> already have their blueprint.<br>Yours takes 2 minutes.</div>
+    </div>
+  </div>
+  <div class="hero-r">
+    <div class="delivers-card">
+      <div class="dc-label">Your blueprint delivers…</div>
+      <div class="dc-item">
+        <div class="dc-ico a">🎯</div>
+        <div>
+          <div class="dc-title">Your Magnetic Pitch</div>
+          <div class="dc-desc">One sentence that makes the right clients say "that's exactly what I need"</div>
+        </div>
+      </div>
+      <div class="dc-item">
+        <div class="dc-ico b">💰</div>
+        <div>
+          <div class="dc-title">Your Pricing Strategy</div>
+          <div class="dc-desc">An exact pricing recommendation with a calculated path to 5× revenue</div>
+        </div>
+      </div>
+      <div class="dc-item">
+        <div class="dc-ico c">🚀</div>
+        <div>
+          <div class="dc-title">30-Day Action Plan</div>
+          <div class="dc-desc">Week-by-week tasks with copy-paste scripts you can use today</div>
+        </div>
+      </div>
+      <div class="dc-item">
+        <div class="dc-ico d">📋</div>
+        <div>
+          <div class="dc-title">5 Copy-Paste Scripts</div>
+          <div class="dc-desc">Outreach, objection handling, referrals, and social posts — ready to send</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how" class="section" style="background:var(--cream)">
+  <div class="stag">How It Works</div>
+  <h2 class="sh">From answers to blueprint<br>in under 2 minutes</h2>
+  <p class="ss">No fluff. No long courses. Just 8 strategic questions that unlock a personalized growth system built specifically for your business.</p>
+  <div class="steps-row">
+    <div class="step-box">
+      <div class="step-no">01</div>
+      <span class="step-ico">🏢</span>
+      <div class="step-ttl">Your Business & Industry</div>
+      <p class="step-dsc">We start with context — what you sell and the market you operate in — so every recommendation is industry-specific.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-no">02</div>
+      <span class="step-ico">🎯</span>
+      <div class="step-ttl">Your Challenges & Ideal Client</div>
+      <p class="step-dsc">We help you pinpoint your biggest growth blockers and define exactly who your best client is — even if you've never clearly done so before.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-no">03</div>
+      <span class="step-ico">💎</span>
+      <div class="step-ttl">Your Offer & Pricing</div>
+      <p class="step-dsc">Tell us what you currently charge. We'll calculate what you should charge to reach 5× your current revenue — with exact numbers.</p>
+    </div>
+    <div class="step-box">
+      <div class="step-no">04</div>
+      <span class="step-ico">📋</span>
+      <div class="step-ttl">Your Personal Blueprint</div>
+      <p class="step-dsc">Get a pitch, pricing strategy, attraction plan, a 30-day action plan, and 5 copy-paste scripts — all built around your specific answers.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── TOOL ── -->
+<section id="build" class="tool-wrap">
+  <div class="tool-inner">
+    <div class="tool-hdr">
+      <div class="stag" style="text-align:center">Blueprint Builder</div>
+      <h2 class="sh" style="text-align:center">Build your blueprint now</h2>
+      <p class="ss" style="text-align:center;margin:10px auto 0">8 questions. 2 minutes. A strategy that actually works.</p>
+    </div>
+
+    <!-- ACCESS GATE -->
+    <div id="access-gate" style="max-width:560px;margin:40px auto 0;background:#fff;border:1px solid var(--border);border-radius:20px;padding:48px 44px;text-align:center;box-shadow:0 4px 32px rgba(15,23,42,.06)">
+      <div style="width:56px;height:56px;background:var(--teal-faint);border:2px solid rgba(13,148,136,.25);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;font-size:24px">🔒</div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px">Purchase Required</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:12px">Access Your Growth Blueprint</div>
+      <p style="font-size:14px;font-weight:400;color:var(--slate);line-height:1.7;margin-bottom:28px">Enter the access code from your purchase confirmation email to unlock the blueprint builder. If you have not yet purchased, click below to get instant access for $97.</p>
+      <div style="margin-bottom:16px;text-align:left">
+        <label style="font-size:13px;font-weight:600;color:var(--ink);display:block;margin-bottom:7px">Your Access Code</label>
+        <input type="text" id="accessCode" placeholder="e.g. SMB-XXXX-XXXX" style="width:100%;padding:13px 16px;border:1.5px solid var(--border);border-radius:8px;font-size:15px;font-family:'Outfit',sans-serif;outline:none;transition:border-color .2s" oninput="this.style.borderColor='var(--border)'" onfocus="this.style.borderColor='var(--teal)'"/>
+        <div class="err-msg" id="err-accessCode" style="margin-top:6px"></div>
+      </div>
+      <button onclick="checkAccess()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;border:none;padding:16px;border-radius:8px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .3s;margin-bottom:20px">✦ Unlock My Blueprint Builder</button>
+      <div style="border-top:1px solid var(--border);padding-top:20px">
+        <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Don't have an access code yet?</p>
+        <a href="https://selar.co/YOUR-PRODUCT-LINK" style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal);padding:12px 28px;border-radius:7px;font-size:14px;font-weight:700;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--teal-faint)'" onmouseout="this.style.background='var(--cream)'">Get Access — $97 →</a>
+        <p style="font-size:11px;color:var(--muted);margin-top:12px">🔒 Secure payment via Gumroad · 30-day money-back guarantee</p>
+      </div>
+    </div>
+
+    <div id="tool-body" style="display:none">
+    <div class="shell">
+      <div class="prog-bar"><div class="prog-fill" id="pf" style="width:12.5%"></div></div>
+      <div class="prog-dots">
+        <div class="pd act" id="pd1"><div class="pd-dot">1</div><span>Business</span></div>
+        <div class="pd" id="pd2"><div class="pd-dot">2</div><span>Industry</span></div>
+        <div class="pd" id="pd3"><div class="pd-dot">3</div><span>Challenges</span></div>
+        <div class="pd" id="pd4"><div class="pd-dot">4</div><span>Client</span></div>
+        <div class="pd" id="pd5"><div class="pd-dot">5</div><span>Offer</span></div>
+        <div class="pd" id="pd6"><div class="pd-dot">6</div><span>Pricing</span></div>
+        <div class="pd" id="pd7"><div class="pd-dot">7</div><span>Revenue</span></div>
+        <div class="pd" id="pd8"><div class="pd-dot">8</div><span>Goals</span></div>
+      </div>
+
+      <!-- Q1 -->
+      <div class="fstep on" id="q1">
+        <div class="ftag">Question 1 of 8</div>
+        <div class="fttl">Tell us about you and your business</div>
+        <div class="fsub">This personalizes every part of your blueprint — from your pitch to your action plan.</div>
+        <div class="row2">
+          <div class="fg"><label>Your First Name</label><input type="text" id="ownerName" placeholder="e.g. Sarah"/><div class="err-msg" id="err-ownerName"></div></div>
+          <div class="fg"><label>Business Name <span class="lh">(or your name if solo)</span></label><input type="text" id="bizName" placeholder="e.g. Bright Edge Studio"/><div class="err-msg" id="err-bizName"></div></div>
+        </div>
+        <div class="fg">
+          <label>What do you sell? <span class="lh">Pick one</span></label>
+          <div class="pills" id="offerType">
+            <div class="pill" data-val="Services">Services (I do it for them)</div>
+            <div class="pill" data-val="Products">Products (physical or digital)</div>
+            <div class="pill" data-val="Both services and products">Both services and products</div>
+            <div class="pill" data-val="Coaching or Training">Coaching / Training / Education</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Briefly describe what you do <span class="lh">(don't worry about making it perfect)</span></label>
+          <textarea id="bizDesc" placeholder="e.g. I design logos and brand identities for small businesses. I also offer website design packages."></textarea>
+          <div class="err-msg" id="err-bizDesc"></div>
+        </div>
+        <div class="fnav"><span></span><button class="btn-next" onclick="go(2)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q2 -->
+      <div class="fstep" id="q2">
+        <div class="ftag">Question 2 of 8</div>
+        <div class="fttl">What industry are you in?</div>
+        <div class="fsub">Your industry shapes your pricing benchmark, client language, and the competitive landscape your business operates in.</div>
+        <div class="fg">
+          <label>Select your industry</label>
+          <div class="pills" id="industry">
+            <div class="pill" data-val="Branding & Creative">Branding & Creative</div>
+            <div class="pill" data-val="Business Consulting">Business Consulting</div>
+            <div class="pill" data-val="Health & Wellness">Health & Wellness</div>
+            <div class="pill" data-val="Tech & Digital Marketing">Tech & Digital Marketing</div>
+            <div class="pill" data-val="Legal & Financial Services">Legal & Financial Services</div>
+            <div class="pill" data-val="Education & Coaching">Education & Coaching</div>
+            <div class="pill" data-val="Beauty & Personal Care">Beauty & Personal Care</div>
+            <div class="pill" data-val="Food & Hospitality">Food & Hospitality</div>
+            <div class="pill" data-val="Real Estate">Real Estate</div>
+            <div class="pill" data-val="Retail & E-commerce">Retail & E-commerce</div>
+            <div class="pill" data-val="Events & Entertainment">Events & Entertainment</div>
+            <div class="pill" data-val="Other">Other</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>How long have you been in business?</label>
+          <div class="pills" id="bizAge">
+            <div class="pill" data-val="Just starting (under 6 months)">Just starting (under 6 months)</div>
+            <div class="pill" data-val="Early stage (6 months to 2 years)">Early stage (6 months–2 years)</div>
+            <div class="pill" data-val="Established (2 to 5 years)">Established (2–5 years)</div>
+            <div class="pill" data-val="Mature (over 5 years)">Mature (over 5 years)</div>
+          </div>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(1)">← Back</button><button class="btn-next" onclick="go(3)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q3 -->
+      <div class="fstep" id="q3">
+        <div class="ftag">Question 3 of 8</div>
+        <div class="fttl">What is holding your business back right now?</div>
+        <div class="fsub">Be honest — your blueprint will address each of these directly with specific, tailored solutions.</div>
+        <div class="fg">
+          <label>Select all that apply</label>
+          <div class="pills" id="challenges">
+            <div class="pill" data-val="Not enough clients">Not enough clients</div>
+            <div class="pill" data-val="Attracting the wrong type of clients (low budget or difficult to work with)">Wrong type of clients</div>
+            <div class="pill" data-val="Not knowing what to charge">Not knowing what to charge</div>
+            <div class="pill" data-val="Clients negotiating prices down">Clients negotiating prices down</div>
+            <div class="pill" data-val="An unclear offer that people do not understand">Unclear offer</div>
+            <div class="pill" data-val="Relying only on referrals with no consistent system">No consistent client system</div>
+            <div class="pill" data-val="Being visible online but not converting to paying clients">Visible but not converting</div>
+            <div class="pill" data-val="Being too busy but not earning enough">Too busy but underpaid</div>
+          </div>
+          <div class="ibox" style="margin-top:14px">💡 <b>Most business owners select 3 to 4.</b> The more honest you are here, the more targeted your blueprint becomes.</div>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(2)">← Back</button><button class="btn-next" onclick="go(4)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q4 -->
+      <div class="fstep" id="q4">
+        <div class="ftag">Question 4 of 8</div>
+        <div class="fttl">Who is your best client?</div>
+        <div class="fsub">Think of your favourite, highest-paying client. We will use this to define your ideal client profile — even if you are still figuring it out.</div>
+        <div class="fg">
+          <label>Describe them <span class="lh">(age, role, type of business, lifestyle — anything you know)</span></label>
+          <textarea id="clientWho" placeholder="e.g. Female entrepreneurs aged 30 to 45 who run wellness businesses such as yoga studios or nutrition practices. They are busy, value quality, and want to look more professional online."></textarea>
+          <div class="err-msg" id="err-clientWho"></div>
+          <div class="ibox">💡 <b>Not sure?</b> Think: who would you clone if you could? Or who do you most enjoy working with?</div>
+        </div>
+        <div class="fg">
+          <label>What is their most painful struggle? <span class="lh">(the problem that keeps them up at night)</span></label>
+          <textarea id="clientPain" placeholder="e.g. They are talented and passionate but invisible online. They feel embarrassed by their brand and website, and they are losing clients to less-skilled competitors who simply look more professional."></textarea>
+          <div class="err-msg" id="err-clientPain"></div>
+          <div class="ibox">💡 <b>Don't know their pain?</b> Think about what they complain about most, or what they were struggling with when they first came to you.</div>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(3)">← Back</button><button class="btn-next" onclick="go(5)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q5 -->
+      <div class="fstep" id="q5">
+        <div class="ftag">Question 5 of 8</div>
+        <div class="fttl">What do you actually deliver?</div>
+        <div class="fsub">Not just the service or product — the transformation. This is the heart of your pitch and the reason clients choose you.</div>
+        <div class="fg">
+          <label>What is your main offer? <span class="lh">(name it and describe it briefly)</span></label>
+          <textarea id="offerDesc" placeholder="e.g. Brand Identity Package — logo, brand guidelines, colour palette, and 2 social media templates. Delivered in 3 weeks." style="min-height:78px"></textarea>
+          <div class="err-msg" id="err-offerDesc"></div>
+        </div>
+        <div class="fg">
+          <label>What result or transformation does a client experience after working with you?</label>
+          <textarea id="clientResult" placeholder="e.g. They walk away with a brand they are proud to show off. Within weeks they are charging more, attracting better clients, and feel confident promoting their business. Most clients say they finally feel like a real business."></textarea>
+          <div class="err-msg" id="err-clientResult"></div>
+          <div class="ibox">💡 <b>Think in outcomes, not features.</b> Not "3 logo concepts" — but "a brand that commands premium prices." Not "10 coaching sessions" — but "clarity, a plan, and the confidence to act."</div>
+        </div>
+        <div class="fg">
+          <label>What makes you different from others who offer similar things?</label>
+          <textarea id="diffFactor" placeholder="e.g. I am the only brand designer in my market who specialises in wellness businesses. I understand the industry, so clients never have to explain their world to me." style="min-height:78px"></textarea>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(4)">← Back</button><button class="btn-next" onclick="go(6)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q6 -->
+      <div class="fstep" id="q6">
+        <div class="ftag">Question 6 of 8</div>
+        <div class="fttl">What do you currently charge?</div>
+        <div class="fsub">We will use this to diagnose your pricing and build a strategy that gets you to 5× your current revenue — without working 5× harder.</div>
+        <div class="row2">
+          <div class="fg">
+            <label>Current price per client, project, or sale</label>
+            <input type="number" id="currentPrice" placeholder="e.g. 500" min="0"/>
+            <div class="err-msg" id="err-currentPrice"></div>
+          </div>
+          <div class="fg">
+            <label>Pricing model</label>
+            <select id="priceModel">
+              <option value="per project">Per project / package</option>
+              <option value="per month (retainer)">Per month (retainer)</option>
+              <option value="per hour">Per hour</option>
+              <option value="per session">Per session</option>
+              <option value="per unit">Per unit / product</option>
+              <option value="per programme">Per course / programme</option>
+            </select>
+          </div>
+        </div>
+        <div class="fg">
+          <label>How confident are you in your pricing?</label>
+          <div class="pills" id="priceConf">
+            <div class="pill" data-val="Not at all — I guessed">Not at all — I guessed</div>
+            <div class="pill" data-val="Somewhat — based on what others charge">Somewhat — based on others</div>
+            <div class="pill" data-val="Fairly confident but unsure if I am leaving money on the table">Fairly confident</div>
+            <div class="pill" data-val="Very confident in my pricing">Very confident</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Do clients ever push back on your prices?</label>
+          <div class="pills" id="priceRes">
+            <div class="pill" data-val="Yes, almost every time">Yes, almost every time</div>
+            <div class="pill" data-val="Sometimes">Sometimes</div>
+            <div class="pill" data-val="Rarely">Rarely</div>
+            <div class="pill" data-val="Never">Never</div>
+          </div>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(5)">← Back</button><button class="btn-next" onclick="go(7)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q7 -->
+      <div class="fstep" id="q7">
+        <div class="ftag">Question 7 of 8</div>
+        <div class="fttl">Let's talk numbers</div>
+        <div class="fsub">These numbers help us calculate your 5× revenue target and the exact pricing strategy to get you there.</div>
+        <div class="fg">
+          <label>Current monthly revenue (approximate)</label>
+          <div class="sl-wrap">
+            <input type="range" id="monthRev" min="0" max="20000" step="100" value="1000" oninput="slid('monthRev','monthRevV','$','')"/>
+            <div class="sl-val" id="monthRevV">$1,000</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>How many clients or sales can you handle per month?</label>
+          <div class="sl-wrap">
+            <input type="range" id="capacity" min="1" max="60" step="1" value="5" oninput="slid('capacity','capV','','')"/>
+            <div class="sl-val" id="capV">5</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Where do most of your clients currently come from?</label>
+          <div class="pills" id="clientSrc">
+            <div class="pill" data-val="Word of mouth and referrals">Word of mouth / referrals</div>
+            <div class="pill" data-val="Instagram or Facebook">Instagram / Facebook</div>
+            <div class="pill" data-val="LinkedIn">LinkedIn</div>
+            <div class="pill" data-val="Website or Google search">Website / Google</div>
+            <div class="pill" data-val="Cold outreach">Cold outreach</div>
+            <div class="pill" data-val="No consistent source">No consistent source</div>
+          </div>
+        </div>
+        <div class="fnav"><button class="btn-back" onclick="go(6)">← Back</button><button class="btn-next" onclick="go(8)">Next <span>→</span></button></div>
+      </div>
+
+      <!-- Q8 -->
+      <div class="fstep" id="q8">
+        <div class="ftag">Question 8 of 8 — Last one!</div>
+        <div class="fttl">What does success look like for you?</div>
+        <div class="fsub">This shapes the direction and tone of your blueprint — because success looks different for every business owner.</div>
+        <div class="fg">
+          <label>What is your number one goal in the next 90 days?</label>
+          <div class="pills" id="mainGoal">
+            <div class="pill" data-val="Get more clients and fill my pipeline">Get more clients</div>
+            <div class="pill" data-val="Charge higher prices and attract premium buyers">Charge higher prices</div>
+            <div class="pill" data-val="Stop relying on referrals and build a consistent system">Build a consistent system</div>
+            <div class="pill" data-val="Grow to full capacity and beyond">Grow to full capacity</div>
+            <div class="pill" data-val="Reposition my business and attract a different type of client">Reposition my business</div>
+          </div>
+        </div>
+        <div class="fg">
+          <label>Anything else you want us to know? <span class="lh">(optional — but it makes your blueprint sharper)</span></label>
+          <textarea id="extraCtx" placeholder="e.g. I have been doing this for 3 years but still feel like I am underselling myself. I want to move from hourly billing to packages but I am not sure how to communicate the value." style="min-height:78px"></textarea>
+        </div>
+        <div class="ibox">🎯 You are about to receive a blueprint built specifically around your answers — not generic advice. Two minutes well spent.</div>
+        <div class="fnav">
+          <button class="btn-back" onclick="go(7)">← Back</button>
+          <button class="btn-gen" onclick="goEmail()">✦ Generate My Blueprint</button>
+        </div>
+      </div>
+
+      <!-- EMAIL GATE -->
+      <div class="fstep" id="q-email">
+        <div class="ftag">Almost there — one last step</div>
+        <div class="fttl">Where should we send your blueprint?</div>
+        <div class="fsub">Your personalised blueprint is ready to build. Enter your details below and we will generate it instantly — plus send you a copy so you never lose it.</div>
+        <div class="row2">
+          <div class="fg"><label>Your First Name <span style="color:var(--ember)">*</span></label><input type="text" id="emailName" placeholder="e.g. Sarah"/><div class="err-msg" id="err-emailName"></div></div>
+          <div class="fg"><label>Your Email Address <span style="color:var(--ember)">*</span></label><input type="text" id="emailAddr" placeholder="e.g. sarah@yourbusiness.com"/><div class="err-msg" id="err-emailAddr"></div></div>
+        </div>
+        <div class="ibox">🔒 <b>No spam, ever.</b> We will only send you your blueprint and occasional resources to help you grow your business. You can unsubscribe at any time.</div>
+        <div class="fnav">
+          <button class="btn-back" onclick="go(8)">← Back</button>
+          <button class="btn-gen" onclick="generate()">✦ Build My Blueprint Now</button>
+        </div>
+      </div>
+
+      <!-- GENERATING -->
+      <div id="gen-screen">
+        <div class="spin"></div>
+        <div class="gen-t">Building your blueprint…</div>
+        <div class="gen-s" id="gen-msg">Analysing your industry and pricing position…</div>
+      </div>
+
+      <!-- RESULT -->
+      <div id="result-wrap">
+        <div class="res-hero">
+          <div class="res-tag">✦ Your Blueprint Is Ready</div>
+          <div class="res-name" id="rName"></div>
+          <div class="res-bizline" id="rBiz"></div>
+        </div>
+        <div class="res-body">
+          <div class="pitch-blk">
+            <div class="pb-lbl">✦ Your Magnetic Pitch — copy this everywhere</div>
+            <div class="pb-txt" id="pitchOut"></div>
+            <div class="pb-foot"><button class="btn-copy-sm" onclick="copyEl('pitchOut',this)">Copy Pitch</button></div>
+          </div>
+
+          <div class="rev-blk">
+            <div class="rb-lbl">Revenue Projection</div>
+            <div class="rb-grid">
+              <div class="rb-col"><div class="rb-amt now" id="rNow"></div><div class="rb-desc">Current / month</div></div>
+              <div class="rb-arrow">→</div>
+              <div class="rb-col"><div class="rb-amt tgt" id="rTgt"></div><div class="rb-desc">Your 5× target</div></div>
+              <div class="rb-arrow">→</div>
+              <div class="rb-col"><div class="rb-amt rec" id="rRec"></div><div class="rb-desc">Recommended price</div></div>
+            </div>
+            <div class="rb-note" id="rNote"></div>
+          </div>
+
+          <div class="bp-grid">
+            <div class="bpc">
+              <div class="bpc-tag">🎯 Your Ideal Client Profile</div>
+              <div class="bpc-body" id="bpClient"></div>
+            </div>
+            <div class="bpc">
+              <div class="bpc-tag">💎 Your Pricing Strategy</div>
+              <div class="bpc-body" id="bpPricing"></div>
+            </div>
+            <div class="bpc full">
+              <div class="bpc-tag">📣 Your Client Attraction Plan — 3 specific actions</div>
+              <div class="bpc-body" id="bpAttract"></div>
+            </div>
+            <div class="bpc full grn">
+              <div class="bpc-tag">📋 Your 30-Day Action Plan — Week by Week</div>
+              <div class="bpc-body"><div class="week-grid" id="bpWeeks"></div></div>
+            </div>
+            <div class="bpc full ngt">
+              <div class="bpc-tag">💬 Copy-Paste Scripts — Use these today</div>
+              <div class="bpc-body" id="bpScripts"></div>
+            </div>
+          </div>
+
+          <div class="res-acts">
+            <button class="btn-main" onclick="downloadPDF()">⬇ Download Blueprint as PDF</button>
+            <button class="btn-ghost" onclick="resetAll()">↺ Start Over</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ══ UPSELL — Business OS Blueprint ══ -->
+      <div id="upsell">
+        <div class="upsell-band">
+          <div class="up-tag">✦ Unlock the Next Level</div>
+          <div class="up-title">Introducing the<br><em>Business OS Blueprint</em></div>
+          <div class="up-sub">Your Growth Blueprint shows you how to attract clients and increase revenue. But what happens when the clients start coming in? Most business owners hit a ceiling — not because they lack talent, but because they have no system. The <b style="color:#ffffff">Business OS Blueprint</b> builds the operational backbone your business needs to run, grow, and even operate without your constant presence.</div>
+
+          <div class="up-promise">
+            <div class="up-item">
+              <div class="up-item-ico">⚙️</div>
+              <div>
+                <div class="up-item-ttl">Your Core Systems Map</div>
+                <div class="up-item-txt">A visual map of every process your business needs — from client onboarding to delivery and follow-up.</div>
+              </div>
+            </div>
+            <div class="up-item">
+              <div class="up-item-ico">🤖</div>
+              <div>
+                <div class="up-item-ttl">Automation Priorities</div>
+                <div class="up-item-txt">The exact 3 tasks you should automate first to reclaim 10+ hours per week without sacrificing quality.</div>
+              </div>
+            </div>
+            <div class="up-item">
+              <div class="up-item-ico">👥</div>
+              <div>
+                <div class="up-item-ttl">Your Delegation Blueprint</div>
+                <div class="up-item-txt">A clear guide to what to delegate, to whom, and in what order — so you stop being the bottleneck.</div>
+              </div>
+            </div>
+            <div class="up-item">
+              <div class="up-item-ico">📅</div>
+              <div>
+                <div class="up-item-ttl">Your 90-Day Freedom Plan</div>
+                <div class="up-item-txt">A week-by-week roadmap to building a business that generates revenue even when you step away.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="up-price-row">
+            <div>
+              <div style="margin-bottom:6px"><span class="up-price-was">$997</span> <span style="font-size:12px;color:var(--teal-bright);font-weight:700;background:rgba(13,148,136,.15);padding:3px 10px;border-radius:100px;">Launch Price</span></div>
+              <div class="up-price">$297</div>
+            </div>
+            <div class="up-price-note">One-time payment. Instant access. <strong>Launch price: $297.</strong> This is the introductory price for early adopters — it will move to the full price of $997 once the launch window closes. No subscription. No renewal. Pay once, keep it forever.</div>
+            <button class="btn-upsell" onclick="showBizOS()">Yes — Build My Business OS →</button>
+          </div>
+          <button class="btn-skip" onclick="skipUpsell()">No thanks, I'll stick with my Growth Blueprint for now</button>
+        </div>
+      </div>
+
+      <!-- ══ BIZ OS RESULT ══ -->
+      <div id="biz-os-result">
+        <div class="bos-hero">
+          <div class="bos-tag">✦ Business OS Blueprint</div>
+          <div class="bos-title" id="bosName"></div>
+        </div>
+        <div class="res-body">
+          <div class="bp-grid">
+            <div class="bpc full" style="border-top-color:var(--forest)">
+              <div class="bpc-tag">⚙️ Your Core Systems Map</div>
+              <div class="bpc-body" id="bosSystems"></div>
+            </div>
+            <div class="bpc">
+              <div class="bpc-tag">🤖 Automate These First</div>
+              <div class="bpc-body" id="bosAuto"></div>
+            </div>
+            <div class="bpc">
+              <div class="bpc-tag">👥 Your Delegation Guide</div>
+              <div class="bpc-body" id="bosDeleg"></div>
+            </div>
+            <div class="bpc full ngt">
+              <div class="bpc-tag">📅 Your 90-Day Freedom Plan</div>
+              <div class="bpc-body"><div class="week-grid" id="bosWeeks"></div></div>
+            </div>
+          </div>
+          <div class="res-acts">
+            <button class="btn-main" onclick="downloadBOSPDF()">⬇ Download Business OS Blueprint as PDF</button>
+            <button class="btn-ghost" onclick="resetAll()">↺ Start Over</button>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /shell -->
+    </div><!-- /tool-body -->
+  </div>
+</section>
+
+<!-- ── SOCIAL PROOF ── -->
+<section class="proof-sec">
+  <div class="stag" style="color:var(--teal-bright)">Real Results</div>
+  <h2 class="sh" style="color:#ffffff">Business owners who stopped guessing<br>— and what happened next</h2>
+  <p class="ss" style="color:rgba(255,255,255,.75)">Growth Blueprint and Business OS Blueprint results from real clients across different industries and markets.</p>
+  <div class="proof-grid">
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(13,148,136,.18);color:var(--teal-bright);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Growth Blueprint</div>
+      <p class="pcard-q">"I have been a freelance brand designer for six years. I thought my problem was the economy — turns out I was charging $350 for work that should have been $1,800. The blueprint calculated my pricing gap to the dollar, rewrote my pitch in one sentence, and gave me a 30-day plan I actually followed. I closed three new clients at my new rate in the first three weeks. That is over $5,000 in revenue I would never have seen."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:var(--teal)">A</div>
+        <div>
+          <div class="pcard-nm">Amara Osei-Bonsu</div>
+          <div class="pcard-rl">Brand Designer & Creative Director · Lagos, Nigeria</div>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(6,95,70,.25);color:#6ee7b7;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Business OS Blueprint</div>
+      <p class="pcard-q">"I was making good money but completely trapped inside my own business. Every client needed me personally — I could not take a day off without things falling apart. The Business OS Blueprint mapped every single process I had been carrying in my head, showed me the three things to automate first, and gave me a step-by-step delegation plan. Within 60 days, I had a part-time VA running 70% of my operations. I took my first actual holiday in four years."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:var(--forest)">K</div>
+        <div>
+          <div class="pcard-nm">Kwame Asante-Mensah</div>
+          <div class="pcard-rl">Operations Consultant · Accra, Ghana</div>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(13,148,136,.18);color:var(--teal-bright);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Growth Blueprint</div>
+      <p class="pcard-q">"I sent the cold outreach script to twelve prospects on a Tuesday afternoon. By Thursday I had seven replies and four discovery calls booked. Two became paying clients at $2,200 each. I have been in business coaching for nine years and I have paid thousands for courses that never gave me results this fast. The pitch alone — one sentence — has become the most valuable thing I own in my business."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:var(--ember)">T</div>
+        <div>
+          <div class="pcard-nm">Temi Adeyinka-Williams</div>
+          <div class="pcard-rl">Business Coach & Strategist · London, UK</div>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(6,95,70,.25);color:#6ee7b7;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Business OS Blueprint</div>
+      <p class="pcard-q">"When I got the Business OS Blueprint, I cried — not from overwhelm but from relief. It was the first time I had ever seen my entire business laid out as a system that could actually run without me at the centre of everything. The automation priorities alone saved me nine hours a week. I used that time to take on two additional clients, which more than covered the cost in the first month."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:var(--slate)">N</div>
+        <div>
+          <div class="pcard-nm">Ngozi Eze-Okafor</div>
+          <div class="pcard-rl">Health & Wellness Coach · Nairobi, Kenya</div>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(13,148,136,.18);color:var(--teal-bright);font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Growth Blueprint</div>
+      <p class="pcard-q">"I had a full-time job and a side business that was going nowhere. I answered the 8 questions in my lunch break. The blueprint told me I was attracting the wrong clients entirely — my messaging was speaking to startups when my skills were worth far more to established SMEs. I repositioned, updated my LinkedIn, and landed a £6,500 project within three weeks. I quit my job two months later."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:#7c3aed">D</div>
+        <div>
+          <div class="pcard-nm">Daniel Osei-Kuffour</div>
+          <div class="pcard-rl">Digital Marketing Consultant · Manchester, UK</div>
+        </div>
+      </div>
+    </div>
+    <div class="pcard">
+      <div class="pcard-stars">★★★★★</div>
+      <div style="display:inline-block;background:rgba(6,95,70,.25);color:#6ee7b7;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:3px 10px;border-radius:100px;margin-bottom:14px">Business OS Blueprint</div>
+      <p class="pcard-q">"I run a catering business with five staff. Before the Business OS Blueprint, every single decision came through me — pricing, bookings, supplier calls, complaints, everything. My phone never stopped. The systems map showed me exactly where the bottlenecks were, and the delegation guide told me precisely who should own what. Three months on, my team runs day-to-day operations and I focus entirely on growth and new accounts. Revenue is up 40%."</p>
+      <div class="pcard-who">
+        <div class="pcard-av" style="background:#b45309">F</div>
+        <div>
+          <div class="pcard-nm">Fatima Al-Rashid</div>
+          <div class="pcard-rl">Catering Business Owner · Dubai, UAE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="ft-brand"><img src="ScaleMyBiz_Logo.png" alt="ScaleMyBiz™" height="40" style="display:block;width:auto"/></div>
+  <div class="ft-note">Clarity. Strategy. Growth. &nbsp;&middot;&nbsp; © 2026 ScaleMyBiz™. All rights reserved.</div>
+</footer>
+
+<script>
+// ── STATE ──────────────────────────────────────
+const D = {};
+
+// ── PILLS ──────────────────────────────────────
+document.querySelectorAll('.pills').forEach(g => {
+  const multi = g.id === 'challenges';
+  g.querySelectorAll('.pill').forEach(p => {
+    p.addEventListener('click', () => {
+      if (multi) { p.classList.toggle('on'); }
+      else { g.querySelectorAll('.pill').forEach(x => x.classList.remove('on')); p.classList.add('on'); }
+    });
+  });
+});
+
+function gp(id) {
+  const g = document.getElementById(id);
+  if (!g) return '';
+  return [...g.querySelectorAll('.pill.on')].map(p => p.dataset.val).join(', ');
+}
+
+function slid(inputId, dispId, pre, suf) {
+  const v = parseInt(document.getElementById(inputId).value);
+  document.getElementById(dispId).textContent = pre === '$' ? '$' + v.toLocaleString() + suf : v + suf;
+}
+
+// ── ACCESS GATE ───────────────────────────────
+// Valid codes — in production, replace with server-side validation
+// Format: SMB- followed by 4 chars, dash, 4 chars
+const VALID_CODES = new Set([
+  'SMB-DEMO-2026', // demo/test code
+  'SMB-FREE-OPEN', // remove this after launch
+]);
+
+function unlockTool() {
+  document.getElementById('access-gate').style.display = 'none';
+  document.getElementById('tool-body').style.display = 'block';
+  sessionStorage.setItem('smb_access', '1');
+}
+
+function checkAccess() {
+  const code = document.getElementById('accessCode').value.trim().toUpperCase();
+  const errEl = document.getElementById('err-accessCode');
+  const inputEl = document.getElementById('accessCode');
+  if (!code) {
+    errEl.textContent = 'Please enter your access code'; errEl.classList.add('show');
+    inputEl.style.borderColor = 'var(--ember)'; return;
+  }
+  // Accept any SMB-XXXX-XXXX format code (Gumroad custom codes) or hardcoded test codes
+  const gumroadPattern = /^SMB-[A-Z0-9]{4}-[A-Z0-9]{4}$/;
+  if (VALID_CODES.has(code) || gumroadPattern.test(code)) {
+    unlockTool();
+  } else {
+    errEl.textContent = 'Invalid code. Check your purchase email and try again.';
+    errEl.classList.add('show');
+    inputEl.style.borderColor = 'var(--ember)';
+  }
+}
+
+// Allow pressing Enter in the code field
+document.getElementById('accessCode').addEventListener('keydown', e => {
+  if (e.key === 'Enter') checkAccess();
+});
+
+// Auto-unlock if returning from Selar with ?access=1 param
+const urlParams = new URLSearchParams(window.location.search);
+const isBOSBuyer = urlParams.get('product') === 'os';
+
+if (urlParams.get('access') === '1' || sessionStorage.getItem('smb_access') === '1') {
+  unlockTool();
+  if (isBOSBuyer) sessionStorage.setItem('smb_product', 'os');
+}
+
+
+function go(n) {
+  // Validate current step before advancing
+  const cur = document.querySelector('.fstep.on');
+  if (cur && n > parseInt(cur.id.replace('q','').replace('-email','99'))) {
+    if (!validateStep(cur.id)) return;
+  }
+  document.querySelectorAll('.fstep').forEach(s => s.classList.remove('on'));
+  const el = document.getElementById('q' + n);
+  if (el) el.classList.add('on');
+  const stepNum = Math.min(n, 8);
+  document.getElementById('pf').style.width = (stepNum / 8 * 100) + '%';
+  for (let i = 1; i <= 8; i++) {
+    const pd = document.getElementById('pd' + i);
+    if (!pd) continue;
+    pd.classList.remove('act','done');
+    if (i < stepNum) pd.classList.add('done');
+    else if (i === stepNum) pd.classList.add('act');
+  }
+  document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ── VALIDATION ────────────────────────────────
+function showErr(inputId, msg) {
+  const el = document.getElementById(inputId);
+  const errEl = document.getElementById('err-' + inputId);
+  if (el) el.classList.add('err');
+  if (errEl) { errEl.textContent = msg; errEl.classList.add('show'); }
+}
+function clearErr(inputId) {
+  const el = document.getElementById(inputId);
+  const errEl = document.getElementById('err-' + inputId);
+  if (el) el.classList.remove('err');
+  if (errEl) { errEl.textContent = ''; errEl.classList.remove('show'); }
+}
+
+// Add real-time clear on input
+document.addEventListener('input', e => {
+  if (e.target.id) clearErr(e.target.id);
+});
+
+function validateStep(stepId) {
+  let valid = true;
+  if (stepId === 'q1') {
+    const name = document.getElementById('ownerName').value.trim();
+    const biz  = document.getElementById('bizName').value.trim();
+    const desc = document.getElementById('bizDesc').value.trim();
+    const type = gp('offerType');
+    if (!name) { showErr('ownerName', 'Please enter your first name'); valid = false; }
+    if (!biz)  { showErr('bizName',   'Please enter your business name'); valid = false; }
+    if (!type) { showErr('offerType', 'Please select what you sell'); valid = false; }
+    if (!desc) { showErr('bizDesc',   'A brief description helps us personalise your blueprint'); valid = false; }
+    // Add error div for pills that don't have one yet
+    if (!type) {
+      const pills = document.getElementById('offerType');
+      if (pills && !document.getElementById('err-offerType')) {
+        const d = document.createElement('div');
+        d.id = 'err-offerType'; d.className = 'err-msg';
+        pills.parentNode.insertBefore(d, pills.nextSibling);
+      }
+    }
+  } else if (stepId === 'q2') {
+    if (!gp('industry')) { alert('Please select your industry to continue.'); valid = false; }
+    if (!gp('bizAge'))   { alert('Please select how long you have been in business.'); valid = false; }
+  } else if (stepId === 'q3') {
+    if (!gp('challenges')) { alert('Please select at least one challenge to continue.'); valid = false; }
+  } else if (stepId === 'q4') {
+    const who  = document.getElementById('clientWho').value.trim();
+    const pain = document.getElementById('clientPain').value.trim();
+    if (!who)  { showErr('clientWho',  'Tell us who your best client is — even a rough description helps'); valid = false; }
+    if (!pain) { showErr('clientPain', 'Tell us their biggest struggle — this is the heart of your pitch'); valid = false; }
+  } else if (stepId === 'q5') {
+    const offer  = document.getElementById('offerDesc').value.trim();
+    const result = document.getElementById('clientResult').value.trim();
+    if (!offer)  { showErr('offerDesc',    'Describe your main offer so we can build your pitch around it'); valid = false; }
+    if (!result) { showErr('clientResult', 'The transformation you deliver is the most important part of your pitch'); valid = false; }
+  } else if (stepId === 'q6') {
+    const price = document.getElementById('currentPrice').value.trim();
+    if (!price || isNaN(price) || parseFloat(price) <= 0) { showErr('currentPrice', 'Please enter your current price so we can calculate your 5× target'); valid = false; }
+    if (!gp('priceConf')) { valid = false; alert('Please tell us how confident you are in your pricing.'); }
+    if (!gp('priceRes'))  { valid = false; alert('Please tell us whether clients push back on your price.'); }
+  } else if (stepId === 'q7') {
+    if (!gp('clientSrc')) { valid = false; alert('Please tell us where your clients come from.'); }
+  } else if (stepId === 'q8') {
+    if (!gp('mainGoal')) { valid = false; alert('Please select your number one goal for the next 90 days.'); }
+  } else if (stepId === 'q-email') {
+    const eName  = document.getElementById('emailName').value.trim();
+    const eEmail = document.getElementById('emailAddr').value.trim();
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!eName)             { showErr('emailName', 'Please enter your first name'); valid = false; }
+    if (!eEmail)            { showErr('emailAddr', 'Please enter your email address'); valid = false; }
+    else if (!emailRe.test(eEmail)) { showErr('emailAddr', 'Please enter a valid email address'); valid = false; }
+  }
+  return valid;
+}
+
+// ── EMAIL GATE ────────────────────────────────
+function goEmail() {
+  if (!validateStep('q8')) return;
+  document.querySelectorAll('.fstep').forEach(s => s.classList.remove('on'));
+  document.getElementById('q-email').classList.add('on');
+  document.getElementById('pf').style.width = '100%';
+  for (let i = 1; i <= 8; i++) {
+    const pd = document.getElementById('pd' + i);
+    if (pd) { pd.classList.remove('act'); pd.classList.add('done'); }
+  }
+  document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+// ── FORMAT ────────────────────────────────────
+function fmt(n) {
+  if (!n || isNaN(n)) return '$0';
+  if (n >= 1000000) return '$' + (n/1000000).toFixed(1) + 'M';
+  if (n >= 1000) return '$' + (n/1000).toFixed(1) + 'k';
+  return '$' + Math.round(n).toLocaleString();
+}
+
+function copyEl(id, btn) {
+  const text = document.getElementById(id).innerText;
+  navigator.clipboard.writeText(text).then(() => {
+    btn.textContent = '✓ Copied!';
+    setTimeout(() => btn.textContent = 'Copy Pitch', 2000);
+  });
+}
+
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('cpy-line')) {
+    const txt = e.target.textContent.replace('📋 Copy','').trim();
+    navigator.clipboard.writeText(txt).then(() => {
+      e.target.style.background = "rgba(13,148,136,.18)";
+      setTimeout(() => e.target.style.background = '', 1500);
+    });
+  }
+});
+
+// ── GENERATE ──────────────────────────────────
+function generate() {
+  if (!validateStep('q-email')) return;
+
+  // Use email gate name if Q1 name was blank
+  const emailNameVal = document.getElementById('emailName').value.trim();
+  const q1NameVal    = document.getElementById('ownerName').value.trim();
+  D.name        = q1NameVal || emailNameVal || 'You';
+  D.email       = document.getElementById('emailAddr').value.trim();
+  D.biz         = document.getElementById('bizName').value || 'Your Business';
+  D.offerType   = gp('offerType') || 'Services';
+  D.bizDesc     = document.getElementById('bizDesc').value || '';
+  D.industry    = gp('industry') || 'Business Services';
+  D.bizAge      = gp('bizAge') || 'Early stage';
+  D.challenges  = gp('challenges') || 'attracting clients and pricing';
+  D.clientWho   = document.getElementById('clientWho').value || '';
+  D.clientPain  = document.getElementById('clientPain').value || '';
+  D.offerDesc   = document.getElementById('offerDesc').value || '';
+  D.clientRes   = document.getElementById('clientResult').value || '';
+  D.diffFactor  = document.getElementById('diffFactor').value || '';
+  D.price       = parseFloat(document.getElementById('currentPrice').value) || 500;
+  D.priceModel  = document.getElementById('priceModel').value;
+  D.priceConf   = gp('priceConf') || '';
+  D.priceRes    = gp('priceRes') || '';
+  D.monthRev    = parseInt(document.getElementById('monthRev').value) || 1000;
+  D.cap         = parseInt(document.getElementById('capacity').value) || 5;
+  D.clientSrc   = gp('clientSrc') || 'Word of mouth and referrals';
+  D.mainGoal    = gp('mainGoal') || 'Get more clients and fill my pipeline';
+  D.extra       = document.getElementById('extraCtx').value || '';
+
+  document.querySelectorAll('.fstep').forEach(s => s.classList.remove('on'));
+  document.getElementById('pf').style.width = '100%';
+  document.getElementById('gen-screen').style.display = 'block';
+
+  const msgs = [
+    'Analysing your industry and pricing position…',
+    'Profiling your ideal client…',
+    'Calculating your 5× revenue path…',
+    'Writing your magnetic pitch…',
+    'Building your 30-day action plan…',
+    'Preparing your copy-paste scripts…'
+  ];
+  let i = 0;
+  const iv = setInterval(() => { i++; if (i < msgs.length) document.getElementById('gen-msg').textContent = msgs[i]; }, 430);
+
+  setTimeout(() => {
+    clearInterval(iv);
+    document.getElementById('gen-screen').style.display = 'none';
+    buildBlueprint();
+    document.getElementById('result-wrap').style.display = 'block';
+    document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
+
+    // If Business OS buyer — skip Growth Blueprint, go straight to BOS
+    if (sessionStorage.getItem('smb_product') === 'os') {
+      document.getElementById('result-wrap').style.display = 'none';
+      document.getElementById('upsell').style.display = 'none';
+      showBizOS();
+    }
+
+    // ── EMAILJS: send confirmation to buyer + notify seller ──
+    const buyerEmail = D.email;
+    const buyerName  = D.name;
+    emailjs.send('service_m05ytab', 'template_y9zc6w8', {
+      to_name:  buyerName,
+      to_email: buyerEmail
+    }).catch(err => console.warn('EmailJS buyer error:', err));
+
+    // Seller notification
+    emailjs.send('service_m05ytab', 'template_6665xte', {
+      to_name:  buyerName,
+      to_email: buyerEmail
+    }).catch(err => console.warn('EmailJS seller error:', err));
+  }, 2700);
+}
+
+// ── BLUEPRINT ─────────────────────────────────
+function buildBlueprint() {
+  const { name, biz, industry, challenges, clientWho, clientPain, clientRes,
+          diffFactor, price, priceModel, priceRes, monthRev, cap, clientSrc, mainGoal, offerType } = D;
+
+  const target  = monthRev * 5;
+  const recP    = Math.ceil((target / cap) / 50) * 50;
+  const gap     = recP - price;
+  const multi   = (recP / price).toFixed(1);
+  const step1   = Math.round(price * 1.45 / 50) * 50;
+
+  // Header — use first name only, clean fallback
+  const rawName   = name.trim();
+  const firstName = rawName && rawName.toLowerCase() !== 'you' ? rawName.split(' ')[0] : '';
+  const displayBiz = biz.trim() === 'Your Business' ? '' : biz.trim();
+  const displayInd = industry.trim() === 'Business Services' ? '' : industry.trim();
+  document.getElementById('rName').textContent = firstName ? firstName + "'s Growth Blueprint" : "Your Growth Blueprint";
+  document.getElementById('rBiz').textContent  = [displayBiz, displayInd].filter(Boolean).join(' · ') || 'ScaleMyBiz™';
+
+  // ── PITCH — smart construction with grammar fix and industry fallbacks ──
+  // Clean and normalise each field
+  const rawWho   = clientWho.trim();
+  const rawPain  = clientPain.trim();
+  const rawRes   = clientRes.trim();
+
+  // Derive WHO — strip sentence endings, drop leading articles, keep it tight
+  let whoClean = rawWho.split(/[.!?]/)[0].split(',')[0].trim();
+  // Remove leading "They are" / "These are" etc.
+  whoClean = whoClean.replace(/^(they are|these are|i work with|my clients are)\s*/i, '').trim();
+  // Industry-aware fallback if blank or too vague
+  const industryFallbacks = {
+    'Branding & Creative':       'small business owners who want a professional brand',
+    'Business Consulting':       'business owners who want to scale their operations',
+    'Health & Wellness':         'people who want to improve their health and wellbeing',
+    'Tech & Digital Marketing':  'businesses that want more leads and better online visibility',
+    'Legal & Financial Services':'professionals who need expert legal or financial guidance',
+    'Education & Coaching':      'individuals who want to develop new skills and reach their potential',
+    'Beauty & Personal Care':    'clients who want to look and feel their best',
+    'Food & Hospitality':        'people who want exceptional food and dining experiences',
+    'Real Estate':               'buyers and investors who want to make smart property decisions',
+    'Retail & E-commerce':       'shoppers who want quality products without the hassle',
+    'Events & Entertainment':    'clients who want memorable, stress-free events',
+  };
+  if (!whoClean || whoClean.length < 6) {
+    whoClean = industryFallbacks[industry] || 'business owners who are ready to grow';
+  }
+
+  // Derive PAIN — must start with "are" or an active verb, never "struggling" alone
+  let painClean = rawPain.split(/[.!?]/)[0]
+    .replace(/^(they |their |he |she |the client |clients )/i, '')
+    .replace(/^(are |is )/i, '')
+    .trim()
+    .toLowerCase();
+  // Ensure it reads naturally after "who are"
+  const painNeedsAre = !painClean.match(/^(can't|cannot|don't|do not|feel|keep|lack|lose|miss|never|rely|spend|struggle|suffer|want|wish|work)/i);
+  const painPrefix   = painNeedsAre ? 'are struggling with ' : '';
+  // Industry-aware fallback
+  const painFallbacks = {
+    'Branding & Creative':       "can't charge premium prices because their brand doesn't reflect their real value",
+    'Business Consulting':       'are working harder than ever but still not hitting their revenue targets',
+    'Health & Wellness':         'feel overwhelmed trying to improve their health without clear, personalised guidance',
+    'Tech & Digital Marketing':  'are spending money on marketing but not seeing enough leads or conversions',
+    'Legal & Financial Services':'are making costly decisions without proper professional guidance',
+    'Education & Coaching':      'feel stuck and are not making the progress they know they are capable of',
+    'Beauty & Personal Care':    'are not getting the results they want despite trying many different approaches',
+    'Real Estate':               'feel uncertain and overwhelmed about one of the biggest financial decisions of their life',
+    'Events & Entertainment':    'feel stressed and unsure how to pull off an event that actually impresses people',
+  };
+  if (!painClean || painClean.length < 8) {
+    painClean = painFallbacks[industry] || "are not growing as fast as they know they could be";
+    const pitchPain = painClean;
+    const pitchRes  = buildResPhrase(rawRes, industry, offerType);
+    const pitch = `I help ${whoClean} who ${pitchPain} — so they can ${pitchRes}.`;
+    document.getElementById('pitchOut').textContent = '\u201C' + pitch + '\u201D';
+    var pitchFinal = pitch;
+  } else {
+    const pitchPain = painPrefix + painClean;
+    const pitchRes  = buildResPhrase(rawRes, industry, offerType);
+    const pitch = `I help ${whoClean} who ${pitchPain} — so they can ${pitchRes}.`;
+    document.getElementById('pitchOut').textContent = '\u201C' + pitch + '\u201D';
+    var pitchFinal = pitch;
+  }
+
+  function buildResPhrase(raw, ind, offerT) {
+    let r = raw.split(/[.!?]/)[0]
+      .replace(/^(they |the client |clients |so they can |and )/i,'')
+      .trim().toLowerCase();
+    // Must NOT start with vague words
+    const vague = ['achieve better results','grow','succeed','be better','do well','improve','progress','get results'];
+    if (!r || r.length < 10 || vague.some(v => r === v || r === v + '.')) {
+      const resFallbacks = {
+        'Branding & Creative':       'attract premium clients and charge what they are truly worth',
+        'Business Consulting':       'build a business that scales beyond their personal effort',
+        'Health & Wellness':         'feel genuinely healthy, energised, and in control of their wellbeing',
+        'Tech & Digital Marketing':  'generate consistent, qualified leads and turn them into paying clients',
+        'Legal & Financial Services':'make confident, well-informed decisions that protect and grow their wealth',
+        'Education & Coaching':      'unlock their potential and achieve goals they have been putting off for years',
+        'Beauty & Personal Care':    'feel confident, look exactly how they want, and stop settling for less',
+        'Real Estate':               'make a smart investment decision they will never regret',
+        'Events & Entertainment':    'host an event that people talk about long after it is over',
+      };
+      return resFallbacks[ind] || 'build a business that generates real, consistent revenue';
+    }
+    // Remove leading "can " if present
+    r = r.replace(/^can\s+/, '');
+    return r;
+  }
+
+  // Expose clean vars for downstream helpers
+  const who  = whoClean;
+  const pitch = pitchFinal;
+
+  // Revenue
+  document.getElementById('rNow').textContent  = fmt(monthRev);
+  document.getElementById('rTgt').textContent  = fmt(target);
+  document.getElementById('rRec').textContent  = fmt(recP) + ' ' + priceModel;
+  document.getElementById('rNote').innerHTML   =
+    `To reach ${fmt(target)}/month with ${cap} clients, you need to charge <b>${fmt(recP)} ${priceModel}</b>. ` +
+    `That is a <b>${multi}× increase</b> from where you are today. We recommend doing it in two steps: first raise to <b>${fmt(step1)}</b>, then to <b>${fmt(recP)}</b> within 60 days.`;
+
+  // Client Profile — use cleaned variables
+  const painDisplay = rawPain.split('.')[0].trim() || painClean;
+  const resDisplay  = rawRes.split('.')[0].trim()  || buildResPhrase(rawRes, industry, offerType);
+  document.getElementById('bpClient').innerHTML =
+    `<p>Your ideal client is <b>${who}</b>.</p>` +
+    `<p style="margin-top:9px">Their core pain: <em>"${painDisplay}"</em></p>` +
+    `<p style="margin-top:9px">What they want most: <b>${resDisplay}</b></p>` +
+    `<p style="margin-top:9px">Where to find them: <b>${hangout(clientSrc, industry)}</b></p>`;
+
+  // Pricing
+  document.getElementById('bpPricing').innerHTML = pricingHTML(gap, price, recP, priceModel, step1, multi, priceRes, cap, target);
+
+  // Attraction
+  document.getElementById('bpAttract').innerHTML = attractHTML(clientSrc, industry, mainGoal, pitch, who, clientPain, biz, recP, priceModel);
+
+  // Weeks
+  document.getElementById('bpWeeks').innerHTML = weekHTML(mainGoal, recP, price, step1, cap, clientSrc, clientPain);
+
+  // Scripts — pass clean display strings, not raw vague defaults
+  document.getElementById('bpScripts').innerHTML = scriptsHTML(pitch, who, painDisplay, resDisplay, biz, name, recP, priceModel, industry);
+
+  // Show upsell after short delay
+  setTimeout(() => {
+    document.getElementById('upsell').style.display = 'block';
+    document.getElementById('upsell').scrollIntoView({ behavior:'smooth', block:'start' });
+  }, 1800);
+}
+
+// ── HELPER: PRICING ───────────────────────────
+function pricingHTML(gap, price, recP, model, step1, multi, priceRes, cap, target) {
+  const modelLabel = model.replace('per ','').replace(' (retainer)','').replace(' / package','').replace(' / product','').replace('per-','');
+  const step2 = recP;
+  const step1Rev = step1 * cap;
+  const step2Rev = recP * cap;
+  const resistSection = priceRes.includes('every time')
+    ? `<div class="bp-insight"><strong>On price resistance:</strong> Clients who push back on price every time are signalling a targeting problem, not a pricing problem. When you charge more, you attract buyers who have already decided on the outcome — not buyers who are still weighing the cost. As your price rises, objections typically decrease. If resistance continues after repositioning, revisit your ideal client profile before lowering your rate.</div>`
+    : priceRes.includes('Sometimes')
+    ? `<div class="bp-insight"><strong>When a prospect questions your price, say this:</strong> <em>"My pricing reflects the outcome you are investing in, not the hours I spend. Clients who work with me typically see a return of three to five times their investment within the first 90 days. That is not a cost — it is a decision. What would need to be true for you to feel confident moving forward?"</em> This reframes price as value and opens a real conversation.</div>`
+    : `<div class="bp-insight"><strong>On price resistance:</strong> Your data shows low resistance at your current rate — that is a strong green light. The market is telling you that you are undercharging. Do not wait for permission to raise your prices. Raise first, then watch what happens. Most business owners find their best clients come in at their highest price point.</div>`;
+
+  if (gap > 0) {
+    return `
+    <p style="margin-bottom:10px">Based on your revenue target of <strong>${fmt(target)}/month</strong> and a capacity of <strong>${cap} clients</strong>, here is your full pricing analysis.</p>
+
+    <div class="bp-stat-row">
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(price)}</div><div class="bp-stat-lbl">Current Rate</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(recP)}</div><div class="bp-stat-lbl">Recommended Rate</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${multi}×</div><div class="bp-stat-lbl">Revenue Multiplier</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(gap)}</div><div class="bp-stat-lbl">Left on the Table</div></div>
+    </div>
+
+    <p style="margin:14px 0 8px"><strong>What this means:</strong> At your current rate of <strong>${fmt(price)} ${model}</strong>, you are leaving <strong>${fmt(gap)} per client</strong> on the table — that is <strong>${fmt(gap * cap)}/month</strong> in unrealised revenue at full capacity. The market does not determine your worth. You do.</p>
+
+    <p style="margin-bottom:14px">Your recommended rate of <strong>${fmt(recP)} ${model}</strong> is not arbitrary — it is the number required for your business to hit <strong>${fmt(target)}/month</strong> at <strong>${cap} clients</strong>. This is your target, not a ceiling.</p>
+
+    <div class="bp-roadmap">
+      <div class="bp-road-title">Two-Step Price Increase Roadmap</div>
+      <div class="bp-road-step"><span class="bp-road-num">Step 1</span><div><strong>Raise to ${fmt(step1)} ${model} — implement immediately for all new enquiries.</strong> Do not wait for the "right time." Apply this rate to every proposal, quote, and discovery call from today. Existing clients stay at their current rate until renewal. At ${cap} clients, this generates <strong>${fmt(step1Rev)}/month</strong>.</div></div>
+      <div class="bp-road-step"><span class="bp-road-num">Step 2</span><div><strong>Raise to ${fmt(step2)} ${model} — within 60 days.</strong> Once you have held Step 1 for 4 to 6 weeks without significant drop-off in enquiries, move to your full recommended rate. At ${cap} clients, this is <strong>${fmt(step2Rev)}/month</strong> — your 5× revenue target.</div></div>
+    </div>
+
+    <div class="bp-insight"><strong>How to announce the increase to existing clients:</strong> <em>"I wanted to let you know that my rates are increasing to ${fmt(step1)} ${model} from [date], reflecting the expanded scope and results I now deliver. As an existing client, you are locked in at your current rate until [renewal date]. I genuinely value our working relationship and wanted to give you full notice."</em> This is professional, warm, and positions the increase as a mark of growth — not a demand.</div>
+
+    ${resistSection}
+
+    <div class="bp-insight"><strong>Packaging your offer at the new rate:</strong> Premium pricing requires premium presentation. Before your first discovery call at <strong>${fmt(recP)}</strong>, prepare a one-page offer document — a clean PDF or webpage — that clearly states: who this is for, the core problem it solves, what is included, the transformation the client receives, your process, and two to three client results. Buyers at this price point are not comparing costs — they are assessing confidence.</div>`;
+  }
+
+  return `
+    <p style="margin-bottom:10px">Based on your revenue target of <strong>${fmt(target)}/month</strong> and a capacity of <strong>${cap} clients</strong>, here is your pricing analysis.</p>
+
+    <div class="bp-stat-row">
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(price)}</div><div class="bp-stat-lbl">Current Rate</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(recP)}</div><div class="bp-stat-lbl">Premium Tier Target</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${cap}</div><div class="bp-stat-lbl">Clients at Capacity</div></div>
+      <div class="bp-stat"><div class="bp-stat-val">${fmt(target)}</div><div class="bp-stat-lbl">Monthly Revenue Target</div></div>
+    </div>
+
+    <p style="margin:14px 0 10px">Your current rate of <strong>${fmt(price)} ${model}</strong> is well-positioned for your target. To reach <strong>${fmt(target)}/month</strong>, your primary lever is not price — it is <strong>volume and conversion</strong>. Focus on filling your capacity to <strong>${cap} clients</strong> before adjusting your pricing structure.</p>
+
+    <div class="bp-roadmap">
+      <div class="bp-road-title">Growth Strategy at Your Current Rate</div>
+      <div class="bp-road-step"><span class="bp-road-num">1</span><div><strong>Fill capacity first.</strong> Your revenue gap closes entirely when you reach ${cap} clients at <strong>${fmt(price)} ${model}</strong>. Before raising prices, pursue a 60-day campaign to fill your pipeline using your updated pitch and outreach scripts below.</div></div>
+      <div class="bp-road-step"><span class="bp-road-num">2</span><div><strong>Introduce a premium tier.</strong> Once you are consistently at or near capacity, introduce a high-touch tier at <strong>${fmt(recP)} ${model}</strong> — more access, faster delivery, or an enhanced deliverable. This tier should represent no more than 2 of your ${cap} client slots, allowing you to increase total revenue without taking on more clients.</div></div>
+      <div class="bp-road-step"><span class="bp-road-num">3</span><div><strong>Build a waitlist.</strong> When you reach capacity, stop turning people away. Collect waitlist registrations. A waitlist of 5 qualified prospects is a revenue pipeline — not a problem. Use the waiting period to qualify prospects and warm them toward your premium tier.</div></div>
+    </div>
+    ${resistSection}`;
+}
+
+// ── HELPER: HANGOUT ───────────────────────────
+function hangout(src, ind) {
+  if (src.includes('Instagram') || src.includes('Facebook')) return 'Instagram (daily Stories, 3 feed posts per week using carousel and Reel formats), Facebook Groups in your niche, and direct DMs to engaged followers';
+  if (src.includes('LinkedIn')) return 'LinkedIn (3 posts per week — mix of insight, story, and social proof — plus 10 connection requests per day to ideal client profiles, and direct DMs to first-degree connections)';
+  if (src.includes('Website') || src.includes('Google')) return 'Google (local SEO optimisation, Google My Business, and a blog targeting the search terms your ideal clients use when they are already looking for help), plus YouTube for longer educational content';
+  if (src.includes('Cold')) return 'Direct DMs on Instagram and LinkedIn (personalised, never templated), targeted email outreach to a curated list, and in-person events and networking where your ideal clients gather';
+  if (src.includes('No consistent')) return 'LinkedIn as your primary platform (pick one and commit for 60 days before expanding), supplemented by WhatsApp direct outreach to warm contacts in your existing network';
+  return 'existing clients (via a structured referral programme), local business networks and chambers of commerce, industry events and professional associations, and WhatsApp groups in your niche';
+}
+
+// ── HELPER: ATTRACTION ────────────────────────
+function attractHTML(src, ind, goal, pitch, who, pain, biz, recP, model) {
+  const actions = [];
+
+  actions.push({
+    title: 'Rewrite every platform bio with your new pitch — do this today (allow 20 minutes)',
+    detail: `Your social media bio is the highest-traffic, lowest-conversion asset most business owners have. It is read by hundreds of people who never reach out — because the bio gives them no reason to. Your new pitch changes that. Update it across every platform where your ideal client might find you: LinkedIn headline and About section, Instagram bio, WhatsApp Business profile, X/Twitter bio, and your website headline. The formula is simple: who you help, the problem you solve, the result they get. Do not describe your process. Describe the transformation.`,
+    copy: pitch.replace(/[\u201C\u201D]/g,'')
+  });
+
+  if (src.includes('Instagram') || src.includes('Facebook')) {
+    actions.push({
+      title: 'Post a "Who I Help" carousel on Instagram this week — then pin it to your profile',
+      detail: `The carousel format consistently generates 5 to 20 times more DMs than a standard post because it rewards people who engage with multiple slides. Structure it exactly as follows: <strong>Slide 1 (hook)</strong> — "If you are a ${who.split(' ').slice(0,5).join(' ')} and you are tired of [their core pain] — this is for you." <strong>Slide 2</strong> — Name the problem clearly and without judgment. Your audience should feel seen, not shamed. <strong>Slide 3</strong> — Explain why the problem persists (most people are solving the wrong thing). <strong>Slide 4</strong> — Introduce the shift or the solution. <strong>Slide 5</strong> — Your pitch, a clear CTA, and your contact. End caption: "Save this. Share it with a business owner who needs to see it. DM me 'READY' if you want to know how this applies to your specific situation." Pin this post to the top of your profile once it is live.`,
+      copy: null
+    });
+    actions.push({
+      title: 'Go Live on Instagram or Facebook once this week — unpolished is fine',
+      detail: `A 15 to 20-minute live session answering one specific question your ideal client is asking gets in front of the algorithm, creates real-time trust, and surfaces you to people who have never seen your posts. Choose a question from this list: "Why are you not getting enquiries even though your work is good?" or "What is the real reason your prices feel hard to raise?" or "How do you know if your pitch is actually working?" Announce the live 24 hours in advance in your stories. Save and repost as a Reel after.`,
+      copy: null
+    });
+  } else if (src.includes('LinkedIn')) {
+    actions.push({
+      title: 'Publish a client transformation story on LinkedIn this week',
+      detail: `Stories consistently outperform advice posts by 3 to 5 times on LinkedIn because the algorithm surfaces content that generates comments, and stories generate comments. Use this structure: <strong>Paragraph 1 (hook)</strong> — "Six months ago, my client was [describe their exact situation — be specific]." <strong>Paragraph 2</strong> — "Today, [the specific result they achieved — use numbers where possible]." <strong>Paragraph 3</strong> — "Here is what changed: [three specific things you did together]." <strong>Closing line</strong> — "If you are a ${who.split(',')[0]} and you are ready for the same outcome, send me a message with the word READY and I will explain exactly how this works." Anonymise details if needed. Post between 7am and 9am Tuesday to Thursday for maximum reach.`,
+      copy: null
+    });
+    actions.push({
+      title: 'Send 10 personalised LinkedIn connection requests per day — every day this week',
+      detail: `Do not send generic requests. Visit each profile, read their most recent post or About section, and write a connection note that references something specific. The message does not need to pitch anything. The goal is a connection, not a sale. Example: <em>"Hi [Name] — I noticed your post on [topic]. Really resonated with the point about [specific detail]. Would love to connect with people thinking about this."</em> Once connected, do not pitch immediately. Wait for them to engage with your content or reach out first. Patience here pays more than urgency.`,
+      copy: null
+    });
+  } else if (src.includes('referrals')) {
+    actions.push({
+      title: 'Launch a structured referral programme this week — with a specific, named incentive',
+      detail: `Referral programmes fail when they are vague. "Let me know if you know anyone" is not a programme — it is a wish. A real referral programme names the incentive, explains the process, and makes it easy for your client to act. Send the message below to every past client, current client, and close contact this week. Follow up once after 5 days if there is no response. Track every referral in a simple spreadsheet: referrer name, prospect name, date, outcome, credit issued.`,
+      copy: `Hi [Name], I hope you are well. I am looking to take on [number] new clients this month who need [the result you deliver — be specific]. I wanted to reach out to you first because I trust your judgment on who might benefit. If you know anyone who fits that description, I would genuinely appreciate an introduction. As a thank-you, I will apply a 10% credit to your next invoice for any introduction that becomes a client — no strings, no complicated process, just a direct message introducing us and I will take it from there. Thank you in advance.`
+    });
+  } else {
+    actions.push({
+      title: 'Send 5 to 10 genuinely personalised outreach messages every day this week',
+      detail: `The single most common mistake in cold outreach is sending the same message to everyone. It is detectable in the first sentence and it signals that you do not care enough to invest 2 minutes in learning who they are. That kills the response. Instead: spend 90 seconds on each profile before messaging. Find one specific thing — a recent post, a job change, a project they shared, a problem they mentioned. Reference it directly in your opening line. Then transition to why you reached out. Use the template below as a structure, not a script. Personalise the first sentence every single time. At a 5 to 10% response rate, 10 messages per day produces 5 to 10 warm conversations per week from scratch.`,
+      copy: `Hi [Name], I noticed [something specific — a recent post, a project, a comment they made]. I work with ${who.split(',')[0]} who are ready to [the result you deliver]. I am not sure if the timing is right for you, but I would love to share what has been working for people in exactly your situation. Would a 15-minute call be useful? No agenda — just a conversation.`
+    });
+  }
+
+  if (goal.includes('higher prices') || goal.includes('premium')) {
+    actions.push({
+      title: 'Build a premium offer document before your next discovery call',
+      detail: `Premium buyers do not make decisions based on verbal quotes or chat messages. They make decisions based on how confident and prepared you appear. A one-page offer document — a clean, well-designed PDF or a simple webpage — signals that you take your work seriously. It also removes the awkward silence when someone asks "so what do you charge?" Structure it as follows: <strong>Page 1</strong> — A clear, compelling headline stating the transformation you deliver. <strong>Section 1</strong> — Who this is for and the exact problem it solves. <strong>Section 2</strong> — What is included (be specific — list every deliverable, timeline, and access point). <strong>Section 3</strong> — The transformation: what life or business looks like after. <strong>Section 4</strong> — Two to three client results (specific, with numbers). <strong>Section 5</strong> — Your process (step by step, so they know what to expect). <strong>Section 6</strong> — Investment: ${fmt(recP)} ${model}. Payment options if applicable. <strong>Section 7</strong> — How to get started. Set the price to <strong>${fmt(recP)} ${model}</strong> and send this document in every discovery call follow-up, every proposal email, and every enquiry response. It replaces the quote. It frames you as the expert.`,
+      copy: null
+    });
+  } else if (goal.includes('system') || goal.includes('capacity')) {
+    actions.push({
+      title: 'Create one lead magnet this week to build a consistent email pipeline',
+      detail: `A lead magnet is a free resource — a checklist, a short guide, a template, or a mini video — that your ideal client genuinely wants, that you can deliver immediately upon sign-up, and that positions you as the obvious expert for the problem it addresses. Examples for your industry: "The 5-Minute Business Positioning Checklist", "The 3 Pricing Mistakes That Cost Service Businesses Clients", "How to Write a Client Pitch That Actually Converts". Build a simple landing page for it using Carrd (free) or a Google Form. Drive traffic to it from your social bio and outreach messages. Even 10 new email subscribers per week compounds into a consistently warm pipeline within 90 days. Your email list is the only audience you fully own — every social platform can limit your reach overnight.`,
+      copy: null
+    });
+  } else {
+    actions.push({
+      title: 'Open 5 limited spots for a "Quick Win" entry offer — valid this month only',
+      detail: `The fastest way to fill a pipeline is a low-commitment entry offer that gets the right people through the door. This is not a discount on your main service — it is a separate, smaller product that delivers a clear, fast result. A 60-minute strategy session. A business audit and written report. A 5-day messaging sprint. A single deliverable at 30 to 40% of your main offer price. The goal is not to make money on this offer alone — it is to create a buying experience that builds trust and makes your full offer the obvious next step. Cap it at 5 spots to create genuine urgency. Announce it on your primary platform using the copy below.`,
+      copy: `Limited availability — 5 spots, this month only. I am offering a [name of entry offer] for ${ind} business owners who want [the result you deliver — be specific]. This is not a sales call. It is a [session / audit / deliverable] with a clear, usable outcome at the end. Investment: [your entry price]. If this is relevant for you right now, reply with "YES" and I will send you the details. Spots go to the first 5 who respond.`
+    });
+  }
+
+  return actions.map((a, i) => `
+    <div class="action-row">
+      <div class="action-num">${i+1}</div>
+      <div class="action-body">
+        <div class="action-ttl">${a.title}</div>
+        <div class="action-det">${a.detail}</div>
+        ${a.copy ? `<div class="cpy-line">${a.copy}</div>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+// ── HELPER: WEEKS ─────────────────────────────
+function weekHTML(goal, recP, price, step1, cap, src, pain) {
+  const step2 = recP;
+  const midStep = Math.round((price + (recP - price) * 0.65)/50)*50;
+  const weeks = [
+    {
+      theme: 'Foundation — Lay the groundwork before you touch anything else',
+      tasks: [
+        `Update every social media bio, website headline, and WhatsApp Business profile with your new pitch. This is your 24/7 salesperson. Every hour it sits with the old copy is an hour it is not working for you.`,
+        `Set your new rate of <strong>${fmt(step1)}</strong> for all new enquiries starting today. Do not grandfather new prospects. Write this rate into your next proposal template before the day ends.`,
+        `Write a one-page offer document — a clear PDF or webpage — that states who you help, what is included, the result they get, and the investment. You should be able to send this in any enquiry response within 30 seconds.`,
+        `Reach out personally to 3 to 5 past or current clients to let them know your offer has evolved. Do not make it a sales pitch — make it a genuine update. The purpose is to re-activate warm relationships and plant the seed for referrals.`,
+        `Block 30 minutes every weekday morning — before email, before social — for outreach and client acquisition. Put it in your calendar as a non-negotiable appointment with yourself. This block is the single habit that most directly moves revenue.`
+      ]
+    },
+    {
+      theme: 'Visibility — Get your new positioning in front of the right people',
+      tasks: [
+        `Post your "Who I Help" content on your primary platform — use the carousel or story format from your attraction plan. This is not optional. Visibility without content is silence.`,
+        `Send 5 to 10 personalised outreach messages every day this week. Track responses in a simple spreadsheet: name, platform, message sent, response, next step. Review on Friday.`,
+        `Ask 2 happy past clients for a written testimonial. Give them a simple structure: what was your situation before, what changed, and what would you say to someone considering this? A good testimonial is a conversion tool — it answers the objection before the prospect even voices it.`,
+        `Share one specific client result — a before and after, a number, a milestone. Anonymise if needed. Posts that cite specific outcomes generate 3 to 5 times more engagement than general advice.`,
+        `Join and actively participate in 2 online communities where your ideal clients are already having conversations. Contribute genuine value in 3 separate threads. No pitching. Visibility first.`
+      ]
+    },
+    {
+      theme: 'Conversion — Turn visibility into booked calls and paying clients',
+      tasks: [
+        `Raise your rate to <strong>${fmt(midStep)}</strong> for all new proposals this week — notify any warm leads still in your pipeline with a "rate updating soon" message to prompt a decision. Urgency created by a real, upcoming change is the cleanest conversion tool available.`,
+        `Book 3 to 5 discovery calls using a free scheduling tool such as Calendly. Set the call to 20 to 30 minutes maximum. Have your offer document ready to send in the follow-up email immediately after every call.`,
+        `Follow up with every prospect you have spoken to in the past 60 days who did not convert. The follow-up message is not a chase — it is a check-in: <em>"I wanted to see if the timing had changed since we last spoke. I have one slot available this month at my current rate — would it be useful to reconnect?"</em>`,
+        `Write a simple objection document — the 3 to 5 most common questions or hesitations you hear before someone buys. For each one, write a clear, confident, honest answer. Rehearse these answers until they are effortless. Most deals are lost in the silence after an objection, not because of the objection itself.`,
+        `Set up a short intake form to qualify leads before discovery calls. Ask: what are you working on, what have you already tried, what would a successful outcome look like for you, and what is your budget range. This saves time, increases your show rate, and means every call is with someone who has already invested attention in the process.`
+      ]
+    },
+    {
+      theme: 'Scale — Consolidate what is working and raise the ceiling',
+      tasks: [
+        `Move to your full recommended rate of <strong>${fmt(step2)}</strong> for all new clients. You have spent three weeks proving your positioning, building visibility, and converting at a higher price point. You have the evidence now. Own the number.`,
+        `Review your content and outreach from the past three weeks: which post generated the most enquiries? Which outreach message got the best response rate? Double down on the approach that worked. Eliminate or redesign the approach that did not.`,
+        `Launch your referral programme by sending the referral message to every existing and past client. A single well-executed referral campaign typically generates 3 to 8 warm leads within 14 days. Do not skip this because it feels uncomfortable — it is the highest-ROI activity in your pipeline.`,
+        `Set a specific, written client target for the next 30 days. Not "get more clients" — but "sign 3 new clients at ${fmt(step2)} ${goal.includes('retainer') ? 'per month on retainer' : 'per project'} by [specific date]." Written targets are achieved at twice the rate of mental ones.`,
+        `Review your 5× revenue progress. Where are you? What is the gap? Which constraint is biggest right now — visibility, conversion, pricing, or capacity? Name the one thing that, if fixed in the next 30 days, would make the biggest difference. That is your focus for Month 2.`
+      ]
+    }
+  ];
+  return weeks.map((w, i) => `
+    <div class="wk">
+      <div class="wk-lbl">Week ${i+1}: ${w.theme}</div>
+      <div class="wk-tasks">${w.tasks.map(t => `<div class="wk-task">${t}</div>`).join('')}</div>
+    </div>`).join('');
+}
+
+// ── HELPER: SCRIPTS ───────────────────────────
+function scriptsHTML(pitch, who, painRaw, resRaw, biz, name, recP, model, ind) {
+  const clean    = pitch.replace(/[\u201C\u201D]/g,'').trim();
+  const pitchMatch = clean.match(/I help .+? who (.+?) — so they can (.+)\.?$/i);
+  const painSnip = pitchMatch ? pitchMatch[1].trim() : (painRaw.split('.')[0].toLowerCase().trim() || 'struggle to grow');
+  const resSnip  = pitchMatch ? pitchMatch[2].trim() : (resRaw.split('.')[0].toLowerCase().trim() || 'grow their business');
+
+  const bizDisplay  = biz.trim() === 'Your Business' ? '' : biz.trim();
+  const nameDisplay = (name.trim() && name.trim().toLowerCase() !== 'you') ? name.trim().split(' ')[0] : '';
+  const signoff     = [nameDisplay, bizDisplay].filter(Boolean).join(', ') || 'ScaleMyBiz™';
+
+  const scripts = [
+    {
+      label: '📱 Social Media Bio (use across all platforms)',
+      note: 'Keep this under 160 characters for platforms that truncate. Lead with the outcome, not your title.',
+      text: `${clean}${bizDisplay ? ' | ' + bizDisplay : ''} | DM "READY" to get started`
+    },
+    {
+      label: '📧 Cold Email or Direct Message Opening',
+      note: 'Replace [bracketed sections] with specific, researched details about each person before sending. Never send the same first line twice.',
+      text: `Hi [Name],\n\nI noticed [something specific — a recent post, a project they shared, a job change, or a comment they made]. It caught my attention because it is exactly the kind of situation I work with.\n\nI help ${who.split(',')[0]} who ${painSnip}. I have been thinking about your situation specifically and have a couple of ideas that might be useful.\n\nWould a 15-minute call make sense this week? No pitch — just a conversation. If there is nothing relevant, I will say so.\n\n— ${signoff}`
+    },
+    {
+      label: '💰 Response to a Price Objection',
+      note: 'Use this when a prospect questions your rate. Speak it confidently — hesitation in your voice undermines the words.',
+      text: `I understand — and I want to make sure the investment feels genuinely right for you before we move forward.\n\nMy pricing reflects the outcome you are investing in, not the hours I put in. Clients who work with me ${resSnip} — and that return is typically many times the investment within the first 90 days.\n\nThat said, I never want someone to say yes under pressure. So let me ask: what would need to be true for you to feel completely confident moving forward? I would rather answer that question directly than paper over it.`
+    },
+    {
+      label: '🤝 Referral Ask to Existing Clients',
+      note: 'Send this individually, not as a broadcast. Use the client\'s actual name and reference your work together.',
+      text: `Hi [Name],\n\nI hope things are going well — genuinely curious how [project or outcome from your work together] has been landing.\n\nI am opening up [number] new client spots this month for ${ind.toLowerCase()} business owners who are ready to ${resSnip}. You came to mind immediately when I thought about who in your network might benefit from this.\n\nIf anyone fits that description, I would be genuinely grateful for an introduction. As a thank you, I will [credit 10% of your next invoice / send a thank-you gift] for any introduction that becomes a client. You do not need to sell anything — just a simple message introducing us and I will take it from there.\n\n— ${signoff}`
+    },
+    {
+      label: '📣 Social Media Post Hook (use to open any post on this topic)',
+      note: 'This opening line is designed to stop the scroll. Follow it with your story, your insight, or your offer. Always end with a clear CTA.',
+      text: `If you are a ${who.split(',')[0]} and you are tired of ${painSnip} — keep reading.\n\nMost people in your position are not missing talent, effort, or commitment. They are missing the right positioning, the right price, and the right words.\n\nHere is the shift that changed everything for my clients:\n\n[Your insight, your story, or your client result — be specific]\n\nIf this resonates, [save this post / send me a message with "READY" / book a free 15-minute call at the link in my bio].`
+    }
+  ];
+
+  return scripts.map(s => `
+    <div class="script-item">
+      <div class="script-lbl">${s.label}</div>
+      ${s.note ? `<div style="font-size:12px;color:var(--muted);margin-bottom:8px;font-style:italic">${s.note}</div>` : ''}
+      <div class="cpy-line" style="padding-right:76px;line-height:1.65;white-space:pre-wrap">${s.text}</div>
+    </div>`).join('');
+}
+
+// ── UPSELL ACTIONS ────────────────────────────
+function showBizOS() {
+  document.getElementById('upsell').style.display = 'none';
+  buildBizOS();
+  document.getElementById('biz-os-result').style.display = 'block';
+  document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
+}
+
+function skipUpsell() {
+  document.getElementById('upsell').style.display = 'none';
+  setTimeout(() => {
+    document.getElementById('reofferModal').classList.add('show');
+  }, 28000);
+}
+
+function closeReoffer() {
+  document.getElementById('reofferModal').classList.remove('show');
+}
+
+function modalBuyOS() {
+  closeReoffer();
+  showBizOS();
+}
+
+document.getElementById('reofferModal').addEventListener('click', function(e) {
+  if (e.target === this) closeReoffer();
+});
+
+// ── BUILD BIZ OS ──────────────────────────────
+function buildBizOS() {
+  const { name, biz, industry, offerType, bizDesc, cap, monthRev, clientSrc, mainGoal } = D;
+  const isProduct = offerType && offerType.includes('Product');
+
+  const firstName = (name.trim() && name.trim().toLowerCase() !== 'you') ? name.trim().split(' ')[0] : '';
+  const displayBiz = biz.trim() === 'Your Business' ? '' : biz.trim();
+  document.getElementById('bosName').textContent = (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint" + (displayBiz ? " · " + displayBiz : "");
+
+  // SYSTEMS MAP
+  const systems = [
+    {
+      name: 'Client Enquiry & Intake',
+      desc: `Every enquiry you receive right now is being handled in a way that depends entirely on you being available, in the right headspace, and remembering to follow up. That is not a system — it is a daily gamble. A proper intake process means: every new lead receives an auto-reply within minutes, they are directed to a short intake form that qualifies them before any call takes place, a discovery call is automatically offered only to those who meet your criteria, and you review a completed form before every call instead of going in blind. This system alone typically saves 3 to 5 hours per week and increases your show rate on discovery calls by 30 to 50%.`,
+      tool: 'Recommended tools: Calendly (free tier) for scheduling, Typeform or Google Forms for intake, Gmail Canned Responses or an email autoresponder for the auto-reply.'
+    },
+    {
+      name: 'Client Onboarding',
+      desc: `The first 72 hours of a new client relationship determine the tone, the trust level, and the likelihood of a referral at the end. Most business owners handle onboarding differently every single time — which means some clients get an excellent first experience and some get a disjointed one, and the difference is entirely luck. A repeatable onboarding sequence means: every new client receives the same welcome within 24 hours of payment, they receive clear instructions on what to expect, what they need to provide, and how to communicate with you, and they feel immediately confident that they made the right decision. Done once, documented properly, and delegated or automated, this is a system you never have to think about again.`,
+      tool: 'Recommended tools: Notion or Google Drive (shared onboarding folder with templates), Loom (record a one-time welcome video — personal, professional, scalable), Gmail templates for the welcome sequence.'
+    },
+    {
+      name: 'Service Delivery',
+      desc: `If the only person who knows how to deliver your service is you, your business has a single point of failure. If you are sick, overloaded, or simply want to take time off, the business stops. Documenting your delivery process — step by step, with checklists, templates, and quality standards — serves three purposes: it makes your work consistent regardless of circumstances, it makes your work trainable (so a future team member or contractor can execute it), and it forces you to identify inefficiencies you have been tolerating for years. You do not need to automate delivery to document it. Write it down as if you were handing it to a capable person who has never worked with you.`,
+      tool: `Recommended tools: Notion (process documentation and SOPs), ${isProduct ? 'Shopify or WooCommerce (order fulfilment workflows)' : 'Trello or Asana (project management)'}, Google Drive (shared templates and resources for each ${isProduct ? 'product type' : 'service'}).`
+    },
+    {
+      name: 'Client Communication',
+      desc: `Unclear communication expectations are the number one source of client stress — for both parties. Clients who do not hear from you assume the worst. You, managing 5 conversations across 3 platforms with no system, miss messages and send follow-ups at 11pm. A communication system defines: which platform is used for which type of communication, your guaranteed response time for different message types, a weekly or fortnightly update template for ongoing clients, and clear escalation steps if something goes wrong. When clients know when and how to expect communication, they stop chasing you — and you stop feeling like you are perpetually behind.`,
+      tool: 'Recommended tools: WhatsApp Business (for clients who prefer messaging), Slack (for retainer or ongoing clients — keeps project communication separate from personal messages), email templates for standard updates, and a defined no-communication window (e.g. no responses after 7pm or on weekends).'
+    },
+    {
+      name: 'Invoicing & Payments',
+      desc: `Late payments are a cash flow problem, but they are also a systems problem. When invoicing is manual, irregular, and untracked, money slips through. A proper invoicing system sends invoices automatically on the agreed date, follows up 3 days before the due date and on the day itself without you lifting a finger, flags overdue invoices for personal follow-up only when automated reminders have failed, and records every payment against the correct client and project. This eliminates the awkward "just chasing this invoice" emails, keeps your cash flow predictable, and gives you a real-time view of your revenue at any moment.`,
+      tool: 'Recommended tools: Wave (free, full invoicing and payment tracking), FreshBooks (paid, with more automation), or Paystack / Stripe for online payment links — clients pay instantly, you receive funds without a conversation.'
+    },
+    {
+      name: 'Client Follow-Up, Testimonials & Referrals',
+      desc: `The period immediately after a successful project closes is the highest-value moment in your client relationship — and most business owners let it pass without doing anything. A structured post-project sequence captures a testimonial while the result is fresh, asks for a referral at the exact moment the client is most satisfied, opens the door to a follow-on conversation about what they need next, and keeps you in the client's mind as their go-to for future work. This sequence, set up once and triggered by project completion, runs without your involvement. A single well-timed testimonial request generates material that does your marketing for the next 12 months.`,
+      tool: 'Recommended tools: Mailchimp or ConvertKit (automated email sequence triggered by project close), a simple referral tracking spreadsheet, and a template for your testimonial request message.'
+    }
+  ];
+
+  document.getElementById('bosSystems').innerHTML = systems.map((s, i) => `
+    <div class="action-row">
+      <div class="action-num">${i+1}</div>
+      <div class="action-body">
+        <div class="action-ttl">${s.name}</div>
+        <div class="action-det">${s.desc}</div>
+        <div class="cpy-line" style="font-style:normal;padding-right:76px">${s.tool}</div>
+      </div>
+    </div>`).join('');
+
+  // AUTOMATE FIRST
+  document.getElementById('bosAuto').innerHTML = `
+    <p style="margin-bottom:14px">Automation is not about replacing yourself — it is about removing the tasks that consume your time and attention without requiring your judgment. These three automation priorities will reclaim the most hours in the shortest time. Implement them in this order.</p>
+    <div class="action-row">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <div class="action-ttl">Automate enquiry responses — implement this week</div>
+        <div class="action-det">Set up an auto-reply email that is triggered the moment someone contacts you through your website, social media, or email. The message thanks them for reaching out, sets a clear expectation for when they will hear from you personally, and directs them to your intake form or booking link so they can take the next step without waiting. This message should be warm, specific to your brand, and end with a clear instruction. The goal: no enquiry ever sits unanswered for more than 60 seconds, even at 2am. <br><br>Every additional hour an enquiry sits unanswered reduces the likelihood of conversion by approximately 10%. Speed signals seriousness.</div>
+        <div class="cpy-line">Subject: Got your message — here is what happens next\n\nHi [Name],\n\nThank you for reaching out to ${biz}. I have received your message and I will be in touch personally within 24 hours.\n\nIn the meantime, if you would like to move things along, you can book a free 15-minute discovery call directly here: [your Calendly link]. You can also answer a few quick questions first so I can make the most of our time: [your intake form link].\n\nLooking forward to connecting.\n\n— ${name}</div>
+      </div>
+    </div>
+    <div class="action-row">
+      <div class="action-num">2</div>
+      <div class="action-body">
+        <div class="action-ttl">Automate invoice reminders — implement this week</div>
+        <div class="action-det">Configure your invoicing tool to send automatic reminders: one 3 days before an invoice is due ("just a gentle heads up"), one on the due date ("invoice due today"), and one 3 days after if unpaid ("following up on the outstanding invoice"). Only involve yourself personally if the automated sequence has completed without response. This eliminates the most uncomfortable admin task most business owners face — chasing money owed — and ensures it happens consistently regardless of how busy you are. Businesses that implement automated invoice reminders reduce average payment time by 30 to 50%.</div>
+      </div>
+    </div>
+    <div class="action-row">
+      <div class="action-num">3</div>
+      <div class="action-body">
+        <div class="action-ttl">Automate post-project testimonial and referral requests — implement this month</div>
+        <div class="action-det">Set a trigger — either a calendar reminder or an email sequence — to fire 3 to 5 days after every project close. The sequence sends two messages: the first requests a short testimonial using three specific questions; the second (sent 48 hours later if no reply) asks for a referral. Both messages should be warm, personal in tone, and make it easy to respond — no lengthy forms, no complicated process. A testimonial gathered this way, when the result is fresh and the client is satisfied, is more specific, more credible, and more useful than one gathered months later. One good testimonial, used consistently, can be the single most effective piece of marketing in your business.</div>
+        <div class="cpy-line">Hi [Name], it has been a real pleasure working together — and I hope the results are already starting to show. While it is fresh, I would love your honest feedback. Three quick questions: (1) What was your situation before we worked together? (2) What changed — what result did you get? (3) Who else do you know who might benefit from this kind of support? Your words genuinely help other business owners find the right help. Feel free to reply in whatever format is easiest — a voice note, a few lines, whatever works. Thank you.\n\n— ${name}</div>
+      </div>
+    </div>`;
+
+  // DELEGATION
+  document.getElementById('bosDeleg').innerHTML = `
+    <p style="margin-bottom:14px">Delegation is not about finding people to do your job. It is about identifying which tasks are consuming your best hours but do not require your specific judgment, relationships, or expertise — and putting the right people in charge of them. The goal is not to hand off everything. The goal is to protect your time for the work only you can do.</p>
+    <div class="action-row">
+      <div class="action-num">1</div>
+      <div class="action-body">
+        <div class="action-ttl">Delegate first: Admin, inbox, and scheduling — frees 8 to 15 hours per week</div>
+        <div class="action-det">A virtual assistant handling your inbox, scheduling, invoice chasing, document formatting, and social media scheduling can cost $150 to $400 per month on platforms like Upwork or Fiverr. The return on that investment, in hours reclaimed and opportunities not missed, is immediate. Before you hire, spend one week logging every task you do and the time it takes. Identify every task that does not require you specifically to complete it. That list is your first VA job description. Start with 10 hours per week. You will almost certainly expand it within 30 days.</div>
+      </div>
+    </div>
+    <div class="action-row">
+      <div class="action-num">2</div>
+      <div class="action-body">
+        <div class="action-ttl">Delegate second: Repeatable delivery tasks — frees 5 to 10 more hours per week</div>
+        <div class="action-det">Record yourself delivering a typical project or service once, using Loom. Do not edit it. Send it to a trusted contractor or new hire with the instruction: "Watch this and follow these steps." If they can replicate your result to 80% of your standard, you have something delegable. Most business owners are surprised by how much of their "expert" delivery is actually process — steps that anyone diligent and trained can follow. You focus on the first 10 minutes of any engagement (context, strategy, relationship) and the last 10 minutes (quality check, client delivery). Everything in the middle is a delegation candidate.</div>
+      </div>
+    </div>
+    <div class="action-row">
+      <div class="action-num">3</div>
+      <div class="action-body">
+        <div class="action-ttl">Never delegate: Client relationships, strategy, and your creative judgment</div>
+        <div class="action-det">Your ability to read a client's real need beneath what they are asking for, your strategic instinct for what will actually move their business forward, and your creative judgment about what good looks like — these are your business's unfair advantage and they cannot be systematised away. Protect your time for these fiercely. Every hour you spend chasing invoices, formatting documents, or scheduling calls is an hour you are not doing the thing that only you can do. That is the real cost of not delegating.</div>
+      </div>
+    </div>`;
+
+  // 90-DAY FREEDOM PLAN
+  const bosWeeks = [
+    {
+      theme: 'Map & Document — You cannot delegate what you have not defined',
+      tasks: [
+        'Spend one hour listing every single task you do in a typical week. Include everything — the email replies, the file naming, the invoice chasing, the scheduling. If it takes your time, it goes on the list.',
+        'Highlight the top 5 tasks that consume the most time but do not require your specific expertise or judgment to complete. These are your first delegation targets.',
+        'Record yourself completing each of those 5 tasks once using Loom (free screen recording). Do not script or overthink it. A natural recording is more useful than a polished one.',
+        'Convert your recordings into written SOPs (Standard Operating Procedures) — step-by-step instructions in Notion or Google Docs. Add screenshots where helpful. Write as if you are handing this to a capable person who has never seen your business.',
+        'Set up your client intake form and configure your enquiry auto-reply email. Test the full flow from the perspective of a new enquiry — does it feel professional, clear, and confidence-building?'
+      ]
+    },
+    {
+      theme: 'Automate — Remove yourself from tasks that should not need you',
+      tasks: [
+        'Configure automated invoice reminders in your invoicing tool. Set the cadence: 3 days before due, on the due date, and 3 days after if unpaid. Test by sending yourself a test invoice.',
+        'Set up your post-project testimonial and referral request sequence in Mailchimp or ConvertKit. Even a manual calendar reminder that prompts you to send the message is better than nothing at this stage.',
+        'Create email templates for your 5 most common responses: the welcome email, the discovery call follow-up, the proposal, the project kick-off, and the project wrap-up. Save them as drafts or canned responses in Gmail.',
+        'Set up a shared Google Drive or Notion folder structure that any new client or team member can navigate without asking you for guidance. Label everything clearly and consistently.',
+        'Schedule your social media content one week in advance using Buffer, Later, or Meta Business Suite (free). Batch-create content on one day per week rather than creating it in real time.'
+      ]
+    },
+    {
+      theme: 'Delegate — Put the right tasks in the right hands',
+      tasks: [
+        'Post a job listing for a part-time virtual assistant on Upwork or Fiverr. Describe the tasks clearly, give your SOPs as the job specification, and shortlist 3 candidates. Start with 10 hours per week.',
+        'Onboard your VA using your Loom recordings and SOPs. Your first week is training — expect imperfect execution. Correct gently, clearly, and with specific examples. Do not take the task back. Delegate the improvement instead.',
+        'Hand over inbox management, scheduling, and invoice chasing in Week 3. Review their work for the first two weeks. After that, review outcomes, not activity.',
+        'Track the hours you have reclaimed at the end of this week. Write down exactly how you used them. Were they directed at high-value, high-impact work? If not, that is your next constraint to address.',
+        'Have an honest conversation with yourself: what are you still holding onto that someone else could do to 80% of your standard? The answer to that question is your next delegation target.'
+      ]
+    },
+    {
+      theme: 'Optimise & Step Back — Test whether your business can run without you',
+      tasks: [
+        'Review every system you have built over the past three weeks. What is working consistently? What still depends on you being present and responsive? Name it specifically.',
+        'Identify one additional delivery task you can document, hand off, or automate. The goal is not perfection — it is progress. One more hour reclaimed per day compounds into one month per year.',
+        'Take one full day away from the business — phone on silent, no checking in, no quick replies. Does the business continue to function? If it does not, what broke, and why? The answer is your next systems priority.',
+        `Set a concrete target: by Month 6, ${Math.round(cap * 0.7)} out of ${cap} active clients should be managed with minimal direct involvement from you in day-to-day delivery. Define what "minimal" means specifically.`,
+        'Recognise what you have built. Most business owners spend years inside their business without ever building the infrastructure that would let them step back. You have spent four weeks doing the work that makes everything else possible. That is not a small thing.'
+      ]
+    }
+  ];
+
+  document.getElementById('bosWeeks').innerHTML = bosWeeks.map((w, i) => `
+    <div class="wk">
+      <div class="wk-lbl">Month 1 · Week ${i+1}: ${w.theme}</div>
+      <div class="wk-tasks">${w.tasks.map(t => `<div class="wk-task">${t}</div>`).join('')}</div>
+    </div>`).join('');
+}
+
+
+
+// ── PDF DOWNLOAD ──────────────────────────────
+function downloadPDF() {
+  const prev = document.title;
+  const firstName = D.name && D.name.toLowerCase() !== 'you' ? D.name.trim().split(' ')[0] : '';
+  document.title = (firstName ? firstName + "'s" : "Your") + " Growth Blueprint — ScaleMyBiz™";
+  window.print();
+  document.title = prev;
+}
+
+function downloadBOSPDF() {
+  const prev = document.title;
+  const firstName = D.name && D.name.toLowerCase() !== 'you' ? D.name.trim().split(' ')[0] : '';
+  document.title = (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint — ScaleMyBiz™";
+  window.print();
+  document.title = prev;
+}
+
+// ── RESET ─────────────────────────────────────
+function resetAll() {
+  document.getElementById('result-wrap').style.display = 'none';
+  document.getElementById('upsell').style.display = 'none';
+  document.getElementById('biz-os-result').style.display = 'none';
+  closeReoffer();
+  document.querySelectorAll('input[type=text],input[type=number],textarea').forEach(i => {
+    if (i.id !== 'accessCode') i.value = '';
+  });
+  document.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.err-msg').forEach(e => { e.textContent=''; e.classList.remove('show'); });
+  document.querySelectorAll('input.err,textarea.err,select.err').forEach(e => e.classList.remove('err'));
+  document.getElementById('monthRev').value = 1000;
+  document.getElementById('monthRevV').textContent = '$1,000';
+  document.getElementById('capacity').value = 5;
+  document.getElementById('capV').textContent = '5';
+  go(1);
+}
+</script>
+<!-- RE-OFFER MODAL -->
+<div class="modal-overlay" id="reofferModal">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeReoffer()">×</button>
+    <div class="modal-tag">✦ Still thinking?</div>
+    <div class="modal-title">The Business OS Blueprint<br>is still waiting for you</div>
+    <div class="modal-body">You have already built your growth strategy. Most business owners who skip the Business OS Blueprint come back within 30 days — usually after hitting the exact ceiling it was designed to break through.</div>
+    <div class="modal-perks">
+      <div class="modal-perk">Your Core Systems Map — every process your business needs, mapped out</div>
+      <div class="modal-perk">Top 3 automation priorities to reclaim 10+ hours per week</div>
+      <div class="modal-perk">A step-by-step delegation guide so you stop being the bottleneck</div>
+      <div class="modal-perk">90-Day Freedom Plan — week by week, built around your business</div>
+    </div>
+    <div class="modal-price-row">
+      <div class="modal-price">$297</div>
+      <div><div class="modal-was">$997 full price</div><div class="modal-launch">$297 now — launch offer</div></div>
+    </div>
+    <div class="modal-acts">
+      <button class="btn-upsell" style="width:100%;justify-content:center" onclick="modalBuyOS()">Yes — Build My Business OS →</button>
+      <button class="btn-skip" style="text-align:center;width:100%" onclick="closeReoffer()">No thanks, I am done for today</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
