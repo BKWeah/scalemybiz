@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ScaleMyBiz.html
+
+Sitemap: https://www.scalemybiz.global/sitemap.xml
