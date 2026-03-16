@@ -501,7 +501,7 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
       <button onclick="checkAccess()" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;border:none;padding:16px;border-radius:8px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;transition:all .3s;margin-bottom:20px">✦ Unlock My Blueprint Builder</button>
       <div style="border-top:1px solid var(--border);padding-top:20px">
         <p style="font-size:13px;color:var(--muted);margin-bottom:12px">Don't have an access code yet?</p>
-        <a href="https://selar.com/677666173q" style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal);padding:12px 28px;border-radius:7px;font-size:14px;font-weight:700;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--teal-faint)'" onmouseout="this.style.background='var(--cream)'">Get Access — $97 →</a>
+        <a href="https://selar.com/677666173q" style="display:inline-flex;align-items:center;gap:8px;background:var(--cream);border:1.5px solid var(--teal);color:var(--teal);padding:12px 28px;border-radius:7px;font-size:14px;font-weight:700;text-decoration:none;transition:all .25s" onmouseover="this.style.background='var(--teal-faint)'" onmouseout="this.style.background='var(--cream)'">Get Access — from $97 →</a>
         <p style="font-size:11px;color:var(--muted);margin-top:12px">🔒 Secure payment via Selar · 30-day money-back guarantee</p>
       </div>
     </div>
@@ -524,7 +524,7 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
       <div class="fstep on" id="q1">
         <div class="ftag">Question 1 of 8</div>
         <div class="fttl">Tell us about you and your business</div>
-        <div class="fsub">This personalizes every part of your blueprint — from your pitch to your action plan.</div>
+        <div class="fsub">This shapes every part of your plan — from your pitch to your action plan.</div>
         <div class="row2">
           <div class="fg"><label>Your First Name</label><input type="text" id="ownerName" placeholder="e.g. Sarah"/><div class="err-msg" id="err-ownerName"></div></div>
           <div class="fg"><label>Business Name <span class="lh">(or your name if solo)</span></label><input type="text" id="bizName" placeholder="e.g. Bright Edge Studio"/><div class="err-msg" id="err-bizName"></div></div>
@@ -867,10 +867,10 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
 
           <div class="up-price-row">
             <div>
-              <div style="margin-bottom:6px"><span class="up-price-was">$997</span> <span style="font-size:12px;color:var(--teal-bright);font-weight:700;background:rgba(13,148,136,.15);padding:3px 10px;border-radius:100px;">Launch Price</span></div>
-              <div class="up-price">$297</div>
+              <div style="margin-bottom:6px"><span class="up-price-was">$497</span> <span style="font-size:12px;color:var(--teal-bright);font-weight:700;background:rgba(13,148,136,.15);padding:3px 10px;border-radius:100px;">Launch Price</span></div>
+              <div class="up-price">$197</div>
             </div>
-            <div class="up-price-note">One-time payment. Instant access. <strong>Launch price: $297.</strong> This is the introductory price for early adopters — it will move to the full price of $997 once the launch window closes. No subscription. No renewal. Pay once, keep it forever.</div>
+            <div class="up-price-note">One-time payment. Instant access. <strong>Launch price: $197.</strong> Full price is $497 — less than two hours with a business operations consultant. The launch window closes in 90 days. No subscription. No renewal. Pay once, keep it forever.</div>
             <button class="btn-upsell" onclick="showBizOS()">Yes — Build My Business OS →</button>
           </div>
           <button class="btn-skip" onclick="skipUpsell()">No thanks, I'll stick with my Growth Blueprint for now</button>
@@ -1176,7 +1176,7 @@ function validateStep(stepId) {
     if (!name) { showErr('ownerName', 'Please enter your first name'); valid = false; }
     if (!biz)  { showErr('bizName',   'Please enter your business name'); valid = false; }
     if (!type) { showErr('offerType', 'Please select what you sell'); valid = false; }
-    if (!desc) { showErr('bizDesc',   'A brief description helps us personalise your blueprint'); valid = false; }
+    if (!desc) { showErr('bizDesc',   'A brief description helps us build your plan around your business'); valid = false; }
     // Add error div for pills that don't have one yet
     if (!type) {
       const pills = document.getElementById('offerType');
@@ -1595,7 +1595,7 @@ function attractHTML(src, ind, goal, pitch, who, pain, biz, recP, model) {
   } else {
     actions.push({
       title: 'Send 5 to 10 well-researched outreach messages every day this week',
-      detail: `The single most common mistake in cold outreach is sending the same message to everyone. It is detectable in the first sentence and it signals that you do not care enough to invest 2 minutes in learning who they are. That kills the response. Instead: spend 90 seconds on each profile before messaging. Find one specific thing — a recent post, a job change, a project they shared, a problem they mentioned. Reference it directly in your opening line. Then transition to why you reached out. Use the template below as a structure, not a script. Personalise the first sentence every single time. At a 5 to 10% response rate, 10 messages per day produces 5 to 10 warm conversations per week from scratch.`,
+      detail: `The single most common mistake in cold outreach is sending the same message to everyone. It is detectable in the first sentence and it signals that you do not care enough to invest 2 minutes in learning who they are. That kills the response. Instead: spend 90 seconds on each profile before messaging. Find one specific thing — a recent post, a job change, a project they shared, a problem they mentioned. Reference it directly in your opening line. Then transition to why you reached out. Use the template below as a structure, not a script. Make the first sentence specific to that person every single time. At a 5 to 10% response rate, 10 messages per day produces 5 to 10 warm conversations per week from scratch.`,
       copy: `Hi [Name], I noticed [something specific — a recent post, a project, a comment they made]. I work with ${who.split(',')[0]} who are ready to [the result you deliver]. I am not sure if the timing is right for you, but I would love to share what has been working for people in exactly your situation. Would a 15-minute call be useful? No agenda — just a conversation.`
     });
   }
@@ -1759,49 +1759,135 @@ document.getElementById('reofferModal').addEventListener('click', function(e) {
   if (e.target === this) closeReoffer();
 });
 
-// ── BUILD BIZ OS ──────────────────────────────
+// ── BUILD BIZ OS v2 ──────────────────────────────
 function buildBizOS() {
   const { name, biz, industry, offerType, bizDesc, cap, monthRev, clientSrc, mainGoal } = D;
-  const isProduct = offerType && offerType.includes('Product');
+  const isProduct   = offerType && offerType.includes('Product');
+  const isRetail    = industry === 'Retail & E-commerce';
+  const isFood      = industry === 'Food & Hospitality';
+  const isBeauty    = industry === 'Beauty & Personal Care';
+  const isEvents    = industry === 'Events & Entertainment';
+  const isHealth    = industry === 'Health & Wellness';
+  const isConsult   = industry === 'Business Consulting';
+  const isCreative  = industry === 'Branding & Creative';
+  const isCoach     = industry === 'Education & Coaching';
+  const isRE        = industry === 'Real Estate';
+  const isTech      = industry === 'Tech & Digital Marketing';
+  const isLegal     = industry === 'Legal & Financial Services';
 
-  const firstName = (name.trim() && name.trim().toLowerCase() !== 'you') ? name.trim().split(' ')[0] : '';
+  const firstName  = (name.trim() && name.trim().toLowerCase() !== 'you') ? name.trim().split(' ')[0] : '';
   const displayBiz = biz.trim() === 'Your Business' ? '' : biz.trim();
-  document.getElementById('bosName').textContent = (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint" + (displayBiz ? " · " + displayBiz : "");
+  document.getElementById('bosName').textContent =
+    (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint" + (displayBiz ? " · " + displayBiz : "");
 
-  // SYSTEMS MAP
-  const systems = [
-    {
-      name: 'Client Enquiry & Intake',
-      desc: `Every enquiry you receive right now is being handled in a way that depends entirely on you being available, in the right headspace, and remembering to follow up. That is not a system — it is a daily gamble. A proper intake process means: every new lead receives an auto-reply within minutes, they are directed to a short intake form that qualifies them before any call takes place, a discovery call is automatically offered only to those who meet your criteria, and you review a completed form before every call instead of going in blind. This system alone typically saves 3 to 5 hours per week and increases your show rate on discovery calls by 30 to 50%.`,
-      tool: 'Recommended tools: Calendly (free tier) for scheduling, Typeform or Google Forms for intake, Gmail Canned Responses or an email autoresponder for the auto-reply.'
-    },
-    {
-      name: 'Client Onboarding',
-      desc: `The first 72 hours of a new client relationship determine the tone, the trust level, and the likelihood of a referral at the end. Most business owners handle onboarding differently every single time — which means some clients get an excellent first experience and some get a disjointed one, and the difference is entirely luck. A repeatable onboarding sequence means: every new client receives the same welcome within 24 hours of payment, they receive clear instructions on what to expect, what they need to provide, and how to communicate with you, and they feel immediately confident that they made the right decision. Done once, documented properly, and delegated or automated, this is a system you never have to think about again.`,
-      tool: 'Recommended tools: Notion or Google Drive (shared onboarding folder with templates), Loom (record a one-time welcome video — personal, professional, scalable), Gmail templates for the welcome sequence.'
-    },
-    {
-      name: 'Service Delivery',
-      desc: `If the only person who knows how to deliver your service is you, your business has a single point of failure. If you are sick, overloaded, or simply want to take time off, the business stops. Documenting your delivery process — step by step, with checklists, templates, and quality standards — serves three purposes: it makes your work consistent regardless of circumstances, it makes your work trainable (so a future team member or contractor can execute it), and it forces you to identify inefficiencies you have been tolerating for years. You do not need to automate delivery to document it. Write it down as if you were handing it to a capable person who has never worked with you.`,
-      tool: `Recommended tools: Notion (process documentation and SOPs), ${isProduct ? 'Shopify or WooCommerce (order fulfilment workflows)' : 'Trello or Asana (project management)'}, Google Drive (shared templates and resources for each ${isProduct ? 'product type' : 'service'}).`
-    },
-    {
-      name: 'Client Communication',
-      desc: `Unclear communication expectations are the number one source of client stress — for both parties. Clients who do not hear from you assume the worst. You, managing 5 conversations across 3 platforms with no system, miss messages and send follow-ups at 11pm. A communication system defines: which platform is used for which type of communication, your guaranteed response time for different message types, a weekly or fortnightly update template for ongoing clients, and clear escalation steps if something goes wrong. When clients know when and how to expect communication, they stop chasing you — and you stop feeling like you are perpetually behind.`,
-      tool: 'Recommended tools: WhatsApp Business (for clients who prefer messaging), Slack (for retainer or ongoing clients — keeps project communication separate from personal messages), email templates for standard updates, and a defined no-communication window (e.g. no responses after 7pm or on weekends).'
-    },
-    {
-      name: 'Invoicing & Payments',
-      desc: `Late payments are a cash flow problem, but they are also a systems problem. When invoicing is manual, irregular, and untracked, money slips through. A proper invoicing system sends invoices automatically on the agreed date, follows up 3 days before the due date and on the day itself without you lifting a finger, flags overdue invoices for personal follow-up only when automated reminders have failed, and records every payment against the correct client and project. This eliminates the awkward "just chasing this invoice" emails, keeps your cash flow predictable, and gives you a real-time view of your revenue at any moment.`,
-      tool: 'Recommended tools: Wave (free, full invoicing and payment tracking), FreshBooks (paid, with more automation), or Paystack / Stripe for online payment links — clients pay instantly, you receive funds without a conversation.'
-    },
-    {
+  // ── INDUSTRY-SPECIFIC SYSTEMS MAP ──
+  function sys1() {
+    if (isRetail || isFood) return {
+      name: 'Order & Customer Intake',
+      desc: `Every order or customer enquiry you receive is handled in a way that still depends on you being present. That is not a system — it is a bottleneck. A proper intake system means: new orders are confirmed automatically the moment they are placed, product or menu enquiries receive an instant response with your most common answers pre-loaded, custom or bulk requests go to a qualification flow before any commitment is made, and you review a summary of the day's pipeline once — not dozens of messages throughout it. For retail and food businesses, this system directly affects how many orders you can handle without adding staff.`,
+      tool: isFood
+        ? 'Recommended tools: WhatsApp Business auto-reply for enquiries, Google Forms or Jotform for event or bulk catering requests, a shared Google Sheet for daily order tracking, and Square or Paystack for instant payment on smaller orders.'
+        : 'Recommended tools: Shopify or WooCommerce (automated order confirmation and inventory updates), Google Forms for custom/wholesale enquiries, WhatsApp Business for customer service auto-replies, and Notion for tracking bespoke requests.'
+    };
+    if (isBeauty) return {
+      name: 'Booking & Client Intake',
+      desc: `Every booking that comes through a DM or a phone call is a booking that depends on you being awake, available, and remembering to follow up. A proper booking system takes that dependency away entirely. Clients book themselves into available slots, receive an automatic confirmation, get a reminder 24 hours before their appointment, and arrive prepared because they have already received your pre-appointment instructions. You wake up each morning knowing your day's schedule without having sent a single message the night before. This system typically reduces no-shows by 40 to 60% and reclaims 5 to 8 hours of admin per week.`,
+      tool: 'Recommended tools: Calendly or Booksy (client self-booking with automated confirmations and reminders), Google Forms for new client intake questionnaires, WhatsApp Business for auto-replies during off-hours, and a Notion or Google Sheet booking log for your own records.'
+    };
+    if (isEvents) return {
+      name: 'Enquiry & Event Brief Intake',
+      desc: `Event enquiries are high-stakes conversations. A poorly handled first response — or a delayed one — loses the booking before you even get a chance to quote. A proper intake system means every enquiry receives an auto-reply within minutes, promising a response within 24 hours. It then directs the prospect to a structured event brief form that captures everything you need to quote accurately: event type, date, guest count, venue, budget range, and any specific requirements. You never go into a quoting conversation unprepared. You never spend 20 minutes on a call extracting information you could have received in a 3-minute form. And you never lose a booking because you responded too slowly.`,
+      tool: 'Recommended tools: Typeform or Google Forms (event brief questionnaire), Calendly (for initial consultation calls), Gmail auto-reply for after-hours enquiries, and HoneyBook or a simple Notion CRM for tracking all active enquiries and their stage.'
+    };
+    return {
+      name: isProduct ? 'Order & Customer Enquiry System' : 'Client Enquiry & Intake',
+      desc: `Every enquiry you receive right now is handled in a way that depends entirely on you being available, in the right headspace, and remembering to follow up. A proper intake process means: every new enquiry receives an auto-reply within minutes, prospects are directed to a short form that qualifies them before any time is committed, and you review a completed summary before every call instead of going in blind. This system alone typically saves 3 to 5 hours per week and increases conversion from enquiry to client by 20 to 40%.`,
+      tool: 'Recommended tools: Calendly (free tier) for scheduling, Typeform or Google Forms for qualification, Gmail Canned Responses or an email autoresponder for the instant auto-reply.'
+    };
+  }
+
+  function sys2() {
+    if (isFood || isRetail) return {
+      name: isFood ? 'Order Fulfilment & Production' : 'Order Fulfilment & Despatch',
+      desc: isFood
+        ? `Production without a system means every order is handled differently depending on who is preparing it and when. Quality becomes inconsistent, ingredients run short without warning, and preparation times balloon on busy days. A documented production system defines: the exact preparation steps for each item, the mise en place checklist that runs before every service or production session, the packaging and presentation standard for every product, and the handoff process between preparation and delivery or collection. When your production is documented, a team member can maintain your standard even on a day you are not there.`
+        : `Fulfilment without a system is the fastest way to generate negative reviews. A documented despatch process means: every order is picked, checked, packed, and despatched in a consistent sequence; packaging quality is defined and reproducible; despatch confirmations with tracking information are sent automatically; and returns or issues have a clear, pre-defined resolution path. This removes the daily improvisation from the most operationally critical part of your business.`,
+      tool: isFood
+        ? 'Recommended tools: Google Sheets or Notion (production schedule and ingredient tracker), a printed prep checklist for kitchen use, WhatsApp or a shared group for team coordination, and a simple order-to-production log updated daily.'
+        : 'Recommended tools: Shopify (built-in fulfilment tracking and despatch notifications), ShipStation or Sendcloud for multi-carrier shipping management, a Notion or Google Sheet pick-and-pack checklist, and a returns management process documented in Notion.'
+    };
+    if (isBeauty) return {
+      name: 'Service Delivery & Treatment Standard',
+      desc: `The experience your client has during their appointment is your primary marketing asset. It determines whether they return, whether they refer others, and whether they leave a review. A service delivery system defines: the standard consultation process at the start of every appointment, the steps of each treatment or service in documented order, the quality checks before the client leaves, and the post-appointment follow-up message sent within 24 hours. When this is documented, every client receives the same high standard regardless of which day they come in or whether you are slightly tired or off your game. Consistency is what turns a one-time client into a regular.`,
+      tool: 'Recommended tools: Notion (service SOPs with photos for each step), a laminated reference card at each workstation, Loom (record yourself performing each service once for training purposes), and a Google Form or Fresha for post-appointment feedback.'
+    };
+    return {
+      name: isProduct ? 'Fulfilment & Delivery' : 'Service Delivery',
+      desc: `If the only person who can deliver your product or service properly is you, your business has a single point of failure. Documenting your delivery process — step by step, with checklists, templates, and quality standards — makes your work consistent regardless of circumstances, trainable for future team members, and efficient enough to scale without proportional increases in your time. You do not need to automate delivery to document it. Write it down as if handing it to a capable person who has never worked with you.`,
+      tool: `Recommended tools: Notion (process documentation and SOPs), ${isProduct ? 'Shopify or WooCommerce (order fulfilment and despatch tracking)' : 'Trello or Asana (project management and task tracking)'}, Google Drive (shared templates, checklists, and resources).`
+    };
+  }
+
+  function sys3() {
+    if (isRetail || isFood) return {
+      name: 'Inventory & Supplier Management',
+      desc: `Running out of a bestselling product or a key ingredient because you were too busy to order in time is an operational failure — and a revenue failure. An inventory system does not need to be complex. It needs to answer three questions at any moment: what do you have, what do you need, and when do you need to order. A reorder threshold for every key item (the quantity at which you order before running out), a preferred supplier contact and lead time for each, and a weekly stock check that takes 15 minutes rather than a full afternoon — these three things, documented and delegated, take inventory management almost entirely off your plate. You only need to get involved when something unusual happens.`,
+      tool: isFood
+        ? 'Recommended tools: Google Sheets (ingredient inventory tracker with reorder alerts), a WhatsApp group with your key suppliers for quick reordering, Notion for your supplier contacts and lead times, and a weekly stock-check routine with a printed or digital checklist.'
+        : 'Recommended tools: Shopify (built-in inventory tracking with low-stock alerts), a Google Sheet for supplier contacts and lead times, Notion for reorder SOPs, and a weekly 15-minute stock review on a set day each week.'
+    };
+    if (isBeauty) return {
+      name: 'Product & Inventory Management',
+      desc: `Running out of a key product mid-appointment — or over-ordering stock that expires before it is used — is a cost that compounds quietly. A proper inventory system tracks what you have, what is running low, and when to reorder without you having to physically check shelves and count bottles. A reorder threshold for every essential product, a standing order schedule with your key suppliers, and a monthly inventory review that takes 20 minutes — these three things remove the mental load of product management entirely. When products are always available and ordered efficiently, your costs fall and your service never pauses.`,
+      tool: 'Recommended tools: Google Sheets (product inventory tracker with reorder thresholds), WhatsApp Business for supplier communication, Notion for your product library and supplier contacts, and a monthly stock review routine on a fixed date.'
+    };
+    return {
+      name: 'Customer Communication',
+      desc: `Unclear communication expectations are the number one source of stress — for both parties. A communication system defines: which platform is used for which type of communication, your guaranteed response time for different message types, regular update templates for ongoing relationships, and clear escalation steps if something goes wrong. When people know when and how to expect communication, they stop chasing you — and you stop feeling perpetually behind.`,
+      tool: 'Recommended tools: WhatsApp Business (auto-replies and message labels), Slack (for retainer relationships), Gmail templates for standard updates, and a defined no-communication window to protect your personal time.'
+    };
+  }
+
+  function sys4() {
+    return {
+      name: 'Invoicing, Payments & Cash Flow',
+      desc: `Late payments are a cash flow problem, but they are also a systems problem. When invoicing is manual, irregular, and untracked, money slips through the gaps. A proper invoicing system sends invoices or payment requests automatically at the agreed point, follows up before and on the due date without you lifting a finger, flags genuinely overdue amounts for personal follow-up only when automated reminders have failed, and gives you a real-time view of your revenue at any moment. This eliminates the awkward chase conversations, keeps your cash flow predictable, and means you always know exactly where you stand financially without digging through your inbox.`,
+      tool: 'Recommended tools: Wave (free, full invoicing and payment tracking), FreshBooks (paid, with more automation), or Paystack / Stripe for instant online payment links — customers pay immediately, funds arrive without a conversation.'
+    };
+  }
+
+  function sys5() {
+    if (isRetail || isFood) return {
+      name: 'Customer Experience & Returns',
+      desc: `The experience a customer has after they pay is what determines whether they come back and whether they tell others. Most retail and food businesses focus almost entirely on the sale and neglect the post-purchase relationship — which is where loyalty is actually built. A customer experience system defines: the follow-up message sent 48 hours after purchase or delivery, the process for handling complaints or returns before they become negative reviews, the review-request sequence sent after a positive experience, and the repeat-purchase or re-order prompt sent at the right moment. Every element of this system runs without your involvement once it is set up. A single well-handled complaint, resolved quickly and generously, often generates a loyal customer and a public positive review.`,
+      tool: 'Recommended tools: WhatsApp Business (post-purchase follow-up and review requests), a Google Form for returns and complaints (keeps everything organised and off your personal messages), Mailchimp for email-based re-engagement sequences, and a simple Google Review request template sent to every satisfied customer.'
+    };
+    if (isBeauty) return {
+      name: 'Rebooking & Client Retention',
+      desc: `The most valuable client you have is a client who comes back. The most expensive thing in your business is acquiring a new one. A retention system means every client leaves their appointment with the next one already booked, receives a reminder message 5 days before it, gets a check-in message 3 days after a new treatment to ask how they are getting on, and hears from you once a month with something genuinely useful — not a generic promotional blast. Clients who feel looked after do not shop around. They rebook automatically, they refer without being asked, and they are more tolerant of price increases because the relationship is worth more than the saving.`,
+      tool: 'Recommended tools: Booksy or Fresha (automatic rebooking reminders), Mailchimp (monthly client newsletter — 1 tip, 1 before/after, 1 availability update), a WhatsApp check-in template for post-treatment follow-ups, and a birthday message sequence for your top 20 regulars.'
+    };
+    return {
       name: 'Client Follow-Up, Testimonials & Referrals',
-      desc: `The period immediately after a successful project closes is the highest-value moment in your client relationship — and most business owners let it pass without doing anything. A structured post-project sequence captures a testimonial while the result is fresh, asks for a referral at the exact moment the client is most satisfied, opens the door to a follow-on conversation about what they need next, and keeps you in the client's mind as their go-to for future work. This sequence, set up once and triggered by project completion, runs without your involvement. A single well-timed testimonial request generates material that does your marketing for the next 12 months.`,
+      desc: `The period immediately after a successful project closes is the highest-value moment in your client relationship — and most business owners let it pass without doing anything. A structured post-project sequence captures a testimonial while the result is fresh, asks for a referral at the exact moment the client is most satisfied, and opens the door to a follow-on conversation about what they need next. This sequence, set up once and triggered by project completion, runs without your involvement. A single well-timed testimonial request generates marketing material that works for the next 12 months.`,
       tool: 'Recommended tools: Mailchimp or ConvertKit (automated email sequence triggered by project close), a simple referral tracking spreadsheet, and a template for your testimonial request message.'
-    }
-  ];
+    };
+  }
 
+  function sys6() {
+    if (isRetail || isFood || isBeauty) return {
+      name: 'Team Coordination & Handoff',
+      desc: `When you are the only person who knows how things are supposed to work, every absence — even a lunch break — creates risk. A team coordination system means every team member knows their responsibilities, the standard they are working to, and what to do when something unexpected happens — without calling you. This requires: a one-page role description for each position, a daily or weekly briefing routine that takes 10 minutes and sets priorities, a clear escalation policy (what gets handled without you, what requires a heads-up, what requires your direct involvement), and a end-of-day or end-of-shift handoff note that keeps the next person informed. When your team can operate to your standard in your absence, you have a business. Until then, you have a job.`,
+      tool: 'Recommended tools: WhatsApp group for team communication (with clear usage rules — business updates only), Notion for role descriptions and SOPs, a daily briefing template shared each morning, and a simple end-of-shift report form in Google Forms.'
+    };
+    return {
+      name: 'Team & Contractor Management',
+      desc: `Whether you work with a VA, a subcontractor, or a small team, the cost of poor coordination is invisible until it becomes a crisis. A team management system defines: how work is assigned and tracked, the expected communication cadence between you and each person, the quality standard for deliverables and how it is checked, and the escalation process for anything that falls outside normal scope. When this is documented, you review outcomes — not activity. You check quality checkpoints — not every task. You manage a system — not individuals.`,
+      tool: 'Recommended tools: Notion or Trello (task assignment and tracking), Loom (async video briefings — faster than long emails, more personal than a document), a shared Google Drive for all working files, and a weekly 15-minute async check-in using a Google Form instead of a meeting.'
+    };
+  }
+
+  const systems = [sys1(), sys2(), sys3(), sys4(), sys5(), sys6()];
   document.getElementById('bosSystems').innerHTML = systems.map((s, i) => `
     <div class="action-row">
       <div class="action-num">${i+1}</div>
@@ -1812,109 +1898,137 @@ function buildBizOS() {
       </div>
     </div>`).join('');
 
-  // AUTOMATE FIRST
+  // ── AUTOMATION PRIORITIES — industry-specific ──
+  const autoP1 = (isRetail || isFood)
+    ? { title: 'Automate order confirmation and delivery updates — implement this week',
+        desc: `Every order should trigger an automatic confirmation the moment it is placed or accepted — with the customer's order summary, expected timeline, and your contact details. For delivery orders, a despatch notification with tracking information or an estimated time should fire automatically when the order leaves your hands. Customers who receive clear, automatic updates do not contact you to chase. Your customer service inbox shrinks by 40 to 60% with this single automation in place. The time saved goes directly back into production, sourcing, or growth.`,
+        copy: isFood
+          ? `Hi [Name], your order has been confirmed! Here is a summary:\n\nOrder: [items]\nDelivery / Collection: [date and time]\nTotal: [amount paid]\n\nWe will send you a message when your order is on its way. If you have any questions, reply to this message.\n\nThank you for choosing ${biz}.`
+          : `Hi [Name], your order has been confirmed and is being prepared!\n\nOrder: [items]\nEstimated despatch: [date]\nTracking will be sent when your order ships.\n\nIf you have any questions, reply here. Thank you for ordering from ${biz}.`
+      }
+    : isBeauty
+    ? { title: 'Automate appointment confirmations and 24-hour reminders — implement this week',
+        desc: `Appointment no-shows cost you the full appointment slot. A 24-hour reminder sent automatically the day before reduces no-shows by 40 to 60%. Configure your booking tool to send a confirmation the moment an appointment is booked — with the date, time, location, and any pre-appointment instructions (arrive with clean hair, no oil-based products, etc.). Set a second message to send 24 hours before. Both messages should be warm and specific, not generic. The goal is that the client feels looked after before they have even arrived — which sets the tone for the appointment itself.`,
+        copy: `Hi [Name], this is a reminder that your appointment at ${biz} is tomorrow at [time].\n\nLocation: [address]\nService: [treatment]\n\nPlease arrive 5 minutes early. If you need to reschedule, reply to this message at least 24 hours in advance.\n\nLooking forward to seeing you.`
+      }
+    : { title: 'Automate enquiry responses — implement this week',
+        desc: `Set up an auto-reply that fires the moment someone contacts you — day or night. The message thanks them, sets a clear response time expectation, and directs them to your intake form or booking link. Every additional hour an enquiry sits unanswered reduces conversion probability by approximately 10%. Speed signals seriousness — and an instant, professional auto-reply buys you 24 hours to respond personally without the prospect feeling ignored.`,
+        copy: `Subject: Got your message — here is what happens next\n\nHi [Name],\n\nThank you for reaching out to ${biz}. I have received your message and will be in touch personally within 24 hours.\n\nIn the meantime, you can book a free discovery call directly here: [Calendly link], or answer a few quick questions to help me prepare: [intake form link].\n\nLooking forward to connecting.\n\n— ${name}`
+      };
+
   document.getElementById('bosAuto').innerHTML = `
-    <p style="margin-bottom:14px">Automation is not about replacing yourself — it is about removing the tasks that consume your time and attention without requiring your judgment. These three automation priorities will reclaim the most hours in the shortest time. Implement them in this order.</p>
+    <p style="margin-bottom:14px">Automation is not about replacing yourself — it is about removing the tasks that consume your time without requiring your judgment. These three automation priorities will reclaim the most hours in the shortest time. Implement them in this order.</p>
     <div class="action-row">
       <div class="action-num">1</div>
       <div class="action-body">
-        <div class="action-ttl">Automate enquiry responses — implement this week</div>
-        <div class="action-det">Set up an auto-reply email that is triggered the moment someone contacts you through your website, social media, or email. The message thanks them for reaching out, sets a clear expectation for when they will hear from you personally, and directs them to your intake form or booking link so they can take the next step without waiting. This message should be warm, specific to your brand, and end with a clear instruction. The goal: no enquiry ever sits unanswered for more than 60 seconds, even at 2am. <br><br>Every additional hour an enquiry sits unanswered reduces the likelihood of conversion by approximately 10%. Speed signals seriousness.</div>
-        <div class="cpy-line">Subject: Got your message — here is what happens next\n\nHi [Name],\n\nThank you for reaching out to ${biz}. I have received your message and I will be in touch personally within 24 hours.\n\nIn the meantime, if you would like to move things along, you can book a free 15-minute discovery call directly here: [your Calendly link]. You can also answer a few quick questions first so I can make the most of our time: [your intake form link].\n\nLooking forward to connecting.\n\n— ${name}</div>
+        <div class="action-ttl">${autoP1.title}</div>
+        <div class="action-det">${autoP1.desc}</div>
+        <div class="cpy-line">${autoP1.copy}</div>
       </div>
     </div>
     <div class="action-row">
       <div class="action-num">2</div>
       <div class="action-body">
-        <div class="action-ttl">Automate invoice reminders — implement this week</div>
-        <div class="action-det">Configure your invoicing tool to send automatic reminders: one 3 days before an invoice is due ("just a gentle heads up"), one on the due date ("invoice due today"), and one 3 days after if unpaid ("following up on the outstanding invoice"). Only involve yourself personally if the automated sequence has completed without response. This eliminates the most uncomfortable admin task most business owners face — chasing money owed — and ensures it happens consistently regardless of how busy you are. Businesses that implement automated invoice reminders reduce average payment time by 30 to 50%.</div>
+        <div class="action-ttl">Automate invoice and payment reminders — implement this week</div>
+        <div class="action-det">Configure your invoicing tool to send automatic reminders: one 3 days before an invoice is due, one on the due date, and one 3 days after if unpaid. Only involve yourself personally if the automated sequence has completed without response. Businesses that implement automated invoice reminders reduce average payment time by 30 to 50% — and eliminate the most uncomfortable admin task most business owners face: chasing money they have already earned.</div>
       </div>
     </div>
     <div class="action-row">
       <div class="action-num">3</div>
       <div class="action-body">
-        <div class="action-ttl">Automate post-project testimonial and referral requests — implement this month</div>
-        <div class="action-det">Set a trigger — either a calendar reminder or an email sequence — to fire 3 to 5 days after every project close. The sequence sends two messages: the first requests a short testimonial using three specific questions; the second (sent 48 hours later if no reply) asks for a referral. Both messages should be warm, personal in tone, and make it easy to respond — no lengthy forms, no complicated process. A testimonial gathered this way, when the result is fresh and the client is satisfied, is more specific, more credible, and more useful than one gathered months later. One good testimonial, used consistently, can be the single most effective piece of marketing in your business.</div>
-        <div class="cpy-line">Hi [Name], it has been a real pleasure working together — and I hope the results are already starting to show. While it is fresh, I would love your honest feedback. Three quick questions: (1) What was your situation before we worked together? (2) What changed — what result did you get? (3) Who else do you know who might benefit from this kind of support? Your words genuinely help other business owners find the right help. Feel free to reply in whatever format is easiest — a voice note, a few lines, whatever works. Thank you.\n\n— ${name}</div>
+        <div class="action-ttl">Automate post-${isRetail || isFood ? 'purchase' : isBeauty ? 'appointment' : 'project'} review and referral requests — implement this month</div>
+        <div class="action-det">Set a trigger to fire 3 to 5 days after every ${isRetail || isFood ? 'delivery or order completion' : isBeauty ? 'appointment' : 'project close'}. The first message asks for a review or testimonial using three specific questions. The second, sent 48 hours later if unanswered, asks for a referral. Both should be warm and specific — make it easy to respond. A testimonial gathered this way, while the result is fresh, is more credible and more specific than one collected months later. One strong testimonial, used consistently, can be the most effective marketing asset in your business.</div>
+        <div class="cpy-line">Hi [Name], it was a genuine pleasure ${isBeauty ? 'having you in' : isFood || isRetail ? 'fulfilling your order' : 'working together'} — I hope ${isBeauty ? 'you are loving the results' : isFood ? 'you enjoyed everything' : isRetail ? 'you love your order' : 'the results are already showing'}. While it is fresh, I would love your honest feedback on three things: (1) What made you choose ${biz}? (2) What was your experience like? (3) Who else do you know who might appreciate this? A few lines or even a voice note is perfect. Thank you.\n\n— ${name}</div>
       </div>
     </div>`;
 
-  // DELEGATION
+  // ── DELEGATION ──
+  const vaRate = (isFood || isRetail) ? '$200–$500/month' : '$150–$400/month';
+  const delegFirst = (isFood || isRetail)
+    ? 'Admin, order tracking, and customer service messages — frees 8 to 15 hours per week'
+    : isBeauty
+    ? 'Booking management, inbox, and social media scheduling — frees 6 to 12 hours per week'
+    : 'Admin, inbox, and scheduling — frees 8 to 15 hours per week';
+  const delegSecond = (isFood || isRetail)
+    ? 'Packing, fulfilment, and prep tasks — frees 5 to 15 more hours per week'
+    : isBeauty
+    ? 'Junior treatments and preparatory services — frees 4 to 8 more hours per week'
+    : 'Repeatable delivery tasks — frees 5 to 10 more hours per week';
+
   document.getElementById('bosDeleg').innerHTML = `
-    <p style="margin-bottom:14px">Delegation is not about finding people to do your job. It is about identifying which tasks are consuming your best hours but do not require your specific judgment, relationships, or expertise — and putting the right people in charge of them. The goal is not to hand off everything. The goal is to protect your time for the work only you can do.</p>
+    <p style="margin-bottom:14px">Delegation is about identifying which tasks are consuming your best hours but do not require your specific judgment, relationships, or expertise — and putting the right people in charge of them. The goal is to protect your time for the work only you can do.</p>
     <div class="action-row">
       <div class="action-num">1</div>
       <div class="action-body">
-        <div class="action-ttl">Delegate first: Admin, inbox, and scheduling — frees 8 to 15 hours per week</div>
-        <div class="action-det">A virtual assistant handling your inbox, scheduling, invoice chasing, document formatting, and social media scheduling can cost $150 to $400 per month on platforms like Upwork or Fiverr. The return on that investment, in hours reclaimed and opportunities not missed, is immediate. Before you hire, spend one week logging every task you do and the time it takes. Identify every task that does not require you specifically to complete it. That list is your first VA job description. Start with 10 hours per week. You will almost certainly expand it within 30 days.</div>
+        <div class="action-ttl">Delegate first: ${delegFirst}</div>
+        <div class="action-det">A virtual assistant or part-time team member handling your ${isFood || isRetail ? 'order tracking, customer service messages, supplier communication, and social media scheduling' : isBeauty ? 'DM replies, booking confirmations, product inventory checks, and social media scheduling' : 'inbox, scheduling, invoice chasing, document formatting, and social media scheduling'} can cost ${vaRate} on platforms like Upwork, Fiverr, or through a local hire. The return on that investment — in hours reclaimed and revenue opportunities not missed — is typically immediate. Before you hire, spend one week logging every task you do and the time it takes. Every task that does not require your specific expertise is a delegation candidate. Start with 10 hours per week.</div>
       </div>
     </div>
     <div class="action-row">
       <div class="action-num">2</div>
       <div class="action-body">
-        <div class="action-ttl">Delegate second: Repeatable delivery tasks — frees 5 to 10 more hours per week</div>
-        <div class="action-det">Record yourself delivering a typical project or service once, using Loom. Do not edit it. Send it to a trusted contractor or new hire with the instruction: "Watch this and follow these steps." If they can replicate your result to 80% of your standard, you have something delegable. Most business owners are surprised by how much of their "expert" delivery is actually process — steps that anyone diligent and trained can follow. You focus on the first 10 minutes of any engagement (context, strategy, relationship) and the last 10 minutes (quality check, client delivery). Everything in the middle is a delegation candidate.</div>
+        <div class="action-ttl">Delegate second: ${delegSecond}</div>
+        <div class="action-det">Record yourself completing a typical ${isFood ? 'preparation or production task' : isRetail ? 'packing or fulfilment task' : isBeauty ? 'preparatory treatment or cleaning routine' : 'delivery or project task'} once, using Loom. Send it to a trusted person with your written SOP and the instruction: follow this exactly. If they can replicate your result to 80% of your standard, you have something delegable. Most business owners are surprised by how much of their work is process — reproducible steps that anyone trained and diligent can follow. You focus on quality control and the parts that genuinely require your judgment. Everything else is a delegation candidate.</div>
       </div>
     </div>
     <div class="action-row">
       <div class="action-num">3</div>
       <div class="action-body">
-        <div class="action-ttl">Never delegate: Client relationships, strategy, and your creative judgment</div>
-        <div class="action-det">Your ability to read a client's real need beneath what they are asking for, your strategic instinct for what will actually move their business forward, and your creative judgment about what good looks like — these are your business's unfair advantage and they cannot be systematised away. Protect your time for these fiercely. Every hour you spend chasing invoices, formatting documents, or scheduling calls is an hour you are not doing the thing that only you can do. That is the real cost of not delegating.</div>
+        <div class="action-ttl">Never delegate: ${isFood || isRetail ? 'Recipes, supplier relationships, and quality standards' : isBeauty ? 'Complex treatments, new client consultations, and your creative direction' : 'Client relationships, strategy, and your creative judgment'}</div>
+        <div class="action-det">Your ability to ${isFood ? "read what a dish needs, your relationship with key suppliers, and the quality standard that defines your reputation" : isRetail ? "identify winning products, your supplier and sourcing relationships, and the brand identity that makes customers choose you" : isBeauty ? "read what a client actually needs beneath what they ask for, your skill with complex or technical treatments, and the aesthetic vision that defines your work" : "read a client's real need beneath what they are asking for, your strategic instinct, and your creative judgment"} — these are your business's unfair advantage and they cannot be systematised away. Protect your time for these fiercely. Every hour you spend on ${isFood || isRetail ? 'packaging, order tracking, or customer service messages' : isBeauty ? 'booking management, inbox, or scheduling' : 'chasing invoices, formatting documents, or scheduling calls'} is an hour you are not doing the work that only you can do. That is the real cost of not delegating.</div>
       </div>
     </div>`;
 
-  // 90-DAY FREEDOM PLAN
+  // ── 90-DAY FREEDOM PLAN ──
   const bosWeeks = [
     {
       theme: 'Map & Document — You cannot delegate what you have not defined',
       tasks: [
-        'Spend one hour listing every single task you do in a typical week. Include everything — the email replies, the file naming, the invoice chasing, the scheduling. If it takes your time, it goes on the list.',
-        'Highlight the top 5 tasks that consume the most time but do not require your specific expertise or judgment to complete. These are your first delegation targets.',
-        'Record yourself completing each of those 5 tasks once using Loom (free screen recording). Do not script or overthink it. A natural recording is more useful than a polished one.',
-        'Convert your recordings into written SOPs (Standard Operating Procedures) — step-by-step instructions in Notion or Google Docs. Add screenshots where helpful. Write as if you are handing this to a capable person who has never seen your business.',
-        'Set up your client intake form and configure your enquiry auto-reply email. Test the full flow from the perspective of a new enquiry — does it feel professional, clear, and confidence-building?'
+        `Spend one hour listing every single task you do in a typical week — include everything. Every message reply, every order check, every booking confirmation, every file you rename. If it takes your time, it goes on the list.`,
+        `Highlight the top 5 tasks that consume the most time but do not require your specific expertise or judgment. These are your first delegation targets. Next to each one, write who could do it instead and what they would need to know.`,
+        `Record yourself completing each of those 5 tasks once using Loom (free screen recorder). Do not script or overthink it. A natural, unedited recording is more useful as a training resource than a polished one.`,
+        `Convert your recordings into written SOPs in Notion or Google Docs — step-by-step instructions with screenshots where helpful. Write as if handing this to a capable person who has never seen your business before.`,
+        `Set up your ${isRetail || isFood ? 'order confirmation auto-reply and your customer intake form' : isBeauty ? 'booking confirmation and 24-hour reminder automation' : 'enquiry auto-reply and intake form'}. Test the full experience from the perspective of a new ${isRetail || isFood ? 'customer' : isBeauty ? 'client booking for the first time' : 'prospect'} — does it feel professional, clear, and confidence-building?`
       ]
     },
     {
       theme: 'Automate — Remove yourself from tasks that should not need you',
       tasks: [
-        'Configure automated invoice reminders in your invoicing tool. Set the cadence: 3 days before due, on the due date, and 3 days after if unpaid. Test by sending yourself a test invoice.',
-        'Set up your post-project testimonial and referral request sequence in Mailchimp or ConvertKit. Even a manual calendar reminder that prompts you to send the message is better than nothing at this stage.',
-        'Create email templates for your 5 most common responses: the welcome email, the discovery call follow-up, the proposal, the project kick-off, and the project wrap-up. Save them as drafts or canned responses in Gmail.',
-        'Set up a shared Google Drive or Notion folder structure that any new client or team member can navigate without asking you for guidance. Label everything clearly and consistently.',
-        'Schedule your social media content one week in advance using Buffer, Later, or Meta Business Suite (free). Batch-create content on one day per week rather than creating it in real time.'
+        `Configure automated invoice or payment reminders in your invoicing tool. Set the cadence: 3 days before due, on the due date, and 3 days after if unpaid. Test by sending yourself a test invoice and checking every message.`,
+        `Set up your post-${isRetail || isFood ? 'purchase' : isBeauty ? 'appointment' : 'project'} review and referral request sequence — even a manual calendar reminder to send the message is better than nothing at this stage. Work toward a fully automated version within 30 days.`,
+        `Create ${isRetail || isFood ? 'order confirmation, despatch notification, and customer service' : isBeauty ? 'booking confirmation, pre-appointment, and post-appointment' : 'welcome, proposal, and project wrap-up'} message templates. Save them as drafts or canned responses. The goal: every common communication takes 30 seconds to send, not 10 minutes to write.`,
+        `Set up a shared folder structure in Google Drive or Notion that any team member or contractor can navigate without asking you for guidance. Label everything consistently. Think about what a new hire would need to find on day one.`,
+        `Schedule your social media content one week in advance using Buffer, Later, or Meta Business Suite (free). Create content in batches on one day per week rather than improvising it in real time. One hour of batching replaces seven hours of daily scrambling.`
       ]
     },
     {
       theme: 'Delegate — Put the right tasks in the right hands',
       tasks: [
-        'Post a job listing for a part-time virtual assistant on Upwork or Fiverr. Describe the tasks clearly, give your SOPs as the job specification, and shortlist 3 candidates. Start with 10 hours per week.',
-        'Onboard your VA using your Loom recordings and SOPs. Your first week is training — expect imperfect execution. Correct gently, clearly, and with specific examples. Do not take the task back. Delegate the improvement instead.',
-        'Hand over inbox management, scheduling, and invoice chasing in Week 3. Review their work for the first two weeks. After that, review outcomes, not activity.',
-        'Track the hours you have reclaimed at the end of this week. Write down exactly how you used them. Were they directed at high-value, high-impact work? If not, that is your next constraint to address.',
-        'Have an honest conversation with yourself: what are you still holding onto that someone else could do to 80% of your standard? The answer to that question is your next delegation target.'
+        `Post a listing for a part-time ${isFood || isRetail ? 'assistant or fulfilment helper' : isBeauty ? 'beauty assistant or receptionist' : 'virtual assistant'} on Upwork, Fiverr, or through your local network. Use your SOPs as the job description. Shortlist 3 candidates. Start with 10 hours per week.`,
+        `Onboard your new hire using your Loom recordings and written SOPs. Your first two weeks are training — expect imperfect execution. Correct gently, specifically, and with examples. Do not take the task back. Delegate the improvement process instead.`,
+        `Hand over ${isFood || isRetail ? 'order tracking, packaging, and customer message management' : isBeauty ? 'booking management, inbox, and product inventory checks' : 'inbox management, scheduling, and invoice chasing'} in Week 3. Review their work daily for the first week, then weekly after that. Review outcomes, not activity.`,
+        `Track the hours you have reclaimed at the end of this week. Write down exactly how you used them. If they were not directed at your highest-value, highest-impact work — that is your next constraint to address.`,
+        `Ask yourself honestly: what are you still holding onto that someone else could do to 80% of your standard? The answer is your next delegation target. Write it down before you close your laptop today.`
       ]
     },
     {
-      theme: 'Optimise & Step Back — Test whether your business can run without you',
+      theme: 'Optimise & Step Back — Test whether your business runs without you',
       tasks: [
-        'Review every system you have built over the past three weeks. What is working consistently? What still depends on you being present and responsive? Name it specifically.',
-        'Identify one additional delivery task you can document, hand off, or automate. The goal is not perfection — it is progress. One more hour reclaimed per day compounds into one month per year.',
-        'Take one full day away from the business — phone on silent, no checking in, no quick replies. Does the business continue to function? If it does not, what broke, and why? The answer is your next systems priority.',
-        `Set a concrete target: by Month 6, ${Math.round(cap * 0.7)} out of ${cap} active clients should be managed with minimal direct involvement from you in day-to-day delivery. Define what "minimal" means specifically.`,
-        'Recognise what you have built. Most business owners spend years inside their business without ever building the infrastructure that would let them step back. You have spent four weeks doing the work that makes everything else possible. That is not a small thing.'
+        `Take a full half-day away from the business without your phone. This is not a break — it is a test. What broke? What needed you? What ran fine? The answers tell you exactly where your systems are still incomplete.`,
+        `Review every SOP you created in Month 1. Which ones are your team actually following? Which ones have been adapted or ignored? Update them to reflect reality — a SOP that nobody follows is not a system, it is a document.`,
+        `Identify the one task you are still doing personally that you committed to delegating in Month 2. Name the reason you kept it. Assess whether that reason is genuine or habitual. Delegate it this week.`,
+        `Review your revenue for the past 90 days. What percentage of it required your direct personal involvement to generate? That percentage is your operational dependency score. Your goal for the next 90 days is to reduce it by 30%.`,
+        `Write a one-paragraph summary of how your business operates today compared to 90 days ago: what is now running without you, what is measurably faster or more consistent, and what you are focusing your time on instead. This paragraph is the evidence that the investment in systems was worth it.`
       ]
     }
   ];
 
   document.getElementById('bosWeeks').innerHTML = bosWeeks.map((w, i) => `
     <div class="wk">
-      <div class="wk-lbl">Month 1 · Week ${i+1}: ${w.theme}</div>
+      <div class="wk-lbl">Week ${(i*3)+1}–${(i*3)+3}: ${w.theme}</div>
       <div class="wk-tasks">${w.tasks.map(t => `<div class="wk-task">${t}</div>`).join('')}</div>
     </div>`).join('');
 }
-
 
 
 // ── PDF DOWNLOAD ──────────────────────────────
@@ -1967,8 +2081,8 @@ function resetAll() {
       <div class="modal-perk">90-Day Freedom Plan — week by week, built around your business</div>
     </div>
     <div class="modal-price-row">
-      <div class="modal-price">$297</div>
-      <div><div class="modal-was">$997 full price</div><div class="modal-launch">$297 now — launch offer</div></div>
+      <div class="modal-price">$197</div>
+      <div><div class="modal-was">$497 full price</div><div class="modal-launch">$197 now — launch offer</div></div>
     </div>
     <div class="modal-acts">
       <button class="btn-upsell" style="width:100%;justify-content:center" onclick="modalBuyOS()">Yes — Build My Business OS →</button>
