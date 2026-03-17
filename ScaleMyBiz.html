@@ -287,6 +287,41 @@ input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;heigh
 .btn-skip:hover{color:rgba(255,255,255,.6)}
 
 /* BIZ OS RESULT */
+/* ── OS QUESTION FLOW ── */
+#os-flow{display:none;animation:up .45s ease}
+.os-flow-inner{max-width:680px;margin:0 auto;padding:40px 20px 60px}
+.os-prog{height:6px;background:var(--border);border-radius:3px;margin-bottom:32px;overflow:hidden}
+.os-prog-fill{height:100%;background:linear-gradient(90deg,var(--purple),#7c3aed);border-radius:3px;transition:width .4s ease}
+.os-prog-dots{display:flex;justify-content:space-between;margin-bottom:28px;gap:4px}
+.os-pd{display:flex;flex-direction:column;align-items:center;gap:4px;flex:1}
+.os-pd-dot{width:28px;height:28px;border-radius:50%;background:var(--border);color:var(--muted);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;transition:all .3s}
+.os-pd.act .os-pd-dot{background:var(--purple);color:#fff}
+.os-pd.done .os-pd-dot{background:#7c3aed;color:#fff}
+.os-pd span{font-size:10px;color:var(--muted);text-align:center;line-height:1.2}
+.os-step{display:none}.os-step.on{display:block}
+.os-ftag{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--purple);margin-bottom:10px}
+.os-fttl{font-family:'Cormorant Garamond',serif;font-size:clamp(26px,4vw,38px);font-weight:700;color:var(--ink);line-height:1.15;margin-bottom:10px}
+.os-fsub{font-size:14px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.os-pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:4px}
+.os-pill{padding:9px 17px;border:1.5px solid var(--border);border-radius:100px;font-size:13px;cursor:pointer;transition:all .2s;background:#fff;color:var(--slate);user-select:none;white-space:nowrap}
+.os-pill:hover{border-color:var(--purple);color:var(--purple)}
+.os-pill.on{background:var(--purple);border-color:var(--purple);color:#fff;font-weight:600}
+.os-pill.on:hover{opacity:.9}
+.os-limit-note{font-size:12px;color:var(--muted);margin-top:8px;font-style:italic}
+.os-ibox{background:#f5f3ff;border:1px solid #ddd6fe;border-radius:8px;padding:12px 16px;font-size:13px;color:#5b21b6;margin-top:14px;line-height:1.6}
+.os-fnav{display:flex;justify-content:space-between;align-items:center;margin-top:32px;padding-top:20px;border-top:1px solid var(--border)}
+.os-btn-back{background:transparent;border:1.5px solid var(--border);color:var(--muted);padding:12px 24px;border-radius:7px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.os-btn-back:hover{border-color:var(--purple);color:var(--purple)}
+.os-btn-next{background:var(--purple);color:#fff;border:none;padding:14px 32px;border-radius:7px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .3s}
+.os-btn-next:hover{background:#6d28d9;transform:translateY(-1px)}
+.os-btn-gen{background:linear-gradient(135deg,var(--purple),#6d28d9);color:#fff;border:none;padding:16px 36px;border-radius:8px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .3s;box-shadow:0 8px 24px rgba(109,40,217,.35)}
+.os-btn-gen:hover{transform:translateY(-2px);opacity:.93}
+.os-sl-wrap{display:flex;align-items:center;gap:14px;margin-top:6px}
+.os-sl-wrap input[type=range]{flex:1;accent-color:var(--purple)}
+.os-sl-val{font-size:18px;font-weight:700;color:var(--purple);min-width:80px;text-align:right}
+.os-row2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media(max-width:600px){.os-row2{grid-template-columns:1fr}}
+
 #biz-os-result{display:none;animation:up .45s ease}
 .bos-hero{background:linear-gradient(135deg,var(--forest) 0%,var(--night) 100%);padding:48px 52px;text-align:center;position:relative;overflow:hidden}
 .bos-hero::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1' fill='rgba(13,148,136,0.12)'/%3E%3C/svg%3E") repeat}
@@ -535,6 +570,38 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
           <div class="fg"><label>Your First Name</label><input type="text" id="ownerName" placeholder="e.g. Sarah"/><div class="err-msg" id="err-ownerName"></div></div>
           <div class="fg"><label>Business Name <span class="lh">(or your name if solo)</span></label><input type="text" id="bizName" placeholder="e.g. Bright Edge Studio"/><div class="err-msg" id="err-bizName"></div></div>
         </div>
+        <div class="row2">
+          <div class="fg">
+            <label>Country <span class="lh">(helps us tailor your plan to your market)</span></label>
+            <select id="countrySelect" onchange="handleCountry(this.value)">
+              <option value="">Select your country</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Ghana">Ghana</option>
+              <option value="Kenya">Kenya</option>
+              <option value="South Africa">South Africa</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Tanzania">Tanzania</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Ivory Coast">Ivory Coast</option>
+              <option value="Cameroon">Cameroon</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+              <option value="Zambia">Zambia</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+              <option value="Canada">Canada</option>
+              <option value="Australia">Australia</option>
+              <option value="Other">Other</option>
+            </select>
+            <div class="err-msg" id="err-country"></div>
+          </div>
+          <div class="fg">
+            <label>City <span class="lh">(optional)</span></label>
+            <input type="text" id="cityInput" placeholder="e.g. Monrovia"/>
+          </div>
+        </div>
         <div class="fg">
           <label>What do you sell? <span class="lh">Pick one</span></label>
           <div class="pills" id="offerType">
@@ -602,6 +669,10 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
             <div class="pill" data-val="Relying only on referrals with no consistent system">No consistent client system</div>
             <div class="pill" data-val="Being visible online but not converting to paying clients">Visible but not converting</div>
             <div class="pill" data-val="Being too busy but not earning enough">Too busy but underpaid</div>
+            <div class="pill" data-val="No time — I am doing everything myself with no systems or help">No systems or team</div>
+            <div class="pill" data-val="Inconsistent revenue — good months and bad months with no predictability">Inconsistent revenue</div>
+            <div class="pill" data-val="Not ready for investors or funding — no structure or numbers to show">Not investor or funding ready</div>
+            <div class="pill" data-val="Struggling to stand out in a crowded market">Hard to stand out</div>
           </div>
           <div class="ibox" style="margin-top:14px">💡 <b>Most business owners select 3 to 4.</b> The more honest you are here, the more targeted your blueprint becomes.</div>
         </div>
@@ -723,6 +794,8 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
             <div class="pill" data-val="Website or Google search">Website / Google</div>
             <div class="pill" data-val="Cold outreach">Cold outreach</div>
             <div class="pill" data-val="No consistent source">No consistent source</div>
+            <div class="pill" data-val="TikTok">TikTok</div>
+            <div class="pill" data-val="X / Twitter">X / Twitter</div>
           </div>
         </div>
         <div class="fnav"><button class="btn-back" onclick="go(6)">← Back</button><button class="btn-next" onclick="go(8)">Next <span>→</span></button></div>
@@ -741,6 +814,9 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
             <div class="pill" data-val="Stop relying on referrals and build a consistent system">Build a consistent system</div>
             <div class="pill" data-val="Grow to full capacity and beyond">Grow to full capacity</div>
             <div class="pill" data-val="Reposition my business and attract a different type of client">Reposition my business</div>
+            <div class="pill" data-val="Prepare my business for investment or funding opportunities">Prepare for investment or funding</div>
+            <div class="pill" data-val="Build a team and stop doing everything myself">Build a team</div>
+            <div class="pill" data-val="Launch a new offer or enter a new market">Launch something new</div>
           </div>
         </div>
         <div class="fg">
@@ -779,6 +855,7 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
 
       <!-- RESULT -->
       <div id="result-wrap">
+        <div id="localNote" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:16px 20px;margin-bottom:20px;font-size:14px;color:#065f46;line-height:1.7"></div>
         <div class="res-hero">
           <div class="res-tag">✦ Your Blueprint Is Ready</div>
           <div class="res-name" id="rName"></div>
@@ -877,18 +954,330 @@ input.err,textarea.err,select.err{border-color:var(--ember)!important;box-shadow
               <div class="up-price">$197</div>
             </div>
             <div class="up-price-note">One-time payment. Instant access. <strong>Launch price: $197.</strong> Full price is $497 — less than two hours with a business operations consultant. The launch window closes in 90 days. No subscription. No renewal. Pay once, keep it forever.</div>
-            <button class="btn-upsell" onclick="showBizOS()">Yes — Build My Business OS →</button>
+            <button class="btn-upsell" onclick="showOSFlow(true)">Yes — Build My Business OS →</button>
           </div>
           <button class="btn-skip" onclick="skipUpsell()">No thanks, I'll stick with my Growth Blueprint for now</button>
         </div>
       </div>
 
       <!-- ══ BIZ OS RESULT ══ -->
+      <!-- ── OS STANDALONE QUESTION FLOW ── -->
+      <div id="os-flow">
+        <div class="os-flow-inner">
+          <div class="os-prog"><div class="os-prog-fill" id="os-pf" style="width:12.5%"></div></div>
+          <div class="os-prog-dots">
+            <div class="os-pd act" id="os-pd1"><div class="os-pd-dot">1</div><span>Business</span></div>
+            <div class="os-pd" id="os-pd2"><div class="os-pd-dot">2</div><span>Operations</span></div>
+            <div class="os-pd" id="os-pd3"><div class="os-pd-dot">3</div><span>Time</span></div>
+            <div class="os-pd" id="os-pd4"><div class="os-pd-dot">4</div><span>Systems</span></div>
+            <div class="os-pd" id="os-pd5"><div class="os-pd-dot">5</div><span>Bottleneck</span></div>
+            <div class="os-pd" id="os-pd6"><div class="os-pd-dot">6</div><span>Freedom</span></div>
+            <div class="os-pd" id="os-pd7"><div class="os-pd-dot">7</div><span>Numbers</span></div>
+            <div class="os-pd" id="os-pd8"><div class="os-pd-dot">8</div><span>Goal</span></div>
+          </div>
+
+          <!-- OS Q1 — About your business (standalone only, hidden on upsell path) -->
+          <div class="os-step on" id="osq1">
+            <div class="os-ftag">Question 1 of 8</div>
+            <div class="os-fttl">Tell us about your business</div>
+            <div class="os-fsub">This shapes every system, automation, and delegation decision in your plan.</div>
+            <div class="os-row2">
+              <div class="fg"><label>Your First Name</label><input type="text" id="os-ownerName" placeholder="e.g. James"/><div class="err-msg" id="err-os-ownerName"></div></div>
+              <div class="fg"><label>Business Name</label><input type="text" id="os-bizName" placeholder="e.g. Apex Catering Co."/><div class="err-msg" id="err-os-bizName"></div></div>
+            </div>
+            <div class="os-row2">
+              <div class="fg">
+                <label>Country</label>
+                <select id="os-country">
+                  <option value="">Select your country</option>
+                  <option value="Liberia">Liberia</option><option value="Nigeria">Nigeria</option>
+                  <option value="Ghana">Ghana</option><option value="Kenya">Kenya</option>
+                  <option value="South Africa">South Africa</option><option value="Uganda">Uganda</option>
+                  <option value="Tanzania">Tanzania</option><option value="Rwanda">Rwanda</option>
+                  <option value="Senegal">Senegal</option><option value="Ivory Coast">Ivory Coast</option>
+                  <option value="Cameroon">Cameroon</option><option value="Ethiopia">Ethiopia</option>
+                  <option value="Zimbabwe">Zimbabwe</option><option value="Zambia">Zambia</option>
+                  <option value="United States">United States</option><option value="United Kingdom">United Kingdom</option>
+                  <option value="Canada">Canada</option><option value="Australia">Australia</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="fg"><label>City <span class="lh">(optional)</span></label><input type="text" id="os-city" placeholder="e.g. Monrovia"/></div>
+            </div>
+            <div class="fg">
+              <label>What do you sell? <span class="lh">Pick one</span></label>
+              <div class="os-pills" id="os-offerType">
+                <div class="os-pill" data-val="Services">Services (I do it for them)</div>
+                <div class="os-pill" data-val="Products">Products (physical or digital)</div>
+                <div class="os-pill" data-val="Both services and products">Both services and products</div>
+                <div class="os-pill" data-val="Coaching or Training">Coaching / Training / Education</div>
+              </div>
+              <div class="err-msg" id="err-os-offerType"></div>
+            </div>
+            <div class="fg">
+              <label>Industry</label>
+              <div class="os-pills" id="os-industry">
+                <div class="os-pill" data-val="Branding & Creative">Branding & Creative</div>
+                <div class="os-pill" data-val="Business Consulting">Business Consulting</div>
+                <div class="os-pill" data-val="Health & Wellness">Health & Wellness</div>
+                <div class="os-pill" data-val="Tech & Digital Marketing">Tech & Digital Marketing</div>
+                <div class="os-pill" data-val="Legal & Financial Services">Legal & Financial Services</div>
+                <div class="os-pill" data-val="Education & Coaching">Education & Coaching</div>
+                <div class="os-pill" data-val="Beauty & Personal Care">Beauty & Personal Care</div>
+                <div class="os-pill" data-val="Food & Hospitality">Food & Hospitality</div>
+                <div class="os-pill" data-val="Real Estate">Real Estate</div>
+                <div class="os-pill" data-val="Retail & E-commerce">Retail & E-commerce</div>
+                <div class="os-pill" data-val="Events & Entertainment">Events & Entertainment</div>
+                <div class="os-pill" data-val="Other">Other</div>
+              </div>
+              <div class="err-msg" id="err-os-industry"></div>
+            </div>
+            <div class="fg">
+              <label>How long have you been in business?</label>
+              <div class="os-pills" id="os-bizAge">
+                <div class="os-pill" data-val="Just starting (under 6 months)">Just starting (under 6 months)</div>
+                <div class="os-pill" data-val="Early stage (6 months to 2 years)">Early stage (6 months–2 years)</div>
+                <div class="os-pill" data-val="Established (2 to 5 years)">Established (2–5 years)</div>
+                <div class="os-pill" data-val="Mature (over 5 years)">Mature (over 5 years)</div>
+              </div>
+              <div class="err-msg" id="err-os-bizAge"></div>
+            </div>
+            <div class="fg">
+              <label>Briefly describe what your business does</label>
+              <textarea id="os-bizDesc" placeholder="e.g. I run a catering business serving corporate events and private functions in Monrovia. I handle everything from menu planning to setup and service."></textarea>
+            </div>
+            <div class="os-fnav"><span></span><button class="os-btn-next" onclick="osGo(2)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q2 — How your business runs today -->
+          <div class="os-step" id="osq2">
+            <div class="os-ftag">Question 2 of 8</div>
+            <div class="os-fttl">How does your business run today?</div>
+            <div class="os-fsub">Give us an honest picture of your current operations — not how you want it to be, how it actually is.</div>
+            <div class="fg">
+              <label>How many clients, orders, or projects do you handle per month?</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-capacity" min="1" max="100" step="1" value="10" oninput="osSlid('os-capacity','os-capV','','')"/>
+                <div class="os-sl-val" id="os-capV">10</div>
+              </div>
+            </div>
+            <div class="fg">
+              <label>Current monthly revenue (approximate)</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-revenue" min="0" max="50000" step="500" value="3000" oninput="osSlid('os-revenue','os-revV','$','')"/>
+                <div class="os-sl-val" id="os-revV">$3,000</div>
+              </div>
+            </div>
+            <div class="fg">
+              <label>How many hours per week do you personally work IN the business?</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-hoursPerWeek" min="10" max="80" step="5" value="50" oninput="osSlid('os-hoursPerWeek','os-hrsV','','hrs/wk')"/>
+                <div class="os-sl-val" id="os-hrsV">50 hrs/wk</div>
+              </div>
+              <div class="os-ibox">💡 Be honest here. Most business owners undercount by 20%. Include evenings and weekends.</div>
+            </div>
+            <div class="fg">
+              <label>Do you currently have any help?</label>
+              <div class="os-pills" id="os-currentHelp">
+                <div class="os-pill" data-val="I do everything myself">I do everything myself</div>
+                <div class="os-pill" data-val="1 part-time assistant or contractor">1 part-time assistant or contractor</div>
+                <div class="os-pill" data-val="Small team of 2 to 5 people">Small team of 2–5 people</div>
+                <div class="os-pill" data-val="Staff but still doing most things myself">I have staff but still do most things myself</div>
+              </div>
+              <div class="err-msg" id="err-os-currentHelp"></div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(1)">← Back</button><button class="os-btn-next" onclick="osGo(3)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q3 — Where your time is going -->
+          <div class="os-step" id="osq3">
+            <div class="os-ftag">Question 3 of 8</div>
+            <div class="os-fttl">Where is your time going?</div>
+            <div class="os-fsub">Which parts of the business consume most of your personal time right now? Select all that apply.</div>
+            <div class="fg">
+              <div class="os-pills" id="os-timeConsumers">
+                <div class="os-pill" data-val="Responding to enquiries and messages">Responding to enquiries and messages</div>
+                <div class="os-pill" data-val="Client or customer delivery">Client or customer delivery</div>
+                <div class="os-pill" data-val="Invoicing, chasing payments, and admin">Invoicing, chasing payments, and admin</div>
+                <div class="os-pill" data-val="Marketing and social media">Marketing and social media</div>
+                <div class="os-pill" data-val="Managing orders or stock">Managing orders or stock</div>
+                <div class="os-pill" data-val="Scheduling and coordination">Scheduling and coordination</div>
+                <div class="os-pill" data-val="Hiring, training, or managing people">Hiring, training, or managing people</div>
+                <div class="os-pill" data-val="Everything — I have no systems for any of it">Everything — I have no systems for any of it</div>
+              </div>
+              <div class="err-msg" id="err-os-timeConsumers"></div>
+              <div class="os-ibox">💡 Most business owners select 3 to 5. The more specific you are, the more targeted your systems map becomes.</div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(2)">← Back</button><button class="os-btn-next" onclick="osGo(4)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q4 — What you have already tried -->
+          <div class="os-step" id="osq4">
+            <div class="os-ftag">Question 4 of 8</div>
+            <div class="os-fttl">What do you already have in place?</div>
+            <div class="os-fsub">Be honest — this stops us recommending tools and systems you already use. Select all that apply.</div>
+            <div class="fg">
+              <div class="os-pills" id="os-existing">
+                <div class="os-pill" data-val="A booking or scheduling tool">A booking or scheduling tool</div>
+                <div class="os-pill" data-val="An invoicing or payment tool">An invoicing or payment tool</div>
+                <div class="os-pill" data-val="A project management tool">A project management tool</div>
+                <div class="os-pill" data-val="A CRM or client tracking system">A CRM or client tracking system</div>
+                <div class="os-pill" data-val="Documented processes or SOPs">Documented processes or SOPs</div>
+                <div class="os-pill" data-val="A VA or assistant">A VA or assistant</div>
+                <div class="os-pill" data-val="A part-time or full-time employee">A part-time or full-time employee</div>
+                <div class="os-pill" data-val="Automation tools (Zapier, Make, etc.)">Automation tools (Zapier, Make, etc.)</div>
+                <div class="os-pill" data-val="None of these — starting from scratch">None of these — starting from scratch</div>
+              </div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(3)">← Back</button><button class="os-btn-next" onclick="osGo(5)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q5 — Biggest bottleneck -->
+          <div class="os-step" id="osq5">
+            <div class="os-ftag">Question 5 of 8</div>
+            <div class="os-fttl">Where is the business most dependent on you personally?</div>
+            <div class="os-fsub">Select up to 3 — your plan will address each one directly.</div>
+            <div class="fg">
+              <div class="os-pills" id="os-bottleneck">
+                <div class="os-pill" data-val="Client enquiries and onboarding">Client enquiries and onboarding — takes too long and depends entirely on me</div>
+                <div class="os-pill" data-val="Delivering the work">Delivering the work — I cannot hand it off to anyone else</div>
+                <div class="os-pill" data-val="Invoicing and chasing payments">Invoicing and chasing payments — I hate this and it always slips</div>
+                <div class="os-pill" data-val="Communication and follow-ups">Communication and follow-ups — I am always behind</div>
+                <div class="os-pill" data-val="Managing orders, stock, or logistics">Managing orders, stock, or logistics — no consistent process</div>
+                <div class="os-pill" data-val="Marketing and content">Marketing and content — I do it all last minute or not at all</div>
+                <div class="os-pill" data-val="Managing my team or contractors">Managing my team or contractors — I end up redoing their work</div>
+                <div class="os-pill" data-val="Financial visibility">Financial visibility — I never know exactly where the money stands</div>
+                <div class="os-pill" data-val="I am the bottleneck everywhere">I am the bottleneck everywhere — there is no single biggest thing</div>
+              </div>
+              <div class="os-limit-note" id="os-bottleneck-note">Select up to 3</div>
+              <div class="err-msg" id="err-os-bottleneck"></div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(4)">← Back</button><button class="os-btn-next" onclick="osGo(6)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q6 — What to step back from -->
+          <div class="os-step" id="osq6">
+            <div class="os-ftag">Question 6 of 8</div>
+            <div class="os-fttl">What do you want to step back from first?</div>
+            <div class="os-fsub">In 90 days, what does a better business look like for you? Pick up to 3.</div>
+            <div class="fg">
+              <div class="os-pills" id="os-stepBack">
+                <div class="os-pill" data-val="Stop being the only person who can deliver the work">Stop being the only person who can deliver the work</div>
+                <div class="os-pill" data-val="Stop managing day-to-day admin personally">Stop managing day-to-day admin personally</div>
+                <div class="os-pill" data-val="Have consistent revenue without being involved in every sale">Have consistent revenue without being involved in every sale</div>
+                <div class="os-pill" data-val="Take time off without the business stopping">Take time off without the business stopping</div>
+                <div class="os-pill" data-val="Build a team that runs without constant supervision">Build a team that runs without constant supervision</div>
+                <div class="os-pill" data-val="Have systems that work even when I am not there">Have systems that work even when I am not there</div>
+                <div class="os-pill" data-val="Become investor or funding ready">Become investor or funding ready</div>
+                <div class="os-pill" data-val="Launch something new without burning out">Launch something new without burning out</div>
+              </div>
+              <div class="os-limit-note" id="os-stepBack-note">Select up to 3</div>
+              <div class="err-msg" id="err-os-stepBack"></div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(5)">← Back</button><button class="os-btn-next" onclick="osGo(7)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q7 — Numbers -->
+          <div class="os-step" id="osq7">
+            <div class="os-ftag">Question 7 of 8</div>
+            <div class="os-fttl">Let's talk numbers</div>
+            <div class="os-fsub">These numbers let us calculate the real cost of not having systems — and the return on building them.</div>
+            <div class="fg">
+              <label>Current monthly revenue (approximate)</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-monthRev" min="0" max="50000" step="500" value="3000" oninput="osSlid('os-monthRev','os-revV2','$','')"/>
+                <div class="os-sl-val" id="os-revV2">$3,000</div>
+              </div>
+            </div>
+            <div class="fg">
+              <label>How many clients or orders per month?</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-monthCap" min="1" max="100" step="1" value="10" oninput="osSlid('os-monthCap','os-capV2','','')"/>
+                <div class="os-sl-val" id="os-capV2">10</div>
+              </div>
+            </div>
+            <div class="fg">
+              <label>What do you currently pay for any help? (VA, staff, contractors)</label>
+              <div class="os-sl-wrap">
+                <input type="range" id="os-helpCost" min="0" max="3000" step="50" value="0" oninput="osSlid('os-helpCost','os-helpV','$','/month')"/>
+                <div class="os-sl-val" id="os-helpV">$0/month</div>
+              </div>
+            </div>
+            <div class="fg">
+              <label>What is your time worth per hour?</label>
+              <div class="os-pills" id="os-hourlyRate">
+                <div class="os-pill" data-val="under25">Under $25/hr</div>
+                <div class="os-pill" data-val="25to50">$25–$50/hr</div>
+                <div class="os-pill" data-val="50to100">$50–$100/hr</div>
+                <div class="os-pill" data-val="over100">Over $100/hr</div>
+              </div>
+              <div class="os-ibox">💡 If you are not sure, divide your monthly revenue by the hours you work. That is your effective hourly rate — and what every hour you spend on admin actually costs you.</div>
+            </div>
+            <div class="os-fnav"><button class="os-btn-back" onclick="osGo(6)">← Back</button><button class="os-btn-next" onclick="osGo(8)">Next <span>→</span></button></div>
+          </div>
+
+          <!-- OS Q8 — 90-day goal -->
+          <div class="os-step" id="osq8">
+            <div class="os-ftag">Question 8 of 8 — Last one!</div>
+            <div class="os-fttl">What does stepping back actually look like for you?</div>
+            <div class="os-fsub">Pick up to 3 — your entire plan is built around these specifically.</div>
+            <div class="fg">
+              <div class="os-pills" id="os-goal">
+                <div class="os-pill" data-val="Work 20 fewer hours per week with the business still running">Work 20 fewer hours per week with the business still running</div>
+                <div class="os-pill" data-val="Hand off delivery completely to a team member or contractor">Hand off delivery completely to a team member or contractor</div>
+                <div class="os-pill" data-val="Have all admin running automatically without my involvement">Have all admin running automatically without my involvement</div>
+                <div class="os-pill" data-val="Have consistent revenue I can predict without chasing every sale">Have consistent revenue I can predict without chasing every sale</div>
+                <div class="os-pill" data-val="Prepare the business for investment or a funding conversation">Prepare the business for investment or a funding conversation</div>
+                <div class="os-pill" data-val="Build and onboard my first hire successfully">Build and onboard my first hire successfully</div>
+                <div class="os-pill" data-val="Launch a new offer or enter a new market without burning out">Launch a new offer or enter a new market without burning out</div>
+                <div class="os-pill" data-val="Take a full week off without the business suffering">Take a full week off without the business suffering</div>
+              </div>
+              <div class="os-limit-note" id="os-goal-note">Select up to 3</div>
+              <div class="err-msg" id="err-os-goal"></div>
+              <div class="fg" style="margin-top:16px">
+                <label>Anything else we should know to make your plan as specific as possible? <span class="lh">(optional)</span></label>
+                <textarea id="os-extra" placeholder="e.g. I have tried hiring before and it did not work out. I want to understand how to do it properly this time." style="min-height:78px"></textarea>
+              </div>
+            </div>
+            <div class="os-ibox">🎯 You are about to receive a complete operations blueprint built specifically around your answers — not generic advice.</div>
+            <div class="os-fnav">
+              <button class="os-btn-back" onclick="osGo(7)">← Back</button>
+              <button class="os-btn-gen" onclick="osGoEmail()">✦ Build My OS Blueprint</button>
+            </div>
+          </div>
+
+          <!-- OS EMAIL GATE -->
+          <div class="os-step" id="osq-email">
+            <div class="os-ftag">Almost there</div>
+            <div class="os-fttl">Where should we send your blueprint?</div>
+            <div class="os-fsub">Your Business OS Blueprint is ready to build. Enter your details and we will generate it instantly.</div>
+            <div class="os-row2">
+              <div class="fg"><label>Your First Name <span style="color:var(--ember)">*</span></label><input type="text" id="os-emailName" placeholder="e.g. James"/><div class="err-msg" id="err-os-emailName"></div></div>
+              <div class="fg"><label>Your Email Address <span style="color:var(--ember)">*</span></label><input type="text" id="os-emailAddr" placeholder="e.g. james@yourbusiness.com"/><div class="err-msg" id="err-os-emailAddr"></div></div>
+            </div>
+            <div class="os-ibox">🔒 No spam, ever. We will send your blueprint and occasional resources to help you grow. Unsubscribe any time.</div>
+            <div class="os-fnav">
+              <button class="os-btn-back" onclick="osGo(8)">← Back</button>
+              <button class="os-btn-gen" onclick="osGenerate()">✦ Build My OS Blueprint Now</button>
+            </div>
+          </div>
+
+          <!-- OS GENERATING -->
+          <div id="os-gen-screen" style="display:none;text-align:center;padding:60px 20px">
+            <div class="spin"></div>
+            <div class="gen-t">Building your OS Blueprint…</div>
+            <div class="gen-s" id="os-gen-msg">Mapping your business systems…</div>
+          </div>
+
+        </div>
+      </div>
+
       <div id="biz-os-result">
         <div class="bos-hero">
           <div class="bos-tag">✦ Business OS Blueprint</div>
           <div class="bos-title" id="bosName"></div>
         </div>
+        <div id="bosIntro" style="display:none;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:10px;padding:20px 24px;margin:0 0 24px;font-size:14px;color:#065f46;line-height:1.75"></div>
         <div class="res-body">
           <div class="bp-grid">
             <div class="bpc full" style="border-top-color:var(--forest)">
@@ -1092,10 +1481,10 @@ function checkAccess() {
       return;
     }
 
-    // Record this use and unlock
+    // Record this use and show plan selector
     uses[email] = count + 1;
     try { localStorage.setItem(DEMO_STORE, JSON.stringify(uses)); } catch(e) {}
-    unlockTool();
+    showDemoPlanSelector();
     return;
   }
 
@@ -1109,6 +1498,45 @@ function checkAccess() {
   codeErr.textContent = 'Invalid code. Check your purchase confirmation email and try again.';
   codeErr.classList.add('show');
   codeEl.style.borderColor = 'var(--ember)';
+}
+
+function showDemoPlanSelector() {
+  // Replace gate content with plan selector
+  const gate = document.getElementById('access-gate');
+  gate.innerHTML = `
+    <div style="text-align:center;margin-bottom:28px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--teal);margin-bottom:10px">PARTNER DEMO ACCESS</div>
+      <div style="font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:700;color:var(--ink);line-height:1.1;margin-bottom:10px">Which plan would you like to demo?</div>
+      <p style="font-size:14px;color:var(--slate);line-height:1.7">You have access to both plans. Select the one you want to experience first.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <button onclick="demoPlan('growth')" style="width:100%;background:linear-gradient(135deg,var(--teal),var(--forest));color:#fff;border:none;padding:18px 20px;border-radius:10px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;text-align:left;transition:all .3s">
+        <div style="font-size:12px;opacity:.8;margin-bottom:4px">GROWTH PLAN — $97</div>
+        <div>✦ Pitch · Pricing · 30-Day Action Plan</div>
+      </button>
+      <button onclick="demoPlan('os')" style="width:100%;background:linear-gradient(135deg,#7c3aed,#6d28d9);color:#fff;border:none;padding:18px 20px;border-radius:10px;font-size:15px;font-weight:700;font-family:'Outfit',sans-serif;cursor:pointer;text-align:left;transition:all .3s">
+        <div style="font-size:12px;opacity:.8;margin-bottom:4px">BUSINESS OPERATIONS PLAN — $197</div>
+        <div>✦ Systems · Automation · 90-Day Freedom Plan</div>
+      </button>
+    </div>
+    <p style="font-size:11px;color:var(--muted);margin-top:18px;text-align:center">Demo access — use 1 of your 3 partner sessions</p>
+  `;
+}
+
+function demoPlan(plan) {
+  if (plan === 'os') {
+    sessionStorage.setItem('smb_product', 'os');
+    unlockTool();
+    // After unlock, show OS flow directly (standalone path for demo)
+    setTimeout(() => {
+      document.getElementById('tool-body').style.display = 'block';
+      showOSFlow(false);
+      osInitPills();
+    }, 100);
+  } else {
+    sessionStorage.removeItem('smb_product');
+    unlockTool();
+  }
 }
 
 function unlockTool() {
@@ -1131,6 +1559,45 @@ if (urlParams.get('access') === '1' || sessionStorage.getItem('smb_access') === 
   if (isBOSBuyer) sessionStorage.setItem('smb_product', 'os');
 }
 
+
+function handleCountry(val) {
+  // Clear error when country selected
+  const err = document.getElementById('err-country');
+  if (err) { err.textContent = ''; err.classList.remove('show'); }
+}
+
+function getLocalContext(country) {
+  // Returns localization context object based on country
+  const africa = ['Liberia','Nigeria','Ghana','Kenya','Uganda','Tanzania','Rwanda','Senegal','Ivory Coast','Cameroon','Ethiopia','Zimbabwe','Zambia','South Africa'];
+  const isAfrica = africa.includes(country);
+
+  const ctx = {
+    isAfrica,
+    isLiberia:     country === 'Liberia',
+    isNigeria:     country === 'Nigeria',
+    isGhana:       country === 'Ghana',
+    isKenyan:      country === 'Kenya',
+    isSouthAfrica: country === 'South Africa',
+    isUS:          country === 'United States',
+    isUK:          country === 'United Kingdom',
+    currency:      country === 'United States' ? 'USD' : country === 'United Kingdom' ? 'GBP' : country === 'South Africa' ? 'ZAR' : country === 'Nigeria' ? 'NGN' : country === 'Ghana' ? 'GHS' : country === 'Kenya' ? 'KES' : 'USD',
+    paymentNote:   country === 'Liberia'
+      ? 'For local buyers, Orange Money and Lonestar Mobile Money are widely used. For international buyers, Stripe and PayPal are the standard.'
+      : country === 'Nigeria'
+      ? 'Paystack and Flutterwave are the dominant payment processors. For international buyers, Stripe and PayPal remain standard.'
+      : country === 'Ghana'
+      ? 'MTN Mobile Money is dominant for local transactions. For international buyers, use Flutterwave or Stripe.'
+      : country === 'Kenya'
+      ? 'M-Pesa is the primary payment method for local buyers. Stripe and PayPal cover international transactions.'
+      : isAfrica
+      ? 'Mobile money is widely used for local transactions in your market. For international buyers, Stripe or PayPal are standard options.'
+      : null,
+    marketNote:    isAfrica && country !== 'South Africa'
+      ? 'Your market context has been factored into your strategy — pricing benchmarks, platform recommendations, and outreach approaches are calibrated for your region.'
+      : null
+  };
+  return ctx;
+}
 
 function go(n) {
   // Validate current step before advancing
@@ -1182,6 +1649,13 @@ function validateStep(stepId) {
     if (!name) { showErr('ownerName', 'Please enter your first name'); valid = false; }
     if (!biz)  { showErr('bizName',   'Please enter your business name'); valid = false; }
     if (!type) { showErr('offerType', 'Please select what you sell'); valid = false; }
+    // Country required
+    const countryEl = document.getElementById('countrySelect');
+    if (countryEl && !countryEl.value) {
+      const err = document.getElementById('err-country');
+      if (err) { err.textContent = 'Please select your country.'; err.classList.add('show'); }
+      valid = false;
+    }
     if (!desc) { showErr('bizDesc',   'A brief description helps us build your plan around your business'); valid = false; }
     // Add error div for pills that don't have one yet
     if (!type) {
@@ -1280,6 +1754,8 @@ function generate() {
   D.bizDesc     = document.getElementById('bizDesc').value || '';
   D.industry    = gp('industry') || 'Business Services';
   D.bizAge      = gp('bizAge') || 'Early stage';
+  D.country     = document.getElementById('countrySelect') ? document.getElementById('countrySelect').value : '';
+  D.city        = document.getElementById('cityInput') ? document.getElementById('cityInput').value.trim() : '';
   D.challenges  = gp('challenges') || 'attracting clients and pricing';
   D.clientWho   = document.getElementById('clientWho').value || '';
   D.clientPain  = document.getElementById('clientPain').value || '';
@@ -1318,11 +1794,11 @@ function generate() {
     document.getElementById('result-wrap').style.display = 'block';
     document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
 
-    // If Business OS buyer — skip Growth Blueprint, go straight to BOS
+    // If Business OS direct buyer — show OS question flow (standalone path)
     if (sessionStorage.getItem('smb_product') === 'os') {
       document.getElementById('result-wrap').style.display = 'none';
       document.getElementById('upsell').style.display = 'none';
-      showBizOS();
+      showOSFlow(false);
     }
 
     // ── EMAILJS: send confirmation to buyer + notify seller ──
@@ -1346,6 +1822,9 @@ function buildBlueprint() {
   const { name, biz, industry, challenges, clientWho, clientPain, clientRes,
           diffFactor, price, priceModel, priceRes, monthRev, cap, clientSrc, mainGoal, offerType } = D;
 
+  // Localization context
+  const localCtx = getLocalContext(D.country || '');
+
   const target  = monthRev * 5;
   const recP    = Math.ceil((target / cap) / 50) * 50;
   const gap     = recP - price;
@@ -1358,7 +1837,17 @@ function buildBlueprint() {
   const displayBiz = biz.trim() === 'Your Business' ? '' : biz.trim();
   const displayInd = industry.trim() === 'Business Services' ? '' : industry.trim();
   document.getElementById('rName').textContent = firstName ? firstName + "'s Growth Blueprint" : "Your Growth Blueprint";
-  document.getElementById('rBiz').textContent  = [displayBiz, displayInd].filter(Boolean).join(' · ') || 'ScaleMyBiz™';
+  document.getElementById('rBiz').textContent  = [displayBiz, displayInd, D.city || D.country || ''].filter(Boolean).join(' · ') || 'ScaleMyBiz™';
+
+  // Show localization note if applicable
+  const localNote = document.getElementById('localNote');
+  if (localNote) {
+    if (localCtx.marketNote || localCtx.paymentNote) {
+      localNote.style.display = 'block';
+      localNote.innerHTML = (localCtx.marketNote ? '<p style="margin-bottom:8px">' + localCtx.marketNote + '</p>' : '') +
+        (localCtx.paymentNote ? '<p><strong>Payment in your market:</strong> ' + localCtx.paymentNote + '</p>' : '');
+    }
+  }
 
   // ── PITCH — smart construction with grammar fix and industry fallbacks ──
   // Clean and normalise each field
@@ -1414,7 +1903,13 @@ function buildBlueprint() {
     const pitchPain = painClean;
     const pitchRes  = buildResPhrase(rawRes, industry, offerType);
     const pitch = `I help ${whoClean} who ${pitchPain} — so they can ${pitchRes}.`;
-    document.getElementById('pitchOut').textContent = '\u201C' + pitch + '\u201D';
+    // Local context note rendered just before pitch
+  const localNoteEl = document.getElementById('localNote');
+  if (localNoteEl && (localCtx.marketNote || localCtx.paymentNote)) {
+    localNoteEl.style.display = 'block';
+  }
+
+  document.getElementById('pitchOut').textContent = '\u201C' + pitch + '\u201D';
     var pitchFinal = pitch;
   } else {
     const pitchPain = painPrefix + painClean;
@@ -1526,6 +2021,10 @@ function pricingHTML(gap, price, recP, model, step1, multi, priceRes, cap, targe
 
     ${resistSection}
 
+    ${(D.challenges||'').includes('funding') || (D.challenges||'').includes('investor') ? '<div class="bp-insight"><strong>On funding readiness and pricing:</strong> Investors and lenders look at your pricing as a signal of how well you understand your own value. Raising your price before approaching investors is not just a revenue decision — it is a credibility decision. A business charging market rate is a more fundable business than one charging below it.</div>' : ''}
+    ${(D.challenges||'').includes('Inconsistent revenue') ? '<div class="bp-insight"><strong>On inconsistent revenue:</strong> Inconsistency is almost always a positioning or pipeline problem, not a luck problem. When your pitch is unclear, you attract whoever comes along. When you have no consistent outreach system, revenue follows your energy levels rather than a repeatable process. Execute Weeks 1 and 2 exactly as written and your revenue pattern will begin to stabilise within 30 to 45 days.</div>' : ''}
+    ${(D.challenges||'').includes('stand out') ? '<div class="bp-insight"><strong>On standing out in a crowded market:</strong> The strongest differentiation is specificity — being unmistakably clear about exactly who you serve and exactly what result you deliver. A pitch that speaks to one specific person is more powerful than one that tries to appeal to everyone. Your magnetic pitch below is where this starts.</div>' : ''}
+
     <div class="bp-insight"><strong>Packaging your offer at the new rate:</strong> Premium pricing requires premium presentation. Before your first discovery call at <strong>${fmt(recP)}</strong>, prepare a one-page offer document — a clean PDF or webpage — that clearly states: who this is for, the core problem it solves, what is included, the transformation the client receives, your process, and two to three client results. Buyers at this price point are not comparing costs — they are assessing confidence.</div>`;
   }
 
@@ -1557,6 +2056,8 @@ function hangout(src, ind) {
   if (src.includes('Website') || src.includes('Google')) return 'Google (local SEO optimisation, Google My Business, and a blog targeting the search terms your ideal clients use when they are already looking for help), plus YouTube for longer educational content';
   if (src.includes('Cold')) return 'Direct DMs on Instagram and LinkedIn (specific and researched, never templated), targeted email outreach to a curated list, and in-person events and networking where your ideal clients gather';
   if (src.includes('No consistent')) return 'LinkedIn as your primary platform (pick one and commit for 60 days before expanding), supplemented by WhatsApp direct outreach to warm contacts in your existing network';
+  if (src.includes('TikTok')) return 'TikTok (3 to 5 short-form videos per week — 30 to 60 seconds — showing the before/after of your work, answering the questions your ideal buyer types into search, and showing the real process behind what you deliver), duetting with content from creators in your niche to borrow their audience';
+  if (src.includes('X') || src.includes('Twitter')) return 'X/Twitter (2 to 4 posts per day — a mix of observations about your industry, specific client results, contrarian takes on common advice, and direct offers every 3 to 5 days), building in public by sharing what you are working on and what is working';
   return 'existing clients (via a structured referral programme), local business networks and chambers of commerce, industry events and professional associations, and WhatsApp groups in your niche';
 }
 
@@ -1592,6 +2093,38 @@ function attractHTML(src, ind, goal, pitch, who, pain, biz, recP, model) {
       detail: `Do not send generic requests. Visit each profile, read their most recent post or About section, and write a connection note that references something specific. The message does not need to pitch anything. The goal is a connection, not a sale. Example: <em>"Hi [Name] — I noticed your post on [topic]. Really resonated with the point about [specific detail]. Would love to connect with people thinking about this."</em> Once connected, do not pitch immediately. Wait for them to engage with your content or reach out first. Patience here pays more than urgency.`,
       copy: null
     });
+  } else if (src.includes('TikTok')) {
+    actions.push({
+      title: 'Post 3 short-form videos on TikTok this week — each one answering a question your buyer is already searching',
+      detail: `TikTok's algorithm is uniquely powerful for service and product businesses because it surfaces content to people who are not yet following you — based on what they are searching for and engaging with. Three specific video formats consistently generate leads: (1) The Before/After — show the problem state and the result you deliver, without saying a word about your process. (2) The Answer Video — type a question your ideal buyer asks into TikTok search, find a video with that question in the comments, and make a direct response video. (3) The Behind-the-Scenes — show how you actually do the work. Not a highlight reel. The real process. People buy from people they trust, and trust comes from transparency. Post at the time your audience is most active — typically 7–9am, 12–2pm, or 7–9pm in your local time zone.`,
+      copy: null
+    });
+    actions.push({
+      title: 'Add your Selar payment link to your TikTok bio and every video caption this week',
+      detail: `TikTok does not allow clickable links in captions, but your bio link is clickable. Every video caption should end with: "Link in bio to get yours." Every single one. Not occasionally. Every one. The moment someone decides they want what you offer, they go to your bio. If the link is not there, you lose them. Set this up once and never change it.`,
+      copy: `${who.split(',')[0]}? This is for you. Link in bio → get your complete plan in under 3 minutes.`
+    });
+  } else if (src.includes('X') || src.includes('Twitter')) {
+    actions.push({
+      title: 'Post 3 times per day on X this week — observation, result, offer',
+      detail: `X rewards consistency and specificity. The accounts that grow fastest on X are not the ones posting the most polished content — they are the ones who post the most specific, honest, and frequent observations about their area of expertise. Use this three-post daily rhythm: Morning — one sharp observation about your industry or your ideal buyer's problem (no more than 3 sentences). Afternoon — one specific client result, described in plain language with real numbers where possible. Evening — one direct offer or invitation every 3 to 5 days. The rest of the time, reply to posts in your niche with genuine, specific responses. Replies are where most X audience growth actually happens.`,
+      copy: null
+    });
+    actions.push({
+      title: 'Thread your blueprint offer on X this week — one thread, pinned to your profile',
+      detail: `A well-structured thread explaining exactly what your offer does, who it is for, and what it costs — written in plain, specific language — consistently outperforms any single post. Structure it as: Tweet 1 (hook): the exact problem. Tweet 2–4: why it keeps happening. Tweet 5–7: what changes when it is solved. Tweet 8: your offer with the link. Pin this thread to your profile so every new visitor sees it first.`,
+      copy: `Thread 1: If you run a ${ind.toLowerCase()} business and you are not converting visitors into paying clients — this is probably why. (Thread 🧵)
+
+Thread 2: Most ${who.split(',')[0]} have the same problem. Not the work. The words. Your pitch does not make the right person stop.
+
+Thread 3: You describe what you do. Not who it changes. Not what it fixes. Not what life looks like after.
+
+Thread 4: The result? People scroll past. Not because they don't need you. Because they didn't recognise themselves in what you said.
+
+Thread 5: Fix: ${pitchFinal || 'A pitch built from your actual buyer, their actual pain, and the actual result you deliver.'}
+
+Thread 6: Built in under 3 minutes at scalemybiz.global → link in bio.`
+    });
   } else if (src.includes('referrals')) {
     actions.push({
       title: 'Launch a structured referral programme this week — with a specific, named incentive',
@@ -1606,7 +2139,30 @@ function attractHTML(src, ind, goal, pitch, who, pain, biz, recP, model) {
     });
   }
 
-  if (goal.includes('higher prices') || goal.includes('premium')) {
+  if (goal.includes('investment') || goal.includes('funding')) {
+    actions.push({
+      title: 'Build a one-page business overview document this week — your investor primer',
+      detail: `Before any investor or funding body will take you seriously, they need to see that you understand your own business numbers. A one-page overview covers: what you do and who it is for, your current revenue and growth trajectory, your pricing model and capacity, your biggest opportunity and the specific constraint you need funding to remove, and what you are asking for and what it will produce. Most business owners who have never written this document discover things about their own business they did not consciously know — which is why writing it before you approach anyone is non-negotiable.`,
+      copy: `Business Overview — ${biz || 'My Business'}\n\nWhat we do: [one sentence]\nWho we serve: ${who.split(',')[0]}\nCurrent monthly revenue: $[amount]\nRevenue trend: [growing / stable / seasonal]\nPricing model: [how you charge]\nCapacity: [current vs maximum]\n\nThe opportunity: [what is possible if this constraint is removed]\nThe constraint: [what is holding growth back right now]\nFunding required: $[amount] — use of funds: [specific breakdown]\nProjected outcome within 12 months: [specific and measurable]`
+    });
+    actions.push({
+      title: 'Get your numbers clean before any investor or lender conversation',
+      detail: `The fastest way to lose credibility with an investor is to not know your numbers without hesitation. Before any funding conversation, be able to state without pause: your monthly revenue for the past 6 months, your average transaction value, your client or order volume, your biggest cost line, and your net margin. Pull these numbers this week. Put them in a simple table. Practise saying them out loud until they are effortless. A founder who knows their numbers is a fundable founder.`,
+      copy: null
+    });
+  } else if (goal.includes('Build a team') || goal.includes('doing everything myself')) {
+    actions.push({
+      title: 'Write your first job description this week — even if you are not hiring yet',
+      detail: `Writing a job description for the role you most need forces clarity you cannot get any other way. It makes you define: what this person actually does day to day, the standard they are working to, what they need to know, and what success looks like after 30 days. Most business owners who do this discover they have been holding onto tasks they could have delegated months ago. Write it, post it on Upwork or a local board, and see who responds. You do not need to hire anyone this week. You need to know exactly who you are looking for.`,
+      copy: `Role: [Job title]\nBusiness: ${biz || 'My Business'}\nHours: Part-time / [X] hours per week to start\n\nWhat you will do day to day:\n• [Task 1 — specific]\n• [Task 2 — specific]\n• [Task 3 — specific]\n\nWhat you need to be able to do:\n• [Skill 1]\n• [Skill 2]\n\nWhat success looks like in the first 30 days:\n[One specific, measurable outcome — not a list of activities]\n\nRate: $[amount] per hour or per month\nTo apply: [contact instructions]`
+    });
+  } else if (goal.includes('Launch something new') || goal.includes('new offer') || goal.includes('new market')) {
+    actions.push({
+      title: 'Validate the new offer before building it — find 3 people who would pay for it',
+      detail: `The most common mistake in launching something new is building before validating. The right order is: describe the offer in one sentence, identify 5 to 10 people who fit the target buyer, have a 15-minute conversation with each of them, and ask directly — "If I offered this at $X, would you buy it?" Three genuine yesses from people who are not your friends or family is enough evidence to build. Anything less means you need to refine the offer or the price before investing more time. Start these conversations this week.`,
+      copy: `Hi [Name],\n\nI am developing something new and want to make sure it solves a real problem before I build it out.\n\nI am thinking about offering [describe in one sentence] — specifically for [target buyer]. The outcome would be [the specific result it delivers].\n\nWould you be open to a 15-minute call this week? I am genuinely not selling anything — I want to know if this is useful and what would make it even better.\n\n— ${name || 'Your name'}`
+    });
+  } else if (goal.includes('higher prices') || goal.includes('premium')) {
     actions.push({
       title: 'Build a premium offer document before your next discovery call',
       detail: `Premium buyers do not make decisions based on verbal quotes or chat messages. They make decisions based on how confident and prepared you appear. A one-page offer document — a clean, well-designed PDF or a simple webpage — signals that you take your work seriously. It also removes the awkward silence when someone asks "so what do you charge?" Structure it as follows: <strong>Page 1</strong> — A clear, compelling headline stating the transformation you deliver. <strong>Section 1</strong> — Who this is for and the exact problem it solves. <strong>Section 2</strong> — What is included (be specific — list every deliverable, timeline, and access point). <strong>Section 3</strong> — The transformation: what life or business looks like after. <strong>Section 4</strong> — Two to three client results (specific, with numbers). <strong>Section 5</strong> — Your process (step by step, so they know what to expect). <strong>Section 6</strong> — Investment: ${fmt(recP)} ${model}. Payment options if applicable. <strong>Section 7</strong> — How to get started. Set the price to <strong>${fmt(recP)} ${model}</strong> and send this document in every discovery call follow-up, every proposal email, and every enquiry response. It replaces the quote. It frames you as the expert.`,
@@ -1667,7 +2223,13 @@ function weekHTML(goal, recP, price, step1, cap, src, pain) {
       tasks: [
         `Raise your rate to <strong>${fmt(midStep)}</strong> for all new proposals this week — notify any warm leads still in your pipeline with a "rate updating soon" message to prompt a decision. Urgency created by a real, upcoming change is the cleanest conversion tool available.`,
         `Book 3 to 5 discovery calls using a free scheduling tool such as Calendly. Set the call to 20 to 30 minutes maximum. Have your offer document ready to send in the follow-up email immediately after every call.`,
-        `Follow up with every prospect you have spoken to in the past 60 days who did not convert. The follow-up message is not a chase — it is a check-in: <em>"I wanted to see if the timing had changed since we last spoke. I have one slot available this month at my current rate — would it be useful to reconnect?"</em>`,
+        goal.includes('investment') || goal.includes('funding')
+          ? `Share your business overview document with one trusted person this week — an accountant, mentor, or business owner who has raised funding. Ask for their honest, specific feedback before you approach anyone formally. The quality of the feedback you receive now determines how your first investor conversation goes.`
+          : goal.includes('Build a team') || goal.includes('doing everything myself')
+          ? `Post your job listing this week. Even a free listing on Upwork or a local board generates responses within days. Review the quality of applications — if nobody suitable applies, your rate or role description needs refining. If good people apply, you are ready to interview.`
+          : goal.includes('Launch something new') || goal.includes('new offer')
+          ? `Run the first paid transaction for your new offer this week, even at a reduced early-adopter rate for the first 3 buyers. A paid transaction is categorically more informative than a free test — it tells you what people actually value, not what they say they value.`
+          : `Follow up with every prospect you have spoken to in the past 60 days who did not convert. The follow-up message is not a chase — it is a check-in: <em>"I wanted to see if the timing had changed since we last spoke. I have one slot available this month at my current rate — would it be useful to reconnect?"</em>`,
         `Write a simple objection document — the 3 to 5 most common questions or hesitations you hear before someone buys. For each one, write a clear, confident, honest answer. Rehearse these answers until they are effortless. Most deals are lost in the silence after an objection, not because of the objection itself.`,
         `Set up a short intake form to qualify leads before discovery calls. Ask: what are you working on, what have you already tried, what would a successful outcome look like for you, and what is your budget range. This saves time, increases your show rate, and means every call is with someone who has already invested attention in the process.`
       ]
@@ -1675,7 +2237,13 @@ function weekHTML(goal, recP, price, step1, cap, src, pain) {
     {
       theme: 'Scale — Consolidate what is working and raise the ceiling',
       tasks: [
-        `Move to your full recommended rate of <strong>${fmt(step2)}</strong> for all new clients. You have spent three weeks proving your positioning, building visibility, and converting at a higher price point. You have the evidence now. Own the number.`,
+        goal.includes('investment') || goal.includes('funding')
+          ? `Begin outreach to your first funding prospect this week — whether that is a bank, a microfinance institution, an angel investor, or a grant programme relevant to your industry. Your overview document is ready. Your numbers are clean. The only thing left is the first conversation.`
+          : goal.includes('Build a team') || goal.includes('doing everything myself')
+          ? `Onboard your first hire or contractor this week using your SOPs and Loom recordings. Your first week with them is training — expect imperfect execution. Correct gently and specifically. Do not take the task back. Track the hours you reclaim and redirect every one of them to your highest-value work.`
+          : goal.includes('Launch something new') || goal.includes('new offer')
+          ? `Launch the new offer publicly this week — post about it on your primary platform, send a direct message to your top 10 contacts, and add it to your bio and website. A quiet launch that reaches 50 people is more valuable than a perfect launch that reaches nobody. Ship it, gather real feedback, and improve from there.`
+          : `Move to your full recommended rate of <strong>${fmt(step2)}</strong> for all new clients. You have spent three weeks proving your positioning, building visibility, and converting at a higher price point. You have the evidence now. Own the number.`,
         `Review your content and outreach from the past three weeks: which post generated the most enquiries? Which outreach message got the best response rate? Double down on the approach that worked. Eliminate or redesign the approach that did not.`,
         `Launch your referral programme by sending the referral message to every existing and past client. A single well-executed referral campaign typically generates 3 to 8 warm leads within 14 days. Do not skip this because it feels uncomfortable — it is the highest-ROI activity in your pipeline.`,
         `Set a specific, written client target for the next 30 days. Not "get more clients" — but "sign 3 new clients at ${fmt(step2)} ${goal.includes('retainer') ? 'per month on retainer' : 'per project'} by [specific date]." Written targets are achieved at twice the rate of mental ones.`,
@@ -1738,11 +2306,245 @@ function scriptsHTML(pitch, who, painRaw, resRaw, biz, name, recP, model, ind) {
 }
 
 // ── UPSELL ACTIONS ────────────────────────────
-function showBizOS() {
+// ── OS DATA OBJECT ──────────────────────────────
+const OD = {};
+
+// ── OS PILL HANDLER ──────────────────────────────
+function osInitPills() {
+  document.querySelectorAll('.os-pills').forEach(grp => {
+    const id      = grp.id;
+    const maxSel  = { 'os-bottleneck': 3, 'os-stepBack': 3, 'os-goal': 3 };
+    const isMulti = !['os-offerType','os-industry','os-bizAge','os-currentHelp','os-hourlyRate'].includes(id);
+    const limit   = maxSel[id] || 99;
+    grp.querySelectorAll('.os-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        if (isMulti) {
+          const selected = grp.querySelectorAll('.os-pill.on').length;
+          if (!pill.classList.contains('on') && selected >= limit) return;
+          pill.classList.toggle('on');
+          const noteEl = document.getElementById(id + '-note');
+          if (noteEl) {
+            const cnt = grp.querySelectorAll('.os-pill.on').length;
+            noteEl.textContent = cnt > 0 ? cnt + ' selected (max ' + limit + ')' : 'Select up to ' + limit;
+          }
+        } else {
+          grp.querySelectorAll('.os-pill').forEach(p => p.classList.remove('on'));
+          pill.classList.add('on');
+        }
+        // Clear error
+        const err = document.getElementById('err-' + id);
+        if (err) { err.textContent = ''; err.classList.remove('show'); }
+      });
+    });
+  });
+}
+
+function osGp(id) {
+  const grp = document.getElementById(id);
+  if (!grp) return '';
+  const sel = [...grp.querySelectorAll('.os-pill.on')].map(p => p.dataset.val);
+  return sel.join(', ');
+}
+
+function osSlid(rangeId, valId, prefix, suffix) {
+  const val = document.getElementById(rangeId).value;
+  const num = parseInt(val);
+  let display;
+  if (prefix === '$') {
+    display = prefix + num.toLocaleString();
+  } else {
+    display = prefix + num + (suffix ? ' ' + suffix : '');
+  }
+  document.getElementById(valId).textContent = display;
+}
+
+// ── OS NAVIGATION ──────────────────────────────
+function osGo(n) {
+  const cur = document.querySelector('.os-step.on');
+  if (!cur) return;
+  const curId = cur.id;
+  const curNum = parseInt(curId.replace('osq','').replace('-email','99'));
+
+  if (n > curNum && !osValidate(curId)) return;
+
+  cur.classList.remove('on');
+
+  const isUpsell = sessionStorage.getItem('os_upsell') === '1';
+
+  // Skip Q1 on upsell path (going forward)
+  if (n === 1 && isUpsell && curNum > 1) {
+    osGo(2); return;
+  }
+
+  const next = n === 99 ? document.getElementById('osq-email') : document.getElementById('osq' + n);
+  if (next) next.classList.add('on');
+
+  // Progress bar
+  const totalQ = 8;
+  const pct = Math.min(100, Math.round((n / totalQ) * 100));
+  document.getElementById('os-pf').style.width = pct + '%';
+
+  // Progress dots
+  for (let i = 1; i <= 8; i++) {
+    const dot = document.getElementById('os-pd' + i);
+    if (!dot) continue;
+    dot.classList.remove('act','done');
+    if (i < n) dot.classList.add('done');
+    else if (i === n) dot.classList.add('act');
+  }
+
+  document.getElementById('os-flow').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function osGoEmail() { osGo(99); }
+
+function osValidate(stepId) {
+  let valid = true;
+  const showErr = (id, msg) => {
+    const el = document.getElementById('err-' + id);
+    if (el) { el.textContent = msg; el.classList.add('show'); }
+    valid = false;
+  };
+
+  if (stepId === 'osq1') {
+    const nm = document.getElementById('os-ownerName');
+    if (nm && !nm.value.trim()) { showErr('os-ownerName', 'Please enter your first name'); }
+    const bn = document.getElementById('os-bizName');
+    if (bn && !bn.value.trim()) { showErr('os-bizName', 'Please enter your business name'); }
+    if (!osGp('os-offerType')) { showErr('os-offerType', 'Please select what you sell'); }
+    if (!osGp('os-industry'))  { showErr('os-industry', 'Please select your industry'); }
+    if (!osGp('os-bizAge'))    { showErr('os-bizAge', 'Please select how long you have been in business'); }
+  }
+  if (stepId === 'osq2') {
+    if (!osGp('os-currentHelp')) { showErr('os-currentHelp', 'Please select your current help situation'); }
+  }
+  if (stepId === 'osq3') {
+    if (!osGp('os-timeConsumers')) { showErr('os-timeConsumers', 'Please select at least one area'); }
+  }
+  if (stepId === 'osq5') {
+    if (!osGp('os-bottleneck')) { showErr('os-bottleneck', 'Please select at least one bottleneck'); }
+  }
+  if (stepId === 'osq6') {
+    if (!osGp('os-stepBack')) { showErr('os-stepBack', 'Please select at least one area to step back from'); }
+  }
+  if (stepId === 'osq8') {
+    if (!osGp('os-goal')) { showErr('os-goal', 'Please select your 90-day goal'); }
+  }
+  if (stepId === 'osq-email') {
+    const en = document.getElementById('os-emailName');
+    const ea = document.getElementById('os-emailAddr');
+    if (en && !en.value.trim()) { showErr('os-emailName', 'Please enter your name'); }
+    if (ea && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(ea.value.trim())) { showErr('os-emailAddr', 'Please enter a valid email address'); }
+  }
+  return valid;
+}
+
+// ── OS GENERATE ──────────────────────────────
+function osGenerate() {
+  if (!osValidate('osq-email')) return;
+
+  const isUpsell = sessionStorage.getItem('os_upsell') === '1';
+
+  // Collect OS-specific data
+  OD.name      = (document.getElementById('os-emailName') ? document.getElementById('os-emailName').value.trim() : '') || D.name || '';
+  OD.email     = (document.getElementById('os-emailAddr') ? document.getElementById('os-emailAddr').value.trim() : '') || D.email || '';
+
+  if (isUpsell) {
+    // Inherit from Growth Plan
+    OD.biz       = D.biz       || '';
+    OD.industry  = D.industry  || '';
+    OD.offerType = D.offerType || '';
+    OD.bizAge    = D.bizAge    || '';
+    OD.country   = D.country   || '';
+    OD.city      = D.city      || '';
+    OD.bizDesc   = D.bizDesc   || '';
+  } else {
+    OD.biz       = (document.getElementById('os-bizName')  || {}).value || '';
+    OD.industry  = osGp('os-industry');
+    OD.offerType = osGp('os-offerType');
+    OD.bizAge    = osGp('os-bizAge');
+    OD.country   = (document.getElementById('os-country')  || {}).value || '';
+    OD.city      = (document.getElementById('os-city')     || {}).value || '';
+    OD.bizDesc   = (document.getElementById('os-bizDesc')  || {}).value || '';
+  }
+
+  // OS-specific fields
+  OD.capacity      = parseInt((document.getElementById('os-capacity')     || {}).value) || 10;
+  OD.revenue       = parseInt((document.getElementById('os-monthRev')     || {}).value) || 3000;
+  OD.hoursPerWeek  = parseInt((document.getElementById('os-hoursPerWeek') || {}).value) || 50;
+  OD.currentHelp   = osGp('os-currentHelp');
+  OD.timeConsumers = osGp('os-timeConsumers');
+  OD.existing      = osGp('os-existing');
+  OD.bottleneck    = osGp('os-bottleneck');
+  OD.stepBack      = osGp('os-stepBack');
+  OD.monthRev      = parseInt((document.getElementById('os-monthRev')     || {}).value) || 3000;
+  OD.monthCap      = parseInt((document.getElementById('os-monthCap')     || {}).value) || 10;
+  OD.helpCost      = parseInt((document.getElementById('os-helpCost')     || {}).value) || 0;
+  OD.hourlyRate    = osGp('os-hourlyRate');
+  OD.goal          = osGp('os-goal');
+  OD.extra         = (document.getElementById('os-extra') || {}).value || '';
+
+  // Hide question flow, show generating
+  document.querySelector('.os-step.on').classList.remove('on');
+  document.getElementById('os-gen-screen').style.display = 'block';
+
+  const msgs = [
+    'Mapping your business systems…',
+    'Identifying your automation priorities…',
+    'Building your delegation framework…',
+    'Calculating your VA ROI…',
+    'Assembling your 90-day freedom plan…',
+  ];
+  let i = 0;
+  const iv = setInterval(() => { i++; if (i < msgs.length) document.getElementById('os-gen-msg').textContent = msgs[i]; }, 500);
+
+  setTimeout(() => {
+    clearInterval(iv);
+    document.getElementById('os-gen-screen').style.display = 'none';
+    buildBizOS();
+    document.getElementById('biz-os-result').style.display = 'block';
+    document.getElementById('build').scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Fire emails
+    emailjs.send('service_m05ytab', 'template_y9zc6w8', {
+      to_name:  OD.name,
+      to_email: OD.email
+    }).catch(err => console.warn('EmailJS OS buyer error:', err));
+    emailjs.send('service_m05ytab', 'template_6665xte', {
+      to_name:  OD.name,
+      to_email: OD.email
+    }).catch(err => console.warn('EmailJS OS seller error:', err));
+  }, 2800);
+}
+
+// ── SHOW OS FLOW ──────────────────────────────
+function showOSFlow(isUpsell) {
+  sessionStorage.setItem('os_upsell', isUpsell ? '1' : '0');
+
+  // Hide other sections
+  document.getElementById('result-wrap').style.display = 'none';
   document.getElementById('upsell').style.display = 'none';
-  buildBizOS();
-  document.getElementById('biz-os-result').style.display = 'block';
-  document.getElementById('build').scrollIntoView({ behavior:'smooth', block:'start' });
+
+  // Show OS flow
+  document.getElementById('os-flow').style.display = 'block';
+
+  // If upsell — skip Q1, pre-fill from D, go straight to Q2
+  if (isUpsell) {
+    document.getElementById('osq1').classList.remove('on');
+    document.getElementById('osq2').classList.add('on');
+    document.getElementById('os-pf').style.width = '25%';
+    document.getElementById('os-pd1').classList.remove('act');
+    document.getElementById('os-pd1').classList.add('done');
+    document.getElementById('os-pd2').classList.add('act');
+  }
+
+  osInitPills();
+  document.getElementById('os-flow').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function showBizOS() {
+  // Route through new OS question flow (upsell path)
+  showOSFlow(true);
 }
 
 function skipUpsell() {
@@ -1758,7 +2560,7 @@ function closeReoffer() {
 
 function modalBuyOS() {
   closeReoffer();
-  showBizOS();
+  showOSFlow(true);
 }
 
 document.getElementById('reofferModal').addEventListener('click', function(e) {
@@ -1767,7 +2569,39 @@ document.getElementById('reofferModal').addEventListener('click', function(e) {
 
 // ── BUILD BIZ OS v2 ──────────────────────────────
 function buildBizOS() {
-  const { name, biz, industry, offerType, bizDesc, cap, monthRev, clientSrc, mainGoal } = D;
+  // Use OD (OS-specific data object) — falls back to D for upsell path fields
+  const name      = OD.name      || D.name      || '';
+  const biz       = OD.biz       || D.biz       || 'Your Business';
+  const industry  = OD.industry  || D.industry  || 'Business Services';
+  const offerType = OD.offerType || D.offerType || 'Services';
+  const bizDesc   = OD.bizDesc   || D.bizDesc   || '';
+  const cap       = OD.monthCap  || D.cap       || 10;
+  const monthRev  = OD.monthRev  || D.monthRev  || 1000;
+  const clientSrc = D.clientSrc  || '';
+  const mainGoal  = OD.goal      || D.mainGoal  || '';
+
+  // OS-specific data
+  const hoursPerWeek  = OD.hoursPerWeek  || 50;
+  const currentHelp   = OD.currentHelp   || '';
+  const timeConsumers = OD.timeConsumers || '';
+  const existing      = OD.existing      || '';
+  const bottleneck    = OD.bottleneck    || '';
+  const stepBack      = OD.stepBack      || '';
+  const helpCost      = OD.helpCost      || 0;
+  const hourlyRate    = OD.hourlyRate    || '25to50';
+  const osExtra       = OD.extra         || '';
+  const country       = OD.country       || D.country || '';
+  const city          = OD.city          || D.city    || '';
+
+  // Hourly rate midpoint for ROI calc
+  const hrMid = hourlyRate === 'under25' ? 20 : hourlyRate === '25to50' ? 37 : hourlyRate === '50to100' ? 75 : 125;
+  // Weekly admin hours wasted (estimated from timeConsumers)
+  const adminAreas    = (timeConsumers.match(/,/g) || []).length + 1;
+  const wastedHrs     = Math.min(hoursPerWeek * 0.4, adminAreas * 4);
+  const wastedCostMo  = Math.round(wastedHrs * 4.33 * hrMid);
+  const vaHrsMo       = 40; // standard VA engagement
+  const vaCostMo      = hourlyRate === 'under25' ? 160 : hourlyRate === '25to50' ? 300 : 400;
+  const vaRoiMo       = wastedCostMo - vaCostMo;
   const isProduct   = offerType && offerType.includes('Product');
   const isRetail    = industry === 'Retail & E-commerce';
   const isFood      = industry === 'Food & Hospitality';
@@ -1783,8 +2617,43 @@ function buildBizOS() {
 
   const firstName  = (name.trim() && name.trim().toLowerCase() !== 'you') ? name.trim().split(' ')[0] : '';
   const displayBiz = biz.trim() === 'Your Business' ? '' : biz.trim();
+  const locTag     = [city, country].filter(Boolean).join(', ');
   document.getElementById('bosName').textContent =
-    (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint" + (displayBiz ? " · " + displayBiz : "");
+    (firstName ? firstName + "'s" : "Your") + " Business OS Blueprint" +
+    (displayBiz ? " · " + displayBiz : "") +
+    (locTag ? " · " + locTag : "");
+
+  // ── OS INTRO NOTE ──
+  // Build context note using OS-specific data
+  const fmtC = n => '$' + Math.round(n).toLocaleString();
+  let introLines = [];
+  if (hoursPerWeek >= 50) introLines.push(`You are currently working approximately <strong>${hoursPerWeek} hours per week</strong> inside your business. That is not sustainable — and it is not necessary. This blueprint maps exactly where those hours are going and how to get them back.`);
+  else if (hoursPerWeek >= 40) introLines.push(`At <strong>${hoursPerWeek} hours per week</strong> you are working full-time inside your business. This blueprint identifies the systems and delegation decisions that will reduce that by 30 to 50% within 90 days.`);
+  if (wastedCostMo > 0 && hrMid > 0) introLines.push(`Based on your hourly rate and the areas consuming your time, you are spending approximately <strong>${fmtC(wastedCostMo)}/month worth of your time</strong> on tasks that do not require you personally. A VA at <strong>${fmtC(vaCostMo)}/month</strong> recovers <strong>${fmtC(Math.max(0, vaRoiMo))}/month in value</strong> — a return of ${vaRoiMo > 0 ? Math.round(wastedCostMo/vaCostMo) + '×' : 'significant value'} on that investment.`);
+  // C. StepBack Statement — REQUIRED by spec
+  if (stepBack) {
+    const sbItems = stepBack.split(',').map(s => s.trim()).filter(Boolean);
+    const sbList  = sbItems.length === 1
+      ? sbItems[0].toLowerCase()
+      : sbItems.slice(0,-1).map(s => s.toLowerCase()).join(', ') + ' and ' + sbItems[sbItems.length-1].toLowerCase();
+    introLines.push(`You want to step back from: <strong>${sbList}</strong>. Every system, automation, and delegation decision in this blueprint is designed to help you achieve exactly that within the next 90 days.`);
+  }
+
+  if (existing.includes('None')) introLines.push(`You are starting from scratch — which is actually an advantage. You get to build the right systems from day one rather than untangling bad ones.`);
+  else if (existing) introLines.push(`You already have some systems in place (${existing.split(',').slice(0,2).join(', ')}). This blueprint identifies the gaps and builds on what you have rather than replacing it.`);
+  if (osExtra) introLines.push(`<em>"${osExtra.split('.')[0]}"</em> — this has been factored into your plan.`);
+
+  // Localization
+  const localCtx = getLocalContext(country);
+  if (localCtx.paymentNote) introLines.push('<strong>Payment in your market:</strong> ' + localCtx.paymentNote);
+
+  if (introLines.length > 0) {
+    const introEl = document.getElementById('bosIntro');
+    if (introEl) {
+      introEl.style.display = 'block';
+      introEl.innerHTML = introLines.map(l => '<p style="margin-bottom:10px">' + l + '</p>').join('');
+    }
+  }
 
   // ── INDUSTRY-SPECIFIC SYSTEMS MAP ──
   function sys1() {
@@ -1855,6 +2724,13 @@ function buildBizOS() {
   }
 
   function sys4() {
+    const localCtx = getLocalContext(country);
+    const payTool = localCtx.isLiberia ? 'Orange Money, Lonestar Mobile Money' :
+                    localCtx.isNigeria ? 'Paystack or Flutterwave' :
+                    localCtx.isGhana   ? 'MTN Mobile Money or Flutterwave' :
+                    localCtx.isKenyan  ? 'M-Pesa or Stripe' :
+                    'Stripe, Paystack, or your preferred processor';
+    const invoiceTool = existing.includes('invoicing') ? 'your existing invoicing tool (configure automated reminders if you have not already)' : 'Wave (free) or FreshBooks (paid)';
     return {
       name: 'Invoicing, Payments & Cash Flow',
       desc: `Late payments are a cash flow problem, but they are also a systems problem. When invoicing is manual, irregular, and untracked, money slips through the gaps. A proper invoicing system sends invoices or payment requests automatically at the agreed point, follows up before and on the due date without you lifting a finger, flags genuinely overdue amounts for personal follow-up only when automated reminders have failed, and gives you a real-time view of your revenue at any moment. This eliminates the awkward chase conversations, keeps your cash flow predictable, and means you always know exactly where you stand financially without digging through your inbox.`,
@@ -1893,16 +2769,38 @@ function buildBizOS() {
     };
   }
 
-  const systems = [sys1(), sys2(), sys3(), sys4(), sys5(), sys6()];
-  document.getElementById('bosSystems').innerHTML = systems.map((s, i) => `
-    <div class="action-row">
-      <div class="action-num">${i+1}</div>
+  // Re-order systems based on bottleneck selections
+  const allSystems = [sys1(), sys2(), sys3(), sys4(), sys5(), sys6()];
+
+  // Priority scoring from bottleneck + stepBack alignment (spec section 2)
+  const sbAdmin    = (stepBack || '').includes('admin');
+  const sbDelivery = (stepBack || '').includes('delivering') || (stepBack || '').includes('Hand off delivery');
+  const sbTeam     = (stepBack || '').includes('team') || (stepBack || '').includes('supervision');
+  const sbSystems  = (stepBack || '').includes('systems that work');
+  const sbRevenue  = (stepBack || '').includes('consistent revenue');
+
+  // Map system index to HIGH PRIORITY flag based on spec rules
+  const highPriority = new Set();
+  if (sbAdmin     || (bottleneck||'').includes('Invoicing'))          highPriority.add(3); // System 4 — Payments
+  if (sbDelivery  || (bottleneck||'').includes('Delivering'))         highPriority.add(1); // System 2 — Delivery
+  if (sbTeam      || (bottleneck||'').includes('Managing my team'))   highPriority.add(5); // System 6 — Team
+  if (sbSystems   || (bottleneck||'').includes('enquiries'))          highPriority.add(0); // System 1 — Intake
+  if (sbRevenue   || (bottleneck||'').includes('Financial'))          highPriority.add(3); // System 4 — Payments
+  if ((bottleneck||'').includes('Managing orders'))                   highPriority.add(2); // System 3 — Inventory/Comms
+
+  document.getElementById('bosSystems').innerHTML = allSystems.map((s, i) => {
+    const isHigh = highPriority.has(i);
+    return `
+    <div class="action-row" style="${isHigh ? 'border-left:4px solid var(--purple);padding-left:12px;' : ''}">
+      <div class="action-num" style="${isHigh ? 'background:var(--purple);' : ''}">${i+1}</div>
       <div class="action-body">
+        ${isHigh ? '<div style="font-size:11px;font-weight:700;letter-spacing:2px;color:var(--purple);text-transform:uppercase;margin-bottom:6px">★ HIGH PRIORITY — Build this first</div>' : ''}
         <div class="action-ttl">${s.name}</div>
         <div class="action-det">${s.desc}</div>
         <div class="cpy-line" style="font-style:normal;padding-right:76px">${s.tool}</div>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 
   // ── AUTOMATION PRIORITIES — industry-specific ──
   const autoP1 = (isRetail || isFood)
@@ -1961,8 +2859,33 @@ function buildBizOS() {
     ? 'Junior treatments and preparatory services — frees 4 to 8 more hours per week'
     : 'Repeatable delivery tasks — frees 5 to 10 more hours per week';
 
+  // bizAge delegation stage (spec section 4A)
+  const bizAgeStr   = (bizAge || '').toLowerCase();
+  const ageStage    = bizAgeStr.includes('just starting') ? 'starter'
+                    : bizAgeStr.includes('early')         ? 'early'
+                    : bizAgeStr.includes('established')   ? 'established'
+                    : bizAgeStr.includes('mature')        ? 'mature'
+                    : 'early';
+
+  const delegIntro =
+    ageStage === 'starter'
+    ? `You are in the earliest stage of your business — which means the priority right now is not hiring, it is documenting. Before you delegate anything to anyone, you need to be able to describe every task you do clearly enough that someone else could follow it. That documentation, done now, becomes the foundation of every future hire. Your goal this month is not to get help — it is to get clear.`
+    : ageStage === 'early'
+    ? `Your business is at the stage where one well-chosen assistant can double your effective output. You do not need a full team — you need your first reliable hire, handling the tasks that drain your time but do not require your specific expertise. Start with 10 hours per week. Get the right person, train them properly, and your capacity expands without working more hours.`
+    : ageStage === 'established'
+    ? `At this stage, delegation is not just practical — it is structural. You need to move from informal task-sharing to a defined team structure with clear roles, ownership, and accountability. Every function in your business should have a named person responsible for it. When you are the named person for everything, you are still the bottleneck regardless of how hard you work.`
+    : `Your business is mature enough to operate at a level where your personal involvement should be strategic, not operational. If you are still handling tasks that a well-trained team member could own, that is a structural problem — not a capacity problem. The delegation work at your stage is about role clarity, performance standards, and building the management layer that keeps the business running without your constant input.`;
+
+  const vaRateRange = (isFood || isRetail) ? '$200–$500/month' : '$150–$400/month';
+  const potentialSavings = Math.max(0, wastedCostMo - helpCost);
+  const teamSizing = monthCap <= 10 ? '10 hours of VA support per week'
+                   : monthCap <= 25 ? '15 to 20 hours of VA or assistant support per week'
+                   : monthCap <= 50 ? 'a part-time team member (20 to 30 hours per week)'
+                   : 'at least one full-time team member plus coordination support';
+
   document.getElementById('bosDeleg').innerHTML = `
-    <p style="margin-bottom:14px">Delegation is about identifying which tasks are consuming your best hours but do not require your specific judgment, relationships, or expertise — and putting the right people in charge of them. The goal is to protect your time for the work only you can do.</p>
+    <p style="margin-bottom:14px">${delegIntro}</p>
+    ${potentialSavings > 0 ? `<div class="bp-insight"><strong>The financial case:</strong> You are currently spending approximately <strong>$${Math.round(wastedCostMo).toLocaleString()}/month worth of your time</strong> on tasks that do not require you personally. You are already paying <strong>$${helpCost.toLocaleString()}/month</strong> for help. The net opportunity is <strong>$${Math.round(potentialSavings).toLocaleString()}/month</strong> in recovered value. At your current volume of ${monthCap} clients or orders per month, you need approximately <strong>${teamSizing}</strong> to remove yourself from operational tasks.</div>` : ''}
     <div class="action-row">
       <div class="action-num">1</div>
       <div class="action-body">
@@ -1985,12 +2908,43 @@ function buildBizOS() {
       </div>
     </div>`;
 
-  // ── 90-DAY FREEDOM PLAN ──
+  // ── 90-DAY FREEDOM PLAN — driven by OS goal + bottleneck ──
+  const goalFunding = (mainGoal || '').includes('investment') || (mainGoal || '').includes('funding');
+  const goalTeam    = (mainGoal || '').includes('Hand off delivery') || (mainGoal || '').includes('Build and onboard');
+  const goalAdmin   = (mainGoal || '').includes('admin running automatically');
+  const goalRevenue = (mainGoal || '').includes('consistent revenue');
+  const goalLaunch  = (mainGoal || '').includes('new offer') || (mainGoal || '').includes('new market');
+  const goalTimeOff = (mainGoal || '').includes('full week off') || (mainGoal || '').includes('fewer hours');
+
+  const bnDelivery  = (bottleneck || '').includes('Delivering the work');
+  const bnAdmin     = (bottleneck || '').includes('Invoicing') || (bottleneck || '').includes('admin');
+  const bnEnquiry   = (bottleneck || '').includes('enquiries');
+  const bnEverywhere = (bottleneck || '').includes('everywhere');
+
   const bosWeeks = [
     {
-      theme: 'Map & Document — You cannot delegate what you have not defined',
+      theme: ageStage === 'mature'     ? 'Audit & Optimise — Find what is working and fix what is not'
+             : ageStage === 'established' ? 'Structure & Systematise — Build roles, not just tasks'
+             : ageStage === 'starter'     ? 'Document Everything — You cannot delegate what you have not defined'
+             :                              'Map & Document — You cannot delegate what you have not defined',
       tasks: [
-        `Spend one hour listing every single task you do in a typical week — include everything. Every message reply, every order check, every booking confirmation, every file you rename. If it takes your time, it goes on the list.`,
+        (() => {
+          // Week 1 Task 1 = first stepBack item (spec requirement)
+          const sbFirst = (stepBack || '').split(',')[0].trim();
+          if (sbFirst.includes('admin') || sbFirst.includes('Admin')) {
+            return `Your first action this week is the one that will give you the most immediate relief: set up automated invoice reminders so you never chase a payment manually again, and create a canned-response library for your 5 most common messages. These two things alone typically save 5 to 7 hours per week — and they can both be set up in a single afternoon.`;
+          } else if (sbFirst.includes('deliver') || sbFirst.includes('Deliver')) {
+            return `Your first action this week is to record yourself completing your most common delivery task from start to finish using Loom. Do not script it. Do not clean it up. A real, unedited recording of how you actually do the work is more useful as a training tool than anything polished. This recording becomes the foundation of your entire delegation plan.`;
+          } else if (sbFirst.includes('team') || sbFirst.includes('Team') || sbFirst.includes('supervision')) {
+            return `Your first action this week is to write a one-page role description for every person currently in your business — including yourself. Define: what they own, what standard they work to, and what escalation looks like. This exercise almost always reveals that multiple tasks have no clear owner, which is why they end up back on your plate every time.`;
+          } else if (sbFirst.includes('revenue') || sbFirst.includes('Revenue')) {
+            return `Your first action this week is to set up an automated invoice and payment reminder sequence so that every invoice you send has automatic follow-ups built in. Consistent revenue starts with consistent collection. No more chasing manually. Every invoice sends its own reminders — you get involved only when the automated sequence fails.`;
+          } else if (sbFirst.includes('funding') || sbFirst.includes('Funding') || sbFirst.includes('investor')) {
+            return `Your first action this week is to pull your last 6 months of revenue figures and write them in a single document alongside your pricing model, your capacity, and your top 3 costs. This is your business overview — the foundation of any funding conversation. Most business owners spend hours preparing for investor meetings because they never have this document ready. Build it this week.`;
+          } else {
+            return `Your first action this week directly addresses your stated priority — ${sbFirst.toLowerCase() || 'stepping back from day-to-day operations'}. Spend one hour listing every single task you do in a typical week. Every message reply, every order check, every file you rename. If it takes your time, it goes on the list. This is your operational map — and you cannot build a freedom plan without it.`;
+          }
+        })(),
         `Highlight the top 5 tasks that consume the most time but do not require your specific expertise or judgment. These are your first delegation targets. Next to each one, write who could do it instead and what they would need to know.`,
         `Record yourself completing each of those 5 tasks once using Loom (free screen recorder). Do not script or overthink it. A natural, unedited recording is more useful as a training resource than a polished one.`,
         `Convert your recordings into written SOPs in Notion or Google Docs — step-by-step instructions with screenshots where helpful. Write as if handing this to a capable person who has never seen your business before.`,
@@ -1998,7 +2952,9 @@ function buildBizOS() {
       ]
     },
     {
-      theme: 'Automate — Remove yourself from tasks that should not need you',
+      theme: ageStage === 'mature'     ? 'Scale Systems — Optimise what exists and remove remaining bottlenecks'
+             : ageStage === 'established' ? 'Delegate & Automate — Hand off and systematise simultaneously'
+             :                              'Automate — Remove yourself from tasks that should not need you',
       tasks: [
         `Configure automated invoice or payment reminders in your invoicing tool. Set the cadence: 3 days before due, on the due date, and 3 days after if unpaid. Test by sending yourself a test invoice and checking every message.`,
         `Set up your post-${isRetail || isFood ? 'purchase' : isBeauty ? 'appointment' : 'project'} review and referral request sequence — even a manual calendar reminder to send the message is better than nothing at this stage. Work toward a fully automated version within 30 days.`,
@@ -2008,7 +2964,7 @@ function buildBizOS() {
       ]
     },
     {
-      theme: 'Delegate — Put the right tasks in the right hands',
+      theme: goalTeam ? 'Hire & Onboard — Your first real team member' : goalAdmin ? 'Automate & Systematise — Remove yourself from the routine' : 'Delegate — Put the right tasks in the right hands',
       tasks: [
         `Post a listing for a part-time ${isFood || isRetail ? 'assistant or fulfilment helper' : isBeauty ? 'beauty assistant or receptionist' : 'virtual assistant'} on Upwork, Fiverr, or through your local network. Use your SOPs as the job description. Shortlist 3 candidates. Start with 10 hours per week.`,
         `Onboard your new hire using your Loom recordings and written SOPs. Your first two weeks are training — expect imperfect execution. Correct gently, specifically, and with examples. Do not take the task back. Delegate the improvement process instead.`,
@@ -2018,13 +2974,23 @@ function buildBizOS() {
       ]
     },
     {
-      theme: 'Optimise & Step Back — Test whether your business runs without you',
+      theme: goalFunding ? 'Funding Readiness — Build your investor case' : goalLaunch ? 'Launch Ready — Systems for your new offer' : goalTimeOff ? 'Test Your Freedom — Take the first real day off' : 'Optimise & Step Back — Test whether your business runs without you',
       tasks: [
-        `Take a full half-day away from the business without your phone. This is not a break — it is a test. What broke? What needed you? What ran fine? The answers tell you exactly where your systems are still incomplete.`,
+        goalFunding
+          ? `Complete your business overview document this week — revenue for the past 6 months, your pricing model, your capacity, your biggest opportunity, and the specific constraint you need funding to remove. This is your investor primer. No meeting happens without it.`
+          : goalLaunch
+          ? `Define the new offer in one sentence and identify 5 people who fit the target buyer. Have a 15-minute conversation with each. Ask directly: would you pay $X for this? Three genuine yesses is your green light to build.`
+          : goalTimeOff
+          ? `Take a full half-day away from the business this week — without your phone. This is not a break. It is a test. What broke? What needed you? What ran without you? The answers tell you exactly where your systems still need work.`
+          : `Take a full half-day away from the business without your phone. This is not a break — it is a test. What broke? What needed you? What ran fine? The answers tell you exactly where your systems are still incomplete.`,
         `Review every SOP you created in Month 1. Which ones are your team actually following? Which ones have been adapted or ignored? Update them to reflect reality — a SOP that nobody follows is not a system, it is a document.`,
         `Identify the one task you are still doing personally that you committed to delegating in Month 2. Name the reason you kept it. Assess whether that reason is genuine or habitual. Delegate it this week.`,
         `Review your revenue for the past 90 days. What percentage of it required your direct personal involvement to generate? That percentage is your operational dependency score. Your goal for the next 90 days is to reduce it by 30%.`,
-        `Write a one-paragraph summary of how your business operates today compared to 90 days ago: what is now running without you, what is measurably faster or more consistent, and what you are focusing your time on instead. This paragraph is the evidence that the investment in systems was worth it.`
+        ageStage === 'mature'
+          ? `Present your operational overview to one trusted adviser, investor contact, or board-level peer this week — someone who will push back honestly. The goal is not validation, it is scrutiny. If your systems cannot survive a sharp question from someone who does not care about your feelings, they are not ready for scale.`
+          : ageStage === 'established'
+          ? `Review your entire team structure this week — roles, responsibilities, and performance standards. Identify the one role that is either unclear or unfilled that is creating the most drag on the business. Define it precisely. That definition is your next hire brief or your next performance conversation.`
+          : `Write a one-paragraph summary of how your business operates today compared to 90 days ago: what is now running without you, what is measurably faster or more consistent, and what you are focusing your time on instead. This paragraph is the evidence that the investment in systems was worth it.`
       ]
     }
   ];

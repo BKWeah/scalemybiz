@@ -412,6 +412,40 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
   h1{font-size:42px}
   .s-h{font-size:32px}
 }
+
+/* ── ABOUT MODAL ── */
+.about-overlay{display:none;position:fixed;top:0;left:0;width:100%;height:100%;z-index:1000;background:rgba(8,13,40,.92);backdrop-filter:blur(6px);overflow-y:auto;animation:fadeIn .3s ease}
+.about-overlay.open{display:flex;align-items:flex-start;justify-content:center;padding:40px 20px 60px}
+.about-modal{background:var(--paper);max-width:760px;width:100%;border-radius:20px;overflow:hidden;position:relative;animation:up .4s ease}
+.about-close{position:absolute;top:20px;right:24px;width:36px;height:36px;border-radius:50%;background:var(--border);border:none;cursor:pointer;font-size:18px;color:var(--muted);display:flex;align-items:center;justify-content:center;transition:all .2s;z-index:10}
+.about-close:hover{background:var(--night);color:#fff}
+.about-hero{background:var(--night);padding:52px 48px 40px;position:relative;overflow:hidden}
+.about-hero::before{content:'';position:absolute;top:-80px;right:-80px;width:320px;height:320px;background:radial-gradient(circle,rgba(20,184,166,.15) 0%,transparent 70%);pointer-events:none}
+.about-headline{font-family:'Cormorant Garamond',serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:#fff;line-height:1.15;margin-bottom:0;position:relative}
+.about-headline em{color:var(--teal);font-style:normal}
+.about-body{padding:40px 48px 48px}
+.about-story{margin-bottom:36px}
+.about-story p{font-size:16px;color:var(--slate);line-height:1.82;margin-bottom:20px}
+.about-story p:last-child{margin-bottom:0}
+.about-turn{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);line-height:1.4;border-left:4px solid var(--teal);padding-left:20px;margin:32px 0}
+.about-platform{background:var(--cream);border-radius:14px;padding:28px 32px;margin-bottom:36px}
+.about-platform p{font-size:15px;color:var(--slate);line-height:1.8;margin-bottom:16px}
+.about-platform p:last-child{margin-bottom:0}
+.about-platform strong{color:var(--ink)}
+.about-bio-wrap{display:flex;gap:28px;align-items:flex-start;padding-top:28px;border-top:1px solid var(--border)}
+.about-photo{width:88px;height:88px;border-radius:50%;object-fit:cover;flex-shrink:0;border:3px solid var(--teal)}
+.about-photo-placeholder{width:88px;height:88px;border-radius:50%;background:linear-gradient(135deg,var(--teal),var(--forest));flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#fff;font-family:'Cormorant Garamond',serif}
+.about-bio p{font-size:15px;color:var(--slate);line-height:1.78;margin-bottom:14px}
+.about-bio-name{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.about-bio-title{font-size:13px;color:var(--muted);margin-bottom:16px}
+.about-socials{display:flex;gap:12px;flex-wrap:wrap}
+.about-social-link{display:inline-flex;align-items:center;gap:7px;padding:8px 16px;border-radius:6px;border:1.5px solid var(--border);font-size:13px;font-weight:600;color:var(--slate);text-decoration:none;transition:all .2s}
+.about-social-link:hover{border-color:var(--teal);color:var(--teal)}
+@media(max-width:600px){
+  .about-hero,.about-body{padding-left:24px;padding-right:24px}
+  .about-bio-wrap{flex-direction:column}
+}
+
 </style>
 </head>
 <body>
@@ -429,9 +463,9 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- HERO -->
 <section class="hero" id="about">
-  <div class="h-eyebrow">Two Plans · One Platform · Built for Your Business Stage</div>
-  <h1>Stop guessing.<br><em>Start attracting.</em></h1>
-  <p class="h-sub">Answer <b>8 questions</b> about your business. Get your complete growth plan — your pitch, your pricing, your action plan, and your scripts — built entirely from your answers in under 3 minutes.</p>
+  <div class="h-eyebrow">Most business owners are not struggling because they work too little. They are struggling because no one ever showed them the right system.</div>
+  <h1>Your business is good.<br><em>Your strategy is costing you.</em></h1>
+  <p class="h-sub">Answer <b>8 questions</b> about your business. Get a complete, specific strategy — your pitch, your pricing, your plan, and your scripts — built entirely from your answers. Not advice. Not theory. A blueprint built for you, in under 3 minutes.</p>
 
   <p class="chooser-label">Choose the blueprint that matches where you are right now</p>
   <div class="chooser">
@@ -478,11 +512,11 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- PROOF BAR -->
 <div class="proof-bar">
-  <div class="pb-stat"><div class="pb-num">1,200+</div><div class="pb-lbl">Blueprints Generated</div></div>
-  <div class="pb-stat"><div class="pb-num">4.9★</div><div class="pb-lbl">Average Rating</div></div>
-  <div class="pb-stat"><div class="pb-num">3 min</div><div class="pb-lbl">Average Completion Time</div></div>
-  <div class="pb-stat"><div class="pb-num">5×</div><div class="pb-lbl">Revenue Growth Target</div></div>
-  <div class="pb-stat"><div class="pb-num">10 hrs</div><div class="pb-lbl">Avg. Weekly Hours Reclaimed</div></div>
+  <div class="pb-stat"><div class="pb-num">Under 3 min</div><div class="pb-lbl">From first question to complete blueprint</div></div>
+  <div class="pb-stat"><div class="pb-num">5×</div><div class="pb-lbl">Revenue target built into every plan</div></div>
+  <div class="pb-stat"><div class="pb-num">Zero</div><div class="pb-lbl">Generic advice — every output is specific</div></div>
+  <div class="pb-stat"><div class="pb-num">$0</div><div class="pb-lbl">Monthly running cost to deliver your plan</div></div>
+  <div class="pb-stat"><div class="pb-num">30 days</div><div class="pb-lbl">Money-back guarantee on both plans</div></div>
 </div>
 
 <!-- COUNTDOWN SECTION -->
@@ -593,8 +627,8 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 <!-- ═══════════════ GROWTH BLUEPRINT ═══════════════ -->
 <section class="section" id="growth">
   <div class="s-tag">Growth Blueprint — $97</div>
-  <h2 class="s-h">For business owners who need<br>more sales, better pricing,<br>and a clearer message</h2>
-  <p class="s-sub">You are good at what you do. The problem is not your work — it is how you position it, price it, and communicate it. Your Growth Blueprint fixes all three in one session.</p>
+  <h2 class="s-h">You are not losing clients<br>because your work is bad.<br>You are losing them before they even hear your pitch.</h2>
+  <p class="s-sub">The difference between a business that attracts premium buyers and one that chases low-budget ones is not talent. It is positioning. It is pricing. It is the exact words you use when someone asks what you do. This blueprint fixes all three — in under three minutes, from your answers alone.</p>
   <div class="deliverables">
     <div class="del-card">
       <div class="del-num">1</div>
@@ -637,27 +671,27 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- GROWTH FOR WHO -->
 <section class="forwho">
-  <div class="s-tag" style="color:var(--teal-b)">Is the Growth Blueprint for you?</div>
-  <h2 class="s-h">This is for you<br>if any of this sounds familiar</h2>
+  <div class="s-tag" style="color:var(--teal-b)">Be honest with yourself for 30 seconds</div>
+  <h2 class="s-h">Read each one.<br>If more than two land — you need this.</h2>
   <div class="who-grid">
     <div class="who-yes">
       <div class="who-label y">✓ This is for you if…</div>
       <div class="who-items">
-        <div class="wi"><span class="wi-ico">✓</span>You are in business but feel like you are underselling yourself</div>
-        <div class="wi"><span class="wi-ico">✓</span>You are great at what you do but struggle to explain it clearly</div>
-        <div class="wi"><span class="wi-ico">✓</span>You get sales from referrals or word of mouth but have no consistent system</div>
-        <div class="wi"><span class="wi-ico">✓</span>You have tried raising prices but buyers pushed back</div>
-        <div class="wi"><span class="wi-ico">✓</span>You are busy but not earning what you know you are worth</div>
-        <div class="wi"><span class="wi-ico">✓</span>You want a clear, specific plan — not more generic advice</div>
+        <div class="wi"><span class="wi-ico">✓</span>People ask what you do and your answer changes every time you say it</div>
+        <div class="wi"><span class="wi-ico">✓</span>You are earning, but not nearly what the effort deserves</div>
+        <div class="wi"><span class="wi-ico">✓</span>You have raised your prices in your head. You have not raised them in your proposals.</div>
+        <div class="wi"><span class="wi-ico">✓</span>You get work through referrals — but the moment referrals dry up, so does the revenue</div>
+        <div class="wi"><span class="wi-ico">✓</span>You have paid for courses or coaching. You are still waiting for the results.</div>
+        <div class="wi"><span class="wi-ico">✓</span>You know something needs to change. You just do not know exactly what to change first.</div>
       </div>
     </div>
     <div class="who-no">
       <div class="who-label n">✗ This is not for you if…</div>
       <div class="who-items">
-        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are looking for a shortcut that requires no effort</div>
-        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You have not yet started or have no offer at all</div>
-        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are unwilling to raise prices even with a clear strategy</div>
-        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are already at full capacity and do not need more revenue</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You want someone else to do the work while you watch</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You have no offer and no business yet — there is nothing to build a strategy around</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You already have more clients than you can handle and are not looking to grow</div>
+        <div class="wi"><span class="wi-ico" style="color:rgba(220,38,38,.7)">✗</span>You are looking for a magic number — not a plan you have to actually execute</div>
       </div>
     </div>
   </div>
@@ -665,9 +699,9 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- HOW IT WORKS -->
 <section class="section" style="background:var(--cream)" id="how-it-works">
-  <div class="s-tag">How It Works</div>
-  <h2 class="s-h">Here is exactly what happens<br>when you hit Start</h2>
-  <p class="s-sub">Eight questions. Each one doing real work. Nothing wasted.</p>
+  <div class="s-tag">The Process</div>
+  <h2 class="s-h">Eight questions.<br>One complete strategy.<br>Under three minutes.</h2>
+  <p class="s-sub">Every question does real work. None of them are filler. By the time you hit the last one, the system already knows what your blueprint needs to say.</p>
   <div class="steps-v">
     <div class="sv-step">
       <div class="sv-num">1</div>
@@ -709,16 +743,16 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- ═══════════════ BUSINESS OS DIVIDER ═══════════════ -->
 <div class="product-divider" id="bos">
-  <div class="pd-label">Already generating revenue?</div>
-  <div class="pd-title">There is a second ceiling.<br>And a blueprint for that too.</div>
-  <div class="pd-sub">Most business owners who grow past their first revenue milestone hit the same wall: the business runs — but only because they are running it. Every decision goes through them. Every order, every enquiry, every problem lands on their desk. The Business OS Blueprint is built for this exact moment.</div>
+  <div class="pd-label">You solved the revenue problem. Now you have a different one.</div>
+  <div class="pd-title">The business is working.<br>But it only works<br>because you never stop.</div>
+  <div class="pd-sub">There is a specific kind of trap that only business owners with revenue understand. The clients are there. The money is coming in. But you cannot take a day off. You cannot step away for a week. Every enquiry, every decision, every problem — it all comes through you. That is not a growth problem. That is an operations problem. And it has a completely different solution.</div>
 </div>
 
 <!-- ═══════════════ BUSINESS OS BLUEPRINT ═══════════════ -->
 <section class="section">
   <div class="s-tag os">Business OS Blueprint — $197</div>
-  <h2 class="s-h">For business owners who have revenue<br>but can't step away from the work</h2>
-  <p class="s-sub">You built the business. Now it owns you. The Business OS Blueprint maps every system, automates what it can, and builds a delegation plan so you can step back without things falling apart.</p>
+  <h2 class="s-h">You built it. You run it.<br>You cannot leave it alone<br>for a single day.</h2>
+  <p class="s-sub">The Business OS Blueprint was built for one specific problem: a business that generates revenue, but only because the owner never stops working. Every system, every automation decision, every delegation move — built from your answers, specific to your industry, designed to give you your time back.</p>
   <div class="deliverables">
     <div class="del-card os">
       <div class="del-num" style="background:var(--purple)">1</div>
@@ -749,18 +783,18 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- BUSINESS OS FOR WHO -->
 <section class="forwho">
-  <div class="s-tag" style="color:#a78bfa">Is the Business OS Blueprint for you?</div>
-  <h2 class="s-h">This is for you<br>if any of this sounds familiar</h2>
+  <div class="s-tag" style="color:#a78bfa">Be honest for 30 more seconds</div>
+  <h2 class="s-h">If you have said any of these<br>in the last 30 days — keep reading.</h2>
   <div class="who-grid">
     <div class="who-yes">
       <div class="who-label y">✓ This is for you if…</div>
       <div class="who-items">
-        <div class="wi"><span class="wi-ico">✓</span>You have revenue coming in but every decision still comes through you</div>
-        <div class="wi"><span class="wi-ico">✓</span>You have never been able to take a full day off without something breaking</div>
-        <div class="wi"><span class="wi-ico">✓</span>You know you need systems but do not know where to start</div>
-        <div class="wi"><span class="wi-ico">✓</span>You are earning but feeling trapped — not growing</div>
-        <div class="wi"><span class="wi-ico">✓</span>You want to hire a VA but have nothing documented to hand over</div>
-        <div class="wi"><span class="wi-ico">✓</span>Your business runs you — and you are ready to flip that</div>
+        <div class="wi"><span class="wi-ico">✓</span>"I cannot take a day off — things fall apart the moment I am not there"</div>
+        <div class="wi"><span class="wi-ico">✓</span>"I am earning, but I feel more trapped than I did when I was just starting"</div>
+        <div class="wi"><span class="wi-ico">✓</span>"I have tried to bring someone in to help but I end up doing their work for them"</div>
+        <div class="wi"><span class="wi-ico">✓</span>"I know I need to document my processes. I have been saying that for two years."</div>
+        <div class="wi"><span class="wi-ico">✓</span>"Every enquiry, every decision, every problem — it all comes through me personally"</div>
+        <div class="wi"><span class="wi-ico">✓</span>"I want to grow, but I literally do not have the capacity to take on any more"</div>
       </div>
     </div>
     <div class="who-no">
@@ -777,9 +811,9 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- COMPARISON TABLE -->
 <section class="section" style="background:var(--cream)">
-  <div class="s-tag">Side by Side</div>
-  <h2 class="s-h">Not sure which one fits<br>where you are right now?</h2>
-  <p class="s-sub">Same tool. Different problems. Pick the one that describes you right now.</p>
+  <div class="s-tag">Which One Is For You</div>
+  <h2 class="s-h">Two problems.<br>Two blueprints.<br>One question.</h2>
+  <p class="s-sub">Are you trying to grow — or are you trying to get your time back? The answer tells you exactly which blueprint you need right now.</p>
   <div class="compare-wrap">
     <table class="compare-table">
       <thead>
@@ -806,8 +840,8 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- TESTIMONIALS -->
 <section class="section" id="results">
-  <div class="s-tag">Results</div>
-  <h2 class="s-h">Business owners who used ScaleMyBiz™<br>— in their own words</h2>
+  <div class="s-tag">Proof</div>
+  <h2 class="s-h">Do not take our word for it.<br>Read what happened when<br>business owners followed their blueprint.</h2>
   <div class="tgrid">
     <div class="tcard">
       <div class="tcard-badge g">Growth Blueprint</div>
@@ -854,15 +888,15 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- BUY CARDS -->
 <section class="section" style="background:var(--cream)" id="buy">
-  <div class="s-tag" style="text-align:center">Pick Your Plan. Start Today.</div>
-  <h2 class="s-h" style="text-align:center">One session. A complete plan.<br>Everything you need to move.</h2>
+  <div class="s-tag" style="text-align:center">Make a decision.</div>
+  <h2 class="s-h" style="text-align:center">Nothing changes<br>until something changes.</h2>
   <div class="buy-grid">
     <div class="buy-card featured">
       <div class="buy-tag g"></div>
       <div class="buy-popular">Most Popular</div>
       <div class="buy-label">Growth Blueprint</div>
-      <div class="buy-title">Attract the right buyers.<br>Charge what you're worth.</div>
-      <div class="buy-desc">For business owners who need a magnetic pitch, a pricing strategy, and a clear 30-day plan. Complete in under 3 minutes. Built entirely from your answers.</div>
+      <div class="buy-title">Stop undercharging.<br>Start attracting buyers<br>worth working for.</div>
+      <div class="buy-desc">Your pitch is vague. Your pricing is guesswork. Your outreach is not converting. This blueprint fixes all three — with specific numbers, exact copy, and a plan built entirely from your answers in under 3 minutes.</div>
       <div class="buy-features">
         <div class="bf"><span class="bf-ico">✓</span>Magnetic pitch — your exact positioning sentence</div>
         <div class="bf"><span class="bf-ico">✓</span>Pricing strategy with step-by-step raise roadmap</div>
@@ -885,8 +919,8 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
       <div class="buy-tag o"></div>
       <div class="buy-popular o">Advanced</div>
       <div class="buy-label o">Business OS Blueprint</div>
-      <div class="buy-title">Build the systems.<br>Reclaim your time.</div>
-      <div class="buy-desc">For business owners with revenue who are trapped by operations. Build the systems, automations, and delegation structure to step back without things falling apart.</div>
+      <div class="buy-title">Stop running a business<br>that cannot run<br>without you.</div>
+      <div class="buy-desc">You have the revenue. You do not have the freedom. This blueprint maps your systems, identifies what to automate, builds your delegation plan, and gives you a 90-day path to a business that runs without you in every single conversation.</div>
       <div class="buy-features">
         <div class="bf"><span class="bf-ico o">✓</span>Core systems map — all 6 critical business systems</div>
         <div class="bf"><span class="bf-ico o">✓</span>Top 3 automation priorities with full implementation guide</div>
@@ -910,8 +944,8 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- FAQ -->
 <section class="section">
-  <div class="s-tag">Questions</div>
-  <h2 class="s-h" id="faq">Questions we get asked before people buy</h2>
+  <div class="s-tag">Before You Buy</div>
+  <h2 class="s-h" id="faq">The questions people ask<br>right before they decide.</h2>
   <div class="faq-list">
     <div class="faq-item">
       <div class="faq-q" onclick="toggleFaq(this)">Which blueprint should I start with?</div>
@@ -958,9 +992,9 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
 
 <!-- FINAL CTA -->
 <section class="cta-band">
-  <div class="s-tag" style="color:var(--teal-b);position:relative">The plan is 8 questions away</div>
-  <h2 class="s-h">Stop running on instinct.</h2>
-  <p class="s-sub">Stop running on instinct. Stop charging less than you are worth. Stop building a business that only works when you are in it. Eight questions changes that.</p>
+  <div class="s-tag" style="color:var(--teal-b);position:relative">One decision. Right now.</div>
+  <h2 class="s-h">How long have you already<br>known something needs to change?</h2>
+  <p class="s-sub">Most business owners who find ScaleMyBiz™ have been thinking about their pitch, their pricing, or their systems for months — sometimes years. They already know what the problem is. They just have not had a tool that builds the specific solution from their specific situation. Eight questions is all it takes. The plan is on the other side of them.</p>
   <div class="cta-final-grid">
     <div class="cta-mini">
       <div class="cta-mini-label g">Growth Blueprint</div>
@@ -1001,7 +1035,7 @@ footer{background:var(--paper);border-top:1px solid var(--border);padding:52px 8
     <div>
       <div class="ft-col-title">Company</div>
       <div class="ft-links">
-        <a href="#about">About</a>
+        <a href="javascript:void(0)" onclick="openAbout()">About</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#results">Results</a>
         <a href="#faq">FAQs</a>
@@ -1071,5 +1105,90 @@ function updateCountdown(){
 updateCountdown();
 setInterval(updateCountdown,1000);
 </script>
+
+<!-- ── ABOUT MODAL ── -->
+<div class="about-overlay" id="aboutOverlay" onclick="closeAbout(event)">
+  <div class="about-modal">
+    <button class="about-close" onclick="closeAboutModal()">✕</button>
+
+    <div class="about-hero">
+      <div class="about-headline">
+        You already know<br>how to do the work.<br>
+        <em>That was never the problem.</em>
+      </div>
+    </div>
+
+    <div class="about-body">
+
+      <div class="about-story">
+        <p>You wake up early. You work late. You deliver. Your clients are happy. Your work is good — you know it is.</p>
+        <p>And yet.</p>
+        <p>The money does not match the effort. The right clients are not finding you. The ones who do want to negotiate. You are visible but not converting. Busy. But not breaking through.</p>
+        <p>You have looked for answers. You have read the threads, watched the videos, bought the courses. You came away with frameworks, principles, general advice — and still went back to your desk with the same problem you started with.</p>
+        <p>Because here is what no one tells you:</p>
+      </div>
+
+      <div class="about-turn">Generic advice cannot fix a specific problem.</div>
+
+      <div class="about-story">
+        <p>A pitch that is not built around your buyer does not convert. A pricing strategy that is not built around your numbers does not hold. A 30-day plan that is not built around your actual goal does not get followed.</p>
+        <p>You do not need more information. You need a plan built for you.</p>
+        <p>That realisation did not come easily. It came after years of building — building companies, building systems, building solutions for problems that had no clean answer yet. Problems that were real, urgent, and affecting people who had no access to the tools that could fix them.</p>
+        <p>I kept asking the same question: <em>Why does the solution have to be complicated, expensive, or locked behind a consultant's calendar?</em></p>
+        <p>It does not.</p>
+      </div>
+
+      <div class="about-platform">
+        <p><strong>ScaleMyBiz™ is the answer to that question applied to business growth.</strong></p>
+        <p>Eight questions. Your answers. Under three minutes.</p>
+        <p>A pitch built from the exact words your ideal buyer needs to hear. A pricing strategy calculated from your real numbers, not industry averages. A 30-day action plan with tasks specific to your goal and your market. Five scripts you can send today — written in your voice, for your buyer.</p>
+        <p>Not for a business owner like you. <strong>For you.</strong></p>
+        <p>And for the business owner trapped in operations with revenue they cannot step away from — the Business OS Plan maps every system, every automation, every delegation decision, built around your specific industry and stage.</p>
+        <p>This is what access to real business intelligence looks like. No gatekeepers. No waiting list. No $500-an-hour consultant. Three minutes. One payment. A complete plan.</p>
+      </div>
+
+      <div class="about-bio-wrap">
+        <img src="https://scontent.fmlw1-2.fna.fbcdn.net/v/t39.30808-6/411061787_122105901842149907_6492882564643492476_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=1d70fc&_nc_eui2=AeH9D0bxL6qv_lwmgvMF_3bGBpGcLDkWtOIGkZwsORa04plSd7DmO082H9dem-WquxWQpneWBHnqt_lB5hdFiqgM&_nc_ohc=4kX6VEY_0MMQ7kNvwHaSuT9&_nc_oc=AdmDfrn5mB7rqF4Ujb1NiXANWOJS_kA5kmvJ1jT-eipgl0kr8Z8Xivw9LTpmbMY3RNE&_nc_zt=23&_nc_ht=scontent.fmlw1-2.fna&_nc_gid=NcnS0M13NJoRmS0Wa1EwPw&_nc_ss=8&oh=00_AfwW0ngr_C9WUPqd4mOOklqVYVaJID_UeykXDOUQYbNZag&oe=69BED68B" alt="B. K. Weah" class="about-photo" onerror="this.style.display='none';this.insertAdjacentHTML('afterend','<div class=\"about-photo-placeholder\">B</div>')">
+        <div class="about-bio">
+          <div class="about-bio-name">B. K. Weah</div>
+          <div class="about-bio-title">Founder, WIGCI Technologies, Inc. · Creator, ScaleMyBiz™</div>
+          <p>B. K. Weah builds technologies and publishes solutions that solve real-world problems. At the intersection of technology and human impact, he identifies the gaps where intelligent systems can remove the barriers that hold capable people back.</p>
+          <p>ScaleMyBiz™ is one of those solutions — built not from theory, but from a direct understanding of what business owners in the real world are missing, and what it costs them when they cannot find it.</p>
+          <div class="about-socials">
+            <a href="https://www.linkedin.com/in/bkweah1" target="_blank" class="about-social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+              LinkedIn
+            </a>
+            <a href="https://www.instagram.com/bkweah" target="_blank" class="about-social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              Instagram
+            </a>
+            <a href="mailto:hello@scalemybiz.global" class="about-social-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+function openAbout() {
+  document.getElementById('aboutOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeAboutModal() {
+  document.getElementById('aboutOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeAbout(e) {
+  if (e.target === document.getElementById('aboutOverlay')) closeAboutModal();
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeAboutModal(); });
+</script>
+
 </body>
 </html>
